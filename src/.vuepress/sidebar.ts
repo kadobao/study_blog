@@ -6,16 +6,15 @@ export default sidebar({
     {
       text: "如何使用",
       icon: "laptop-code",
-      prefix: "demo/",
-      link: "demo/",
+      prefix: "acrticle/demo",
+      link: "acrticle/demo/",
       children: "structure",
       collapsible: true,
-      // expanded: false,
     },
     {
       text: "文章",
       icon: "book",
-      prefix: "posts/",
+      prefix: "acrticle/posts",
       children: "structure",
       collapsible: true
     },
