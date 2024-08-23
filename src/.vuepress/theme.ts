@@ -11,7 +11,7 @@ export default hopeTheme({
     url: "https://mister-hope.com",
   },
 
-  iconAssets: "fontawesome-with-brands",
+  iconAssets: "fontawesome-with-brands",  // 图标资源
 
   logo: "https://theme-hope-assets.vuejs.press/logo.svg",
 
