@@ -40,10 +40,11 @@ jobs:
       - name: 创建版本标签
         id: create_tag
         run: |
-          echo "::set-output name=TAG::v$(date +'%Y%m%d%H%M%S')"
+          TAG=v$(date +'%Y%m%d%H%M%S')
+          echo "TAG=$TAG" >> $GITHUB_ENV
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git tag -a ${{ steps.create_tag.outputs.TAG }} -m "Automated release"
+          git tag -a $TAG -m "Automated release"
           git push --tags
 
       - name: 创建 GitHub Release
@@ -52,8 +53,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ steps.create_tag.outputs.TAG }}
-          release_name: Release ${{ steps.create_tag.outputs.TAG }}
+          tag_name: ${{ env.TAG }}
+          release_name: Release ${{ env.TAG }}
           body: |
             Automated release created by GitHub Actions
           draft: false
@@ -66,7 +67,7 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: src/.vuepress/dist
-          asset_name: docs-${{ steps.create_tag.outputs.TAG }}.zip
+          asset_name: docs-${{ env.TAG }}.zip
           asset_content_type: application/zip
 
       - name: 部署文档
