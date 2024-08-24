@@ -1,4 +1,3 @@
-
 name: 部署文档
 
 on:
@@ -20,8 +19,6 @@ jobs:
           # 如果你文档需要 Git 子模块，取消注释下一行
           submodules: true
 
-
-
       - name: 设置 Node.js
         uses: actions/setup-node@v4
         with:
@@ -39,6 +36,38 @@ jobs:
         run: |-
           npm run docs:build
           > src/.vuepress/dist/.nojekyll
+
+      - name: 创建版本标签
+        id: create_tag
+        run: |
+          echo "::set-output name=TAG::v$(date +'%Y%m%d%H%M%S')"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git tag -a ${{ steps.create_tag.outputs.TAG }} -m "Automated release"
+          git push --tags
+
+      - name: 创建 GitHub Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ steps.create_tag.outputs.TAG }}
+          release_name: Release ${{ steps.create_tag.outputs.TAG }}
+          body: |
+            Automated release created by GitHub Actions
+          draft: false
+          prerelease: false
+
+      - name: 上传 Release 资产
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: src/.vuepress/dist
+          asset_name: docs-${{ steps.create_tag.outputs.TAG }}.zip
+          asset_content_type: application/zip
 
       - name: 部署文档
         uses: JamesIves/github-pages-deploy-action@v4
