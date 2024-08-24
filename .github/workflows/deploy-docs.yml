@@ -71,26 +71,8 @@ jobs:
           tar -czvf release/build.tar.gz -C dist .
 
       - name: 创建 GitHub Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: softprops/action-gh-release@v1
         with:
-          tag_name: 'v${{ github.ref_name }}'
-          release_name: Release ${{ github.ref_name }}
-          draft: false
-          prerelease: false
-          body: |
-            Changes in this release:
-            - Add your changelog here
           files: release/build.tar.gz
-
-      - name: 上传构建结果到 Release
-        uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: release/build.tar.gz
-          asset_name: build.tar.gz
-          asset_content_type: application/gzip
