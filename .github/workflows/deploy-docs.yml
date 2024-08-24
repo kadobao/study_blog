@@ -1,4 +1,4 @@
-name: 部署文档
+name: 部署文档和发布版本
 
 on:
   push:
@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  packages: write
 
 jobs:
   deploy-gh-pages:
@@ -37,19 +38,37 @@ jobs:
           npm run docs:build
           > src/.vuepress/dist/.nojekyll
 
-      - name: 压缩文档
-        run: |
-          zip -r docs-${{ env.TAG }}.zip src/.vuepress/dist
+      - name: 部署文档
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: src/.vuepress/dist
 
-      - name: 创建版本标签
-        id: create_tag
+  release:
+    needs: deploy-gh-pages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: 设置 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: 安装依赖
         run: |
-          TAG=v$(date +'%Y%m%d%H%M%S')
-          echo "TAG=$TAG" >> $GITHUB_ENV
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git tag -a $TAG -m "Automated release"
-          git push --tags
+          corepack enable
+          npm ci
+
+      - name: 构建项目
+        run: npm run build
+
+      - name: 打包构建结果
+        run: |
+          mkdir -p release
+          tar -czvf release/build.tar.gz -C dist .
 
       - name: 创建 GitHub Release
         id: create_release
@@ -57,26 +76,21 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ env.TAG }}
-          release_name: Release ${{ env.TAG }}
-          body: |
-            Automated release created by GitHub Actions
+          tag_name: 'v${{ github.ref_name }}'
+          release_name: Release ${{ github.ref_name }}
           draft: false
           prerelease: false
+          body: |
+            Changes in this release:
+            - Add your changelog here
+          files: release/build.tar.gz
 
-      - name: 上传 Release 资产
+      - name: 上传构建结果到 Release
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: docs-${{ env.TAG }}.zip
-          asset_name: docs-${{ env.TAG }}.zip
-          asset_content_type: application/zip
-
-      - name: 部署文档
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          # 部署文档
-          branch: gh-pages
-          folder: src/.vuepress/dist
+          asset_path: release/build.tar.gz
+          asset_name: build.tar.gz
+          asset_content_type: application/gzip
