@@ -40,11 +40,10 @@ jobs:
       - name: 创建版本标签
         id: create_tag
         run: |
-          TAG=v$(date +'%Y%m%d%H%M%S')
-          echo "TAG=$TAG" >> $GITHUB_ENV
+          echo "TAG=v$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git tag -a $TAG -m "Automated release"
+          git tag -a ${{ env.TAG }} -m "Automated release"
           git push --tags
 
       - name: 创建 GitHub Release
