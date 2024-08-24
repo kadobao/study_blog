@@ -42,10 +42,6 @@ jobs:
           branch: gh-pages
           folder: src/.vuepress/dist
 
-      - name: 创建版本打包
-        run: |
-          zip -r release-package.zip src/.vuepress/dist
-
       - name: 创建 Git 标签
         id: tag_step
         run: |
@@ -57,7 +53,6 @@ jobs:
       - name: 发布到 GitHub Releases
         uses: softprops/action-gh-release@v1
         with:
-          files: release-package.zip
           tag_name: ${{ env.TAG_NAME }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
