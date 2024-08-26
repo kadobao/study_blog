@@ -1,5 +1,6 @@
 ---
 title: 在serv00部署alist
+cover: https://cdn.jsdelivr.net/gh/kadobao/picx-images-hosting@master/20240826/image.1hs5cn4i9o.jpg
 icon: 
 order: 2
 category:
