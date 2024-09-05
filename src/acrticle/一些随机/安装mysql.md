@@ -1,3 +1,17 @@
+---
+title: 在serv00部署alist
+icon: 
+order: 6
+category:
+  - 一些随记
+tag:
+  - mysql
+
+---
+
+
+
+
 ![image](https://cdn.jsdelivr.net/gh/kadobao/picx-images-hosting@master/20240831/image.9kg4cc507c.jpg)
 
 
