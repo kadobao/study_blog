@@ -1,5 +1,5 @@
 ---
-title: 在serv00部署alist
+title: 安装mysql
 icon: 
 order: 6
 category:
