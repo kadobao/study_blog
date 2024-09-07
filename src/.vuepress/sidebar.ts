@@ -12,7 +12,7 @@ export default sidebar({
       collapsible: true
     },
     {
-      text: "JAVA",
+      text: "JAVA学习",
       icon: "laptop-code",
       prefix: "acrticle/JAVA学习",   // prefix 属性的作用是定义一个路径前缀，用于指定侧边栏项的子项相对于根目录所在的路径，这里指的根目录是指源文件
       link: "acrticle/JAVA学习/",   // link: "acrticle/demo/" 指向的是 acrticle/demo/ 目录。这意味着当用户点击这个侧边栏项时，他们将被带到 acrticle/demo/ 目录的主页（通常是 index.html 或 README.md）。
