@@ -34,7 +34,7 @@ v-model在组件标签:
 
 v-model在html标签:
 
-格式：v-model="dataProperty"，这里的 dataProperty 是组件内部的数据属性。在 HTML 标签 或 基础表单元素 上使用 v-model 进行双向数据绑定的常规方式，比如在 <input>, <textarea>, <select> 等元素上。
+格式：v-model="dataProperty"，这里的 `dataProperty` 是组件内部的数据属性。在 HTML 标签 或 基础表单元素 上使用 v-model 进行双向数据绑定的常规方式，比如在 `<input>`, `<textarea>`, `<select>` 等元素上。
 
 
 

@@ -25,8 +25,9 @@ provide('sharedCounter', counter)
 使用 inject 获取父组件提供的状态。
 
 渲染接收到的计数值。
-
+```
 const injectedCounter = inject<number>('sharedCounter', 0)
+```
 
 
 
