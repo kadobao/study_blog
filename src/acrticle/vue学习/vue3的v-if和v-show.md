@@ -1,3 +1,15 @@
+---
+title: vue3的v-if和v-show
+icon: 
+order: 
+category:
+  - vue学习
+tag:
+  - vue学习
+---
+
+
+
 `v-if` 控制元素是否渲染到 DOM中。
 `v-show` 通过 CSS 控制元素是否可见，但不影响其在 DOM 中的存在。
 

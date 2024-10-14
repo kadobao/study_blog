@@ -1,3 +1,17 @@
+---
+title: 使用vue的前置工作
+icon: 
+order: 
+category:
+  - vue学习
+tag:
+  - vue学习
+---
+
+
+
+
+
 ### 前置工作
 
 检测是否安装了 typescript

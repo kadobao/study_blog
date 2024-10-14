@@ -1,3 +1,16 @@
+---
+title: vue3的props通信
+icon: 
+order: 
+category:
+  - vue学习
+tag:
+  - vue学习
+---
+
+
+
+
 父传子：在父组件中，通过绑定 props 的方式，将数据传递给子组件。子组件通过 defineProps 接收从父组件传递的 props，并且可以在模板中使用这些数据。
 
 

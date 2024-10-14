@@ -1,6 +1,23 @@
-`<el-row>`：用来创建一行，可以包裹多个列（<el-col>）。`
+---
+title: Vue 3 + Element Plus 简单菜单栏项目
+icon: 
+order: 
+category:
+  - vue学习
+tag:
+  - vue学习
+---
 
-`<el-col>·`：用来创建列，表示行中的一个块，通过 span 属性控制列的宽度。
+
+
+
+
+```
+
+`<el-row>`：用来创建一行，可以包裹多个列（<el-col>）。
+
+`<el-col>`：用来创建列，表示行中的一个块，通过 span 属性控制列的宽度。
+```
 
 
 

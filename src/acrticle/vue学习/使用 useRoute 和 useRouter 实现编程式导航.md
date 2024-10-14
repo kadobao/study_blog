@@ -1,3 +1,18 @@
+---
+title: 使用 useRoute 和 useRouter 实现编程式导航
+icon: 
+order: 
+category:
+  - vue学习
+tag:
+  - vue学习
+---
+
+
+
+
+
+
 ### Vue 3 项目示例：使用 `useRoute` 和 `useRouter` 实现编程式导航
 
 在这个项目中，我们将演示如何使用 Vue Router 的 `useRoute()` 和 `useRouter()` `hooks`，并结合 Vue 3 的 Composition API 进行编程式导航。我们将创建一个简单的项目，展示如何从路由中获取参数并执行导航操作。

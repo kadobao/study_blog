@@ -1,3 +1,17 @@
+---
+title: vue3里面的pinia里面的storeToRefs
+icon: 
+order: 
+category:
+  - vue学习
+tag:
+  - vue学习
+---
+
+
+
+
+
 **Pinia 提供的 `storeToRefs` 只会将 Pinia `store` 中的** **状态（`state`）** **属性转化为 `ref` 对象**，而 **Vue 的 `toRefs` 会将整个 `store` 中的所有数据（包括`state`、`getters` 和 `actions`）都转换为 `ref`**，因此它们的行为有细微的区别。
 
 ### 理解 `storeToRefs` 和 `toRefs`

@@ -1,3 +1,18 @@
+---
+title: vue3的v-model
+icon: 
+order: 
+category:
+  - vue学习
+tag:
+  - vue学习
+---
+
+
+
+
+
+
 v-model在html标签:
 在script定义数据，然后在模板哪里使用v-model绑定就行。
 

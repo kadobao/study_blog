@@ -1,3 +1,16 @@
+---
+title: vue3的useAttrs
+icon: 
+order: 
+category:
+  - vue学习
+tag:
+  - vue学习
+---
+
+
+
+
 使用defineProps明确声明它将接收哪些属性。这些声明的属性称为声明为 props 的属性。
 
 ------

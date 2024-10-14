@@ -1,3 +1,19 @@
+---
+title: vue 3的script setup语法糖
+icon: 
+order: 
+category:
+  - vue学习
+tag:
+  - vue学习
+---
+
+
+
+
+
+
+
 ### Vue 3 `script setup` 语法糖解析
 
 `script setup` 是 Vue 3 中的一种语法糖，简化了组合式 API 的使用，同时提高了代码的可读性和运行性能。下面是其主要特点：

@@ -1,3 +1,18 @@
+---
+title: vue3的pinia里面的$subscribe
+icon: 
+order: 
+category:
+  - vue学习
+tag:
+  - vue学习
+---
+
+
+
+
+
+
 ### 使用 `$subscribe` 的 Vue 3 + Pinia 项目示例
 
 **项目结构**

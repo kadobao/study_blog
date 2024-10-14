@@ -1,3 +1,18 @@
+---
+title: vue3的$attrs 
+icon: 
+order: 
+category:
+  - vue学习
+tag:
+  - vue学习
+---
+
+
+
+
+
+
 父组件只要接收就行，子组件使用v-bind="$attrs"将父组件传递的属性传递给孙组件，孙组件使用defineProps接收之后就可以直接使用了
 
 

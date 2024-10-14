@@ -1,3 +1,16 @@
+---
+title: 修改pinia数据的三个方式
+icon: 
+order: 
+category:
+  - vue学习
+tag:
+  - vue学习
+---
+
+
+
+
 ```vue
 counterStore.$patch({
   count: 7

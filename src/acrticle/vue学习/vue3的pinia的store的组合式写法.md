@@ -1,3 +1,19 @@
+---
+title: vue3的pinia的store的组合式写法
+icon: 
+order: 
+category:
+  - vue学习
+tag:
+  - vue学习
+---
+
+
+
+
+
+
+
 [details="省流"]
 ## 组合式 API 的规则与结构
 

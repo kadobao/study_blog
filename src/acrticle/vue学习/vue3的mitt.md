@@ -1,3 +1,18 @@
+---
+title: vue3的mitt
+icon: 
+order: 
+category:
+  - vue学习
+tag:
+  - vue学习
+---
+
+
+
+
+
+
 在使用 mitt 实现两个组件之间的通信时，两个组件需要分别执行以下步骤：
 
 1. 子组件 A（发布事件的组件）

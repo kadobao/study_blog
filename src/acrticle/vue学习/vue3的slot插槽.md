@@ -1,3 +1,18 @@
+---
+title: vue3的slot插槽
+icon: 
+order: 
+category:
+  - vue学习
+tag:
+  - vue学习
+---
+
+
+
+
+
+
 写在组件标签里面的标签都是要插入子组件的标签，只是不同插槽的区别。
 
 

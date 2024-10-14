@@ -1,3 +1,18 @@
+---
+title: Element Plus 的布局系统
+icon: 
+order: 
+category:
+  - vue学习
+tag:
+  - vue学习
+---
+
+
+
+
+
+
 除了你已经提到的 `Element Plus` 布局组件（`<el-container>`、`<el-aside>`、`<el-header>` 和 `<el-main>`），还有一些其它的布局组件和工具，可以帮助你构建更复杂的布局结构。下面是完整的 `Element Plus` 布局组件及其使用方式的讲解：
 
 ### 1. **`<el-container>`**

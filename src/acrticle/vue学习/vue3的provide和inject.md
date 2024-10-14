@@ -1,3 +1,15 @@
+---
+title: vue3的provide和inject
+icon: 
+order: 
+category:
+  - vue学习
+tag:
+  - vue学习
+---
+
+
+
 父组件需要做的事：
 
 创建计数器状态并通过 provide 提供。

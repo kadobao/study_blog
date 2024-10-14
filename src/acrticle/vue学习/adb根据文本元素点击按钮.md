@@ -1,3 +1,18 @@
+---
+title: adb根据文本元素点击按钮
+icon: 
+order: 
+category:
+  - vue学习
+tag:
+  - vue学习
+---
+
+
+
+
+
+
 ```python
 from lxml import etree as ET
 import subprocess

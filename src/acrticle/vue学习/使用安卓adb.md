@@ -1,3 +1,15 @@
+---
+title: 使用安卓adb
+icon: 
+order: 
+category:
+  - vue学习
+tag:
+  - vue学习
+---
+
+
+
 先下载工具：`https://developer.android.com/tools/releases/platform-tools?hl=zh-cn`
 
 
