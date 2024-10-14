@@ -1,5 +1,5 @@
 ---
-title: 安装mysql
+title: 将本地的仓库推送到github
 icon: 
 order: 
 category:
@@ -7,6 +7,8 @@ category:
 tag:
   - github
 ---
+
+
 
 ```bash
 git init

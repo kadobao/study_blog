@@ -4,10 +4,10 @@ export default sidebar({
   "/": [
     "",  // 指向根目录下的 index.md 文件
     {
-      text: "一些随机",
+      text: "一些随记",
       icon: "pen-to-square",
-      prefix: "acrticle/一些随机",  // 注意这个最后不要加`/`，不然会默认展开折叠栏
-      link: "acrticle/一些随机/",
+      prefix: "acrticle/一些随记",  // 注意这个最后不要加`/`，不然会默认展开折叠栏
+      link: "acrticle/一些随记/",
       children: "structure",
       collapsible: true
     },
