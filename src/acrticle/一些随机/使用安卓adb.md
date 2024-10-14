@@ -3,9 +3,9 @@ title: 使用安卓adb
 icon: 
 order: 
 category:
-  - vue学习
+  - 一些随记
 tag:
-  - vue学习
+  - python
 ---
 
 

@@ -3,9 +3,9 @@ title: adb根据文本元素点击按钮
 icon: 
 order: 
 category:
-  - vue学习
+  - 一些随记
 tag:
-  - vue学习
+  - python
 ---
 
 

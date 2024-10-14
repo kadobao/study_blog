@@ -3,9 +3,9 @@ title: fofa搜索谷歌镜像
 icon: 
 order: 
 category:
-  - vue学习
+  - 一些随记
 tag:
-  - vue学习
+  - fofa
 ---
 
 

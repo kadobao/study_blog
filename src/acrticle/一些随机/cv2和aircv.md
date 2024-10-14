@@ -3,9 +3,9 @@ title: cv2和aircv
 icon: 
 order: 
 category:
-  - vue学习
+  - 一些随记
 tag:
-  - vue学习
+  - python
 ---
 
 
