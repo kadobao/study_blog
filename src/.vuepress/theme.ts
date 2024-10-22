@@ -103,6 +103,14 @@ export default hopeTheme({
     //   serverURL: "https://waline-comment.vuejs.press",
     // },
 
+    comment: { 
+      provider: 'Giscus',
+      repo: 'kadobao/comments', 
+      repoId: 'R_kgDONEToaA',
+      category: 'Announcements',
+      categoryId: 'DIC_kwDONEToaM4CjmRu',
+    },
+
     components: {
       components: ["Badge", "VPCard"],
     },
