@@ -4,7 +4,7 @@ layout: BlogHome
 icon: home
 title: 博客主页
 heroImage: https://theme-hope-assets.vuejs.press/logo.svg
-heroText: 你博客的名称
+heroText: 学习笔记
 heroFullScreen: true
 # bgImageStyle:
 #   background: 'url(https://assets-global.website-files.com/5db63dc519de55e028ef4816/5f2ded0348b56d016fbdeece_%E5%91%A8%E9%BA%9F%E5%98%89%20-%203.jpg) center/contain no-repeat, url(assets/images/cover2.jpg) center/cover no-repeat'
@@ -13,7 +13,7 @@ heroFullScreen: true
 #   background-position: center, center
 #   background-repeat: no-repeat, no-repeat
 #   background-size: contain, cover
-tagline: 你可以在这里放置你的口号与标语
+tagline: 而古尔丹代价是什么
 projects:
   - icon: project
     name: 项目名称
