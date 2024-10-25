@@ -11,7 +11,7 @@ tag:
 
 
 
-
+::: details 点击展开项目代码
 
 ```python
 from lxml import etree as ET
@@ -74,3 +74,4 @@ else:
     print(f'Element with text "{target_text}" not found.')
 ```
 
+:::

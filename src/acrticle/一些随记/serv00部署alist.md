@@ -48,6 +48,10 @@ NS记录添加到cloudflare的dns解析里
 
 ![image](https://cdn.jsdelivr.net/gh/kadobao/picx-images-hosting@master/20240826/image.60u6foed8i.jpg)
 到底`public_nodejs`文件夹里面的`data`文件夹里面，把`config.json`换成这个：
+
+::: details 点击展开
+
+
 ```json
 {
   "force": false,
@@ -133,6 +137,8 @@ NS记录添加到cloudflare的dns解析里
 }
 ```
 
+:::
+
 
 主要是修改，其余的都不要修改，域名换成自己的，数据库换成自己的，端口换成自己的
 ```yml
@@ -165,6 +171,10 @@ alist server # 使用`pgrep -l .`就能查看进程的名字是什么了，前�
 
 
 ### app.js
+
+::: details 点击展开项目代码
+
+
 ```js
 const express = require("express"); // 引入 express 模块
 const app = express(); // 创建 express 应用实例
@@ -211,9 +221,13 @@ function keep_web_alive() { // 定义一个函数用于保持 Web 应用运行
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`)); // 启动服务器，监听指定端口
 ```
-
+:::
 
 ### package.json
+
+
+::: details 点击展开项目代码
+
 ```json
 {
     "name": "alist",
@@ -238,6 +252,9 @@ app.listen(port, () => console.log(`Example app listening on port ${port}!`)); /
     ]
 }
 ```
+
+:::
+
 
 
 如果域名访问不了，把依赖删除掉，然后重新启动访问就行，如果显示不安全，去ssl哪里第一个IP的管理，申请一个ssl证书就行

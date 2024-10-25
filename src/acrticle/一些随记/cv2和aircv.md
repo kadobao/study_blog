@@ -10,9 +10,9 @@ tag:
 
 
 
+::: details 点击展开项目代码
 
-
-```
+```py
 # import aircv as ac
 
 # # 读取大图和小图
@@ -118,3 +118,4 @@ else:
 
 ```
 
+:::

@@ -14,6 +14,8 @@ tag:
 
 ### 获取价格并发送给tg_bot
 
+::: details 点击展开项目代码
+
 ```python
 import requests
 from concurrent.futures import ThreadPoolExecutor
@@ -65,13 +67,15 @@ while True:
     time.sleep(60)  # 每分钟执行一次
 ```
 
-
+:::
 
 
 
 
 
 ### 获取价格并发送给tg_bot，并提醒
+
+::: details 点击展开项目代码
 
 ```python
 import requests
@@ -156,3 +160,4 @@ alert_thread.join()
 minute_thread.join()
 ```
 
+:::
