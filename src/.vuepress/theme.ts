@@ -118,7 +118,7 @@ export default hopeTheme({
 
     docsearch: {
       appId: 'A1CR6K16KA',         // 替换为你的 appId
-      apiKey: 'b10d08be1d5873eaa3830e07790394f1',       // 替换为你的 apiKey
+      apiKey: '73654585fbd334c76d1f6d688c2f64d6',       // 替换为你的 apiKey
       indexName: 'tomo-us', // 替换为你的 indexName
       // 可选项，参考 DocSearch 配置文档
       placeholder: '搜索文档',
