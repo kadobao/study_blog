@@ -1,4 +1,4 @@
-​---
+---
 title: VuePress配置Algolia踩坑
 icon: 
 order: 
@@ -6,7 +6,7 @@ category:
   - 一些随记
 tag:
   - Algolia
-​---
+---
 
 
 
