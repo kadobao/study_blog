@@ -13,7 +13,10 @@ tag:
 
 ### vue3登录界面
 
-```
+
+::: details 点击展开项目代码
+
+```vue
 <template>
     <div class="login-container">
       <el-card class="login-card">
@@ -76,6 +79,9 @@ tag:
   }
   </style>
 ```
+
+:::
+
 
 ```
           <el-form-item>

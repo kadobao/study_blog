@@ -8,6 +8,8 @@ tag:
   - picx
 ---
 
+::: details 点击展开具体步骤
+
 ## 点击添加新的项目
 ![image](https://cdn.jsdelivr.net/gh/kadobao/picx-images-hosting@master/20240824/image.3yedno0rto.jpg)
 
@@ -37,3 +39,5 @@ tag:
 
 ## 之后就访问自己的域名就可以访问到vercel部署的picx图床了
 ![image](https://cdn.jsdelivr.net/gh/kadobao/picx-images-hosting@master/20240824/image.6f0m2m9xs0.jpg)
+
+:::

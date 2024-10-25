@@ -9,6 +9,10 @@ tag:
 ---
 
 
+
+
+::: details 点击展开具体步骤
+
 查看进程：`pgrep -l .`，查看alist进程是否存在：`pgrep -laf alist`。  
 
 
@@ -48,6 +52,11 @@ NS记录添加到cloudflare的dns解析里
 
 ![image](https://cdn.jsdelivr.net/gh/kadobao/picx-images-hosting@master/20240826/image.60u6foed8i.jpg)
 到底`public_nodejs`文件夹里面的`data`文件夹里面，把`config.json`换成这个：
+
+
+:::
+
+
 
 ::: details 点击展开
 
@@ -281,6 +290,11 @@ Password: changeme
 ````
 
 
+
+
+::: details 点击展开具体步骤
+
+
 ![image](https://cdn.jsdelivr.net/gh/kadobao/picx-images-hosting@master/20240827/image.77dhoszebt.jpg)
 去`SSL Certificates`点击`Add SSL Certificate`申请SSL证书，
 
@@ -325,3 +339,6 @@ privkey1.pem:这是私钥文件，应该保密。
 
 ![image](https://cdn.jsdelivr.net/gh/kadobao/picx-images-hosting@master/20240827/image.6f0m73blu6.jpg)
 这个就是我们需要的`Cloudflare API token`令牌了
+
+
+:::

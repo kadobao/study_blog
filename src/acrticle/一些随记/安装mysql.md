@@ -9,7 +9,7 @@ tag:
 ---
 
 
-
+::: details 点击展开具体步骤
 
 ![image](https://cdn.jsdelivr.net/gh/kadobao/picx-images-hosting@master/20240831/image.9kg4cc507c.jpg)
 
@@ -28,7 +28,7 @@ tag:
 ![image](https://cdn.jsdelivr.net/gh/kadobao/picx-images-hosting@master/20240831/image.2a511as8km.jpg)
 
 
-
+:::
 
 
 
