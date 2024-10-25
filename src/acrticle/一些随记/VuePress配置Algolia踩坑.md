@@ -10,15 +10,6 @@ tag:
 
 
 
-
-
-
-
-
-
-
-
-
 直接放在theme.ts里面的插件里面：
 
 ```
@@ -63,6 +54,6 @@ https://crawler.algolia.com/admin/crawlers/
           },
 ```
 
-
+完整的就像这样：
 
 ![image](https://cdn.jsdelivr.net/gh/kadobao/picx-images-hosting@master/image.6bh2myw6f6.jpg)
