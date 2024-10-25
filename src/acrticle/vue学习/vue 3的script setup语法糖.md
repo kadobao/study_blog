@@ -108,6 +108,9 @@ tag:
 
 ###  Vue 2 完整示例
 
+
+::: details 点击展开项目代码
+
 ```vue
 <template>
   <div>
@@ -171,3 +174,4 @@ button {
 </style>
 ```
 
+:::

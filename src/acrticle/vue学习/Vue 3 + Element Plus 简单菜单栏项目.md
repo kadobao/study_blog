@@ -57,9 +57,12 @@ el-menu-item-group 通常是包含在 el-sub-menu 内部的，用于对 el-sub-m
 
 ### Vue 3 + Element Plus 简单菜单栏项目
 
+
+
 下面我们来搭建一个简单的 Vue 3 项目，使用 Element Plus 提供的菜单组件，并包含构建命令与项目结构。
 
 ### 项目结构
+::: details 点击展开项目代码
 ```
 my-vue-menu-app/
 ├── node_modules/          # Node.js 依赖
@@ -74,6 +77,7 @@ my-vue-menu-app/
 ├── package.json           # 项目配置和依赖
 └── vite.config.ts         # Vite 配置文件
 ```
+:::
 
 ### 1. 初始化项目
 
@@ -98,6 +102,8 @@ npm install element-plus
 #### `src/main.ts`
 入口文件，用于引入 Element Plus 和挂载 Vue 实例。
 
+::: details 点击展开项目代码
+
 ```ts
 import { createApp } from 'vue'
 import App from './App.vue'
@@ -108,9 +114,13 @@ const app = createApp(App)
 app.use(ElementPlus)
 app.mount('#app')
 ```
+:::
+
 
 #### `src/App.vue`
 主组件，包含导航菜单。
+
+::: details 点击展开项目代码
 
 ```vue
 <template>
@@ -184,6 +194,10 @@ const handleClose = (key: string, keyPath: string[]) => {
 </style>
 ```
 
+:::
+
+
+
 ### 4. 运行项目
 
 #### 运行开发服务器：
@@ -222,6 +236,9 @@ npm run preview
 为了让菜单栏既包含侧边栏导航，又有顶部导航，你可以通过在 **Element Plus** 中使用水平菜单实现顶部导航，垂直菜单实现侧边栏导航。以下是一个修改后的完整 Vue 3 项目代码示例，其中顶部有导航菜单，左侧也有垂直的侧边栏导航。
 
 ### 修改后的 `App.vue`：
+
+
+::: details 点击展开项目代码
 
 ```vue
 <template>
@@ -330,6 +347,10 @@ const handleClose = (key: string, keyPath: string[]) => {
 </style>
 ```
 
+:::
+
+
+
 ### 主要修改说明：
 
 1. **顶部导航（`el-header` 部分）**：
@@ -376,6 +397,9 @@ const handleClose = (key: string, keyPath: string[]) => {
 
 ### 项目结构
 
+
+::: details 点击展开项目代码
+
 ```
 my-vue-menu-app/
 ├── node_modules/            # Node.js 依赖
@@ -401,6 +425,9 @@ my-vue-menu-app/
 └── vite.config.ts           # Vite 配置文件
 ```
 
+:::
+
+
 ### 1. 初始化项目
 
 首先，使用 **Vite** 来初始化项目：
@@ -419,6 +446,8 @@ npm install element-plus @element-plus/icons-vue vue-router
 
 ### 2. `src/main.ts` - 入口文件
 
+::: details 点击展开项目代码
+
 ```ts
 import { createApp } from 'vue'
 import App from './App.vue'
@@ -433,7 +462,12 @@ app.use(router)  // 使用 Vue Router
 app.mount('#app')
 ```
 
+:::
+
+
 ### 3. `src/router/index.ts` - 路由配置
+
+::: details 点击展开项目代码
 
 ```ts
 import { createRouter, createWebHistory } from 'vue-router'
@@ -465,7 +499,11 @@ const router = createRouter({
 export default router
 ```
 
+:::
+
 ### 4. `src/App.vue` - 主组件
+
+::: details 点击展开项目代码
 
 ```vue
 <template>
@@ -553,9 +591,15 @@ import { Location, Menu as IconMenu, Setting } from '@element-plus/icons-vue'
 </style>
 ```
 
+:::
+
+
 ### 5. 创建视图组件
 
 #### `src/views/HomeView.vue`
+
+
+
 
 ```vue
 <template>
@@ -680,6 +724,8 @@ npm run build
 
 ### 项目结构
 
+::: details 点击展开项目代码
+
 ```
 my-vue-menu-app/
 ├── node_modules/            # Node.js 依赖
@@ -705,6 +751,9 @@ my-vue-menu-app/
 ├── package.json             # 项目配置和依赖
 └── vite.config.ts           # Vite 配置文件
 ```
+
+:::
+
 
 ### 1. 初始化项目
 
@@ -738,6 +787,9 @@ app.mount('#app')
 ```
 
 ### 3. `src/router/index.ts` - 路由配置
+
+
+::: details 点击展开项目代码
 
 ```ts
 import { createRouter, createWebHistory } from 'vue-router'
@@ -778,7 +830,11 @@ router.beforeEach((to, _from, next) => {
 export default router
 ```
 
+:::
+
 ### 4. `src/App.vue` - 主组件
+
+::: details 点击展开项目代码
 
 ```vue
 <template>
@@ -894,9 +950,17 @@ const logout = () => {
 </style>
 ```
 
+:::
+
+
+
 ### 5. 创建视图组件
 
 #### `src/views/LoginView.vue`
+
+
+
+::: details 点击展开项目代码
 
 ```vue
 <template>
@@ -963,6 +1027,11 @@ const handleLogin = () => {
 </style>
 ```
 
+:::
+
+
+
+
 #### 其余视图组件如 `HomeView.vue`、`AboutView.vue` 等你可以直接参考之前的模板。
 
 ### 6. 启动项目
@@ -994,6 +1063,9 @@ npm run build
 1. 首先，创建一个新的 `NotFoundView.vue` 文件：
 
 在 `src/views/` 目录下创建 `NotFoundView.vue`：
+
+
+::: details 点击展开项目代码
 
 ```vue
 <template>
@@ -1035,7 +1107,12 @@ h2 {
 </style>
 ```
 
+:::
+
 2. 然后，修改 `src/router/index.ts` 文件，添加 404 路由：
+
+
+::: details 点击展开项目代码
 
 ```typescript
 import { createRouter, createWebHistory } from 'vue-router'
@@ -1077,6 +1154,8 @@ router.beforeEach((to, _from, next) => {
 
 export default router
 ```
+
+:::
 
 这里的主要变化是：
 

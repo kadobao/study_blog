@@ -37,7 +37,9 @@ tag:
 #### 第二步：配置 Vite 使用 WindiCSS
 打开 vite.config.ts 文件，添加 WindiCSS 插件。
 
-```
+::: details 点击展开项目代码
+
+```ts
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import WindiCSS from 'vite-plugin-windicss'
@@ -49,6 +51,8 @@ export default defineConfig({
   ],
 })
 ```
+
+:::
 
 现在你就可以随意使用windicss了，而不是每次要自己弄。
 ![屏幕截图-2024-10-16-230459](https://cdn.jsdelivr.net/gh/kadobao/picx-images-hosting@master/20241016/屏幕截图-2024-10-16-230459.pfbw0x6b8.jpg)
@@ -88,7 +92,9 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 
 ### 依旧是登录页面作为示例
 
-```
+::: details 点击展开项目代码
+
+```vue
 <template>
   <div class="login-container">
 
@@ -237,3 +243,4 @@ const rules = {
 </style>
 ```
 
+:::

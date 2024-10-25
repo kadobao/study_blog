@@ -139,6 +139,7 @@ export const useCounterStore = defineStore('counter', {
 
 ### `src/components/Counter.vue`
 
+::: details 点击展开项目代码
 ```vue
 <template>
   <div>
@@ -201,6 +202,8 @@ button {
 </style>
 ```
 
+:::
+
 #### 说明：
 - **直接修改**：通过 `modifyDirectly()`，直接将 `count` 设置为 `5`。
 - **批量修改**：通过 `modifyBatch()`，使用 `$patch()` 批量修改 `count`，将其设置为 `7`。
@@ -214,6 +217,8 @@ button {
 
 ### `src/App.vue`
 
+::: details 点击展开项目代码
+
 ```vue
 <template>
   <div>
@@ -226,6 +231,7 @@ button {
 import Counter from './components/Counter.vue'
 </script>
 ```
+:::
 
 ---
 

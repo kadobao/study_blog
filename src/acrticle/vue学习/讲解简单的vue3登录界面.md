@@ -18,9 +18,11 @@ tag:
 
 
 
+::: details 点击展开项目代码
+
 ### 讲解简单的vue3登录界面
 
-```
+```vue
 <template>
   <div class="login-container">
 
@@ -160,6 +162,16 @@ const rules = {
   }
   </style>
 ```
+
+:::
+
+
+
+
+
+
+
+
 
 组件里面有v-bind和v-model绑定，一个是单向的，一个是双向的。
 

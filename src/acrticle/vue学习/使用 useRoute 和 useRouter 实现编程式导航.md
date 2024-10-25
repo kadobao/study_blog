@@ -18,6 +18,7 @@ tag:
 在这个项目中，我们将演示如何使用 Vue Router 的 `useRoute()` 和 `useRouter()` `hooks`，并结合 Vue 3 的 Composition API 进行编程式导航。我们将创建一个简单的项目，展示如何从路由中获取参数并执行导航操作。
 
 ### 项目结构
+::: details 点击展开项目代码
 ```
 vue-router-hooks-demo/
 │
@@ -33,6 +34,8 @@ vue-router-hooks-demo/
 ├── tsconfig.json
 └── vite.config.ts
 ```
+
+:::
 
 ### 1. 初始化项目
 
@@ -50,6 +53,7 @@ npm install
 
 在 `src/components/Detail.vue` 中创建一个 `Detail` 组件，它将展示从路由参数中获取的信息，并提供返回和跳转的按钮。
 
+::: details 点击展开项目代码
 ```vue
 <template>
   <div>
@@ -79,6 +83,7 @@ const goNextDetail = () => {
 }
 </script>
 ```
+:::
 
 #### 解释：
 - **`useRoute()`**：获取当前路由信息，如路径参数、查询参数等。在这个例子中，我们通过 `route.params.id` 和 `route.params.title` 获取路由参数。
@@ -88,6 +93,8 @@ const goNextDetail = () => {
 
 在 `src/router/index.ts` 中配置路由，并为 `Detail.vue` 设置动态路径参数。
 
+
+::: details 点击展开项目代码
 ```ts
 import { createRouter, createWebHistory } from 'vue-router'
 import Detail from '../components/Detail.vue'
@@ -107,6 +114,7 @@ const router = createRouter({
 
 export default router
 ```
+:::
 
 #### 解释：
 - **`path: '/detail/:id/:title'`**：定义动态路由参数 `id` 和 `title`，这些参数会传递给 `Detail.vue` 组件。
@@ -115,6 +123,9 @@ export default router
 ### 4. 设置 `App.vue`
 
 在 `src/App.vue` 中，提供一个导航链接跳转到不同的详情页面，同时使用 `router-view` 渲染匹配的路由组件。
+
+
+::: details 点击展开项目代码
 
 ```vue
 <template>
@@ -143,6 +154,9 @@ export default router
 </script>
 ```
 
+:::
+
+
 #### 解释：
 - `router-link`：用于导航，点击链接时将跳转到不同的详情页面，传递路由参数 `id` 和 `title`。
 - `router-view`：显示当前匹配的路由组件。在这个例子中，点击链接后，`Detail.vue` 组件会根据路由被渲染。
@@ -150,6 +164,9 @@ export default router
 ### 5. 设置 `main.ts`
 
 在 `src/main.ts` 中挂载应用，并引入路由系统。
+
+
+::: details 点击展开项目代码
 
 ```ts
 import { createApp } from 'vue'
@@ -160,6 +177,8 @@ const app = createApp(App)
 app.use(router)
 app.mount('#app')
 ```
+
+:::
 
 #### 解释：
 - **`createApp(App)`**：创建 Vue 应用实例。
