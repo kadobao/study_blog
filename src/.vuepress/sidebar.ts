@@ -29,10 +29,10 @@ export default sidebar({
     },
 
     {
-      text: "c#学习",
+      text: "C#学习",
       icon: "laptop-code",
-      prefix: "acrticle/c#学习",
-      link: "acrticle/c#学习/",    
+      prefix: "acrticle/csharp",
+      link: "acrticle/csharp/",    
       children: "structure",
       collapsible: true
     },
