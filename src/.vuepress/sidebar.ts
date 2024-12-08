@@ -27,6 +27,16 @@ export default sidebar({
       children: "structure",
       collapsible: true,
     },
+
+    {
+      text: "c#学习",
+      icon: "laptop-code",
+      prefix: "acrticle/c#学习",
+      link: "acrticle/c#学习/",    
+      children: "structure",
+      collapsible: true
+    },
+    
     // {
     //   text: "文章",
     //   icon: "book",
