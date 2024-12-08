@@ -5,7 +5,7 @@ order:
 category:
   - C#
 tag:
-  - 初步学习C#
+  - C#
 ---
 
 
