@@ -36,6 +36,14 @@ export default sidebar({
       children: "structure",
       collapsible: true
     },
+    {
+      text: "PLC编程",
+      icon: "laptop-code",
+      prefix: "acrticle/PLC编程",   // prefix 属性的作用是定义一个路径前缀，用于指定侧边栏项的子项相对于根目录所在的路径，这里指的根目录是指源文件
+      link: "acrticle/PLC编程/",    
+      children: "structure",
+      collapsible: true
+    },
     
     // {
     //   text: "文章",
