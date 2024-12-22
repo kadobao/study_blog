@@ -42,3 +42,9 @@ git remote add origin git@github.com-别名:kadobao/my-vue-me
 git push -u origin main
 ```
 
+
+
+修改远程仓库地址：
+```bash
+git remote set-url origin https://gitee.com/your_username/your_repository.git
+```
