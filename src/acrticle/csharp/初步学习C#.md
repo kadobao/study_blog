@@ -21,6 +21,7 @@ tag:
 [**Visual Studio 2022 Community**](https://visualstudio.microsoft.com/vs/community/)
 
 [**Visual Studio 2022 Professional**](https://visualstudio.microsoft.com/vs/professional/)
+激活码：`TD244-P4NB7-YQ6XK-Y8MMM-YWV2J`
 
 
 
