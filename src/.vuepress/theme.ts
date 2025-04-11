@@ -32,7 +32,7 @@ export default hopeTheme({
 
   // 博客相关
   blog: {
-    description: "一个前端开发者",
+    description: "一个程序员",
     intro: "/intro.html",
     medias: {
       LinuxDO: {
