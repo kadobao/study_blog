@@ -1,3 +1,8 @@
+// 侧边栏配置
+// 要增加侧边栏直接增加一个{}就行了，然后在`src\acrticle`下面新建一个文件夹，文件夹下面新建一个`README.md`文件
+
+
+
 import { sidebar } from "vuepress-theme-hope";
 
 export default sidebar({
@@ -21,7 +26,7 @@ export default sidebar({
     // },
     {
       text: "vue学习",
-      icon: "laptop-code",
+      icon: "layer-group",
       prefix: "acrticle/vue学习",   // prefix 属性的作用是定义一个路径前缀，用于指定侧边栏项的子项相对于根目录所在的路径，这里指的根目录是指源文件
       link: "acrticle/vue学习/",   // link: "acrticle/demo/" 指向的是 acrticle/demo/ 目录。这意味着当用户点击这个侧边栏项时，他们将被带到 acrticle/demo/ 目录的主页（通常是 index.html 或 README.md）。
       children: "structure",    // 用于侧边栏的自动生成
@@ -29,11 +34,19 @@ export default sidebar({
     },
     {
       text: "C#学习",
-      icon: "laptop-code",
+      icon: "code",
       prefix: "acrticle/csharp",
       link: "acrticle/csharp/",    
       children: "structure",    // 用于侧边栏的自动生成
       collapsible: true    // 是否可折叠
+    },
+    {
+      text: "SQL理解",
+      icon: "database",
+      prefix: "acrticle/SQL理解",
+      link: "acrticle/SQL理解/",
+      children: "structure",
+      collapsible: true
     },
 
     // {

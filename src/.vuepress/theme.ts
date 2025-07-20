@@ -1,3 +1,7 @@
+// 一些插件和网站配置
+
+
+
 import { hopeTheme } from "vuepress-theme-hope";
 
 import navbar from "./navbar.js";

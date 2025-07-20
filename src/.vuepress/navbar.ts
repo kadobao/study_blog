@@ -1,8 +1,12 @@
+// 导航栏配置
+
+
 import { navbar } from "vuepress-theme-hope";
 
 export default navbar([
+  // 代表有两个导航项
   "/",
-  "/acrticle/",
+  "/acrticle/",  // 等同于 { text: "学习记录", link: "/acrticle/" }，VuePress 会自动根据目标页面的 frontmatter 中的 title 字段来显示导航文本，如果没有则使用默认名称。
   // {
   //   text: "博文",
   //   icon: "pen-to-square",
