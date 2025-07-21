@@ -41,6 +41,14 @@ export default sidebar({
       collapsible: true    // 是否可折叠
     },
     {
+      text: "Python学习",
+      icon: "fab fa-python",
+      prefix: "acrticle/Python学习",
+      link: "acrticle/Python学习/",    
+      children: "structure",    // 用于侧边栏的自动生成
+      collapsible: true    // 是否可折叠
+    },
+    {
       text: "SQL理解",
       icon: "database",
       prefix: "acrticle/SQL理解",
