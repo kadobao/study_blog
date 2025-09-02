@@ -1,6 +1,6 @@
 ---
 home: true
-layout: BlogHome
+layout: Blog  # 从 BlogHome 改为 Blog
 icon: home
 title: 博客主页
 heroImage: https://theme-hope-assets.vuejs.press/logo.svg
