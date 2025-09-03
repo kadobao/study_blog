@@ -33,8 +33,8 @@ export default hopeTheme({
   sidebar,
 
   // 页脚
-  footer: "默认页脚",
-  displayFooter: true,
+  // footer: "默认页脚",
+  // displayFooter: true,
 
   // 博客相关
   blog: {
