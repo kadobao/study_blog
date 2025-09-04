@@ -1,7 +1,7 @@
 ---
 title: vue3项目里面使用axios
-icon: 32
-order: 
+icon: 
+order: 32
 category:
   - vue3学习
 tag:

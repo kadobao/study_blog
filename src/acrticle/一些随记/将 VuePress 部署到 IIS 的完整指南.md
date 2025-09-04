@@ -1,6 +1,6 @@
 ---
 title: 将 VuePress 部署到 IIS 的完整指南
-icon: search
+icon: 
 order: 20
 category:
   - 一些随记
