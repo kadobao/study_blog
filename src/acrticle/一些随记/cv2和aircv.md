@@ -1,7 +1,7 @@
 ---
 title: cv2和aircv
 icon: 
-order: 
+order: 8
 category:
   - 一些随记
 tag:

@@ -1,7 +1,7 @@
 ---
 title: Vue3 实例挂载过程图
 icon: 
-order: 
+order: 14
 category:
   - vue学习
 tag:

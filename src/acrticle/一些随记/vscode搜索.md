@@ -1,7 +1,7 @@
 ---
 title: vscode的搜索
 icon: 
-order: 
+order: 2
 category:
   - 一些随记
 tag:

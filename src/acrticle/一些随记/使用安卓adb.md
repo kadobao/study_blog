@@ -1,7 +1,7 @@
 ---
 title: 使用安卓adb
 icon: 
-order: 
+order: 15
 category:
   - 一些随记
 tag:

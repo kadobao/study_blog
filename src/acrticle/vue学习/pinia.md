@@ -1,7 +1,7 @@
 ---
 title: pinia
 icon: 
-order: 
+order: 10
 category:
   - vue学习
 tag:

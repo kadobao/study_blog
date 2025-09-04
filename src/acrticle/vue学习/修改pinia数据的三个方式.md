@@ -1,7 +1,7 @@
 ---
 title: 修改pinia数据的三个方式
 icon: 
-order: 
+order: 6
 category:
   - vue学习
 tag:

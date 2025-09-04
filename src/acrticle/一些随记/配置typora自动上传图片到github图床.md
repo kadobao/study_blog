@@ -1,7 +1,7 @@
 ---
 title: 配置typora自动上传图片到github图床
 icon: 
-order: 
+order: 18
 category:
   - 一些随记
 tag:

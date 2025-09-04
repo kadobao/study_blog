@@ -1,5 +1,5 @@
 ---
-title: SQL基础语法详解
+title: SELLECT基础语法详解
 icon: database
 order: 1
 category:
@@ -9,7 +9,7 @@ tag:
   - 数据库查询
 ---
 
-# SQL基础语法详解
+# SELECT基础语法详解
 
 ## SQL查询语句的基本结构
 

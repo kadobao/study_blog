@@ -1,7 +1,7 @@
 ---
 title: 将本地的仓库推送到github
 icon: 
-order: 
+order: 19
 category:
   - 一些随记
 tag:

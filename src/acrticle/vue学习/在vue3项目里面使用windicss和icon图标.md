@@ -1,7 +1,7 @@
 ---
 title: 在vue3项目里面使用windicss和icon图标
 icon: 
-order: 
+order: 7
 category:
   - vue学习
 tag:

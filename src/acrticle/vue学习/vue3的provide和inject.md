@@ -1,7 +1,7 @@
 ---
 title: vue3的provide和inject
 icon: 
-order: 
+order: 21
 category:
   - vue学习
 tag:

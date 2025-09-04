@@ -1,7 +1,7 @@
 ---
 title: vue3的mitt
 icon: 
-order: 
+order: 17
 category:
   - vue学习
 tag:

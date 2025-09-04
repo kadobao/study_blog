@@ -1,7 +1,7 @@
 ---
 title: 在serv00部署alist
 icon: 
-order: 2
+order: 3
 category:
   - 一些随记
 tag:

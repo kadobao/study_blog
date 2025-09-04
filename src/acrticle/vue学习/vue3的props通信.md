@@ -1,7 +1,7 @@
 ---
 title: vue3的props通信
 icon: 
-order: 
+order: 20
 category:
   - vue学习
 tag:

@@ -1,7 +1,7 @@
 ---
 title: Vue 3 + Element Plus 简单菜单栏项目
 icon: 
-order: 
+order: 12
 category:
   - vue学习
 tag:

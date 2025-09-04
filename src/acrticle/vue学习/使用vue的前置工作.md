@@ -1,7 +1,7 @@
 ---
 title: 使用vue的前置工作
 icon: 
-order: 
+order: 5
 category:
   - vue学习
 tag:

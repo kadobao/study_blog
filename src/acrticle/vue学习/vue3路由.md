@@ -1,7 +1,7 @@
 ---
 title: vue3路由
 icon: 
-order: 
+order: 29
 category:
   - vue学习
 tag:

@@ -1,7 +1,7 @@
 ---
 title: vue3路由props
 icon: 
-order: 
+order: 30
 category:
   - vue学习
 tag:

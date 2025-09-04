@@ -1,7 +1,7 @@
 ---
 title: 获取价格并发送给tg_bot
 icon: 
-order: 
+order: 21
 category:
   - 一些随记
 tag:

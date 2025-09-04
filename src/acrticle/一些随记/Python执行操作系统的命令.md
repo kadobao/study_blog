@@ -1,7 +1,7 @@
 ---
 title: Python执行操作系统的命令
 icon: 
-order: 
+order: 4
 category:
   - 一些随记
 tag:

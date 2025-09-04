@@ -1,7 +1,7 @@
 ---
 title: 在 Windows 上设置右键菜单选项以便用 Visual Studio Code 打开文件和文件夹
 icon: 
-order: 
+order: 11
 category:
   - 一些随记
 tag:

@@ -1,7 +1,7 @@
 ---
 title: 使用sshpass登录远程服务器并执行命令
 icon: 
-order: 4
+order: 14
 category:
   - 一些随记
 tag:

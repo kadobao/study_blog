@@ -1,7 +1,7 @@
 ---
 title: 修改wsl设置为阿里云的镜像源
 icon: 
-order: 3
+order: 13
 category:
   - 一些随记
 tag:

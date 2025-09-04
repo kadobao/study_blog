@@ -1,7 +1,7 @@
 ---
 title: Element Plus 的布局系统
 icon: 
-order: 
+order: 9
 category:
   - vue学习
 tag:

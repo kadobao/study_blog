@@ -1,7 +1,7 @@
 ---
 title: 安装mysql
 icon: 
-order: 6
+order: 23
 category:
   - 一些随记
 tag:

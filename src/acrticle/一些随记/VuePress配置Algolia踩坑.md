@@ -1,7 +1,7 @@
 ---
 title: VuePress配置Algolia踩坑
 icon: 
-order: 
+order: 1
 category:
   - 一些随记
 tag:

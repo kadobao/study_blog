@@ -1,7 +1,7 @@
 ---
 title: vue3全屏模式
 icon: 
-order: 
+order: 31
 category:
   - vue3学习
 tag:

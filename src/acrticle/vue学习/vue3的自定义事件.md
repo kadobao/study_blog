@@ -1,7 +1,7 @@
 ---
 title: vue3的自定义事件
 icon: 
-order: 
+order: 16
 category:
   - vue学习
 tag:

@@ -1,7 +1,7 @@
 ---
 title: vue 3的script setup语法糖
 icon: 
-order: 
+order: 13
 category:
   - vue学习
 tag:

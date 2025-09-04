@@ -1,7 +1,7 @@
 ---
 title: vue3里面的pinia里面的storeToRefs
 icon: 
-order: 
+order: 28
 category:
   - vue学习
 tag:

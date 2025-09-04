@@ -1,7 +1,7 @@
 ---
 title: javascript里面的promise
 icon: 
-order: 
+order: 6
 category:
   - 一些随记
 tag:

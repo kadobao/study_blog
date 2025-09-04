@@ -1,7 +1,7 @@
 ---
 title: vue3的pinia里面的$subscribe
 icon: 
-order: 
+order: 19
 category:
   - vue学习
 tag:

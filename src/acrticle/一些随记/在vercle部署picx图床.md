@@ -1,7 +1,7 @@
 ---
 title: 在vercle部署picx图床
 icon: 
-order: 1
+order: 10
 category:
   - 一些随记
 tag:
