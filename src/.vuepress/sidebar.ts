@@ -56,6 +56,14 @@ export default sidebar({
       children: "structure",
       collapsible: true
     },
+    {
+      text: "CSS属性",
+      icon: "laptop-code",
+      prefix: "acrticle/CSS属性",
+      link: "acrticle/CSS属性/",
+      children: "structure",
+      collapsible: true
+    },
 
     // {
     //   text: "C#学习",
