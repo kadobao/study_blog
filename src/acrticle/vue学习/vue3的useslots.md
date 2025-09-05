@@ -1,6 +1,6 @@
 ---
 title: vue3的useslots
-icon: 
+icon: fa-brands fa-vuejs
 order: 24
 category:
   - vue学习

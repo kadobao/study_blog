@@ -1,6 +1,6 @@
 ---
 title: vue3的pinia里面的$subscribe
-icon: 
+icon: fa-brands fa-vuejs
 order: 19
 category:
   - vue学习

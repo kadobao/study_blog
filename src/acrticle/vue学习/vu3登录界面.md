@@ -1,6 +1,6 @@
 ---
 title: vue3登录界面
-icon: 
+icon: fa-brands fa-vuejs
 order: 11
 category:
   - vue3学习

@@ -1,6 +1,6 @@
 ---
 title: vue3的$attrs 
-icon: 
+icon: fa-brands fa-vuejs
 order: 15
 category:
   - vue学习

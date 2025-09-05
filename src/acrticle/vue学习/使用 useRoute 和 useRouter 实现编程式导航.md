@@ -1,6 +1,6 @@
 ---
 title: 使用 useRoute 和 useRouter 实现编程式导航
-icon: 
+icon: fa-brands fa-vuejs
 order: 4
 category:
   - vue学习

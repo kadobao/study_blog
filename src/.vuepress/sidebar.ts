@@ -26,7 +26,7 @@ export default sidebar({
     // },
     {
       text: "vue学习",
-      icon: "layer-group",
+      icon: "fa-brands fa-vuejs",
       prefix: "acrticle/vue学习",   // prefix 属性的作用是定义一个路径前缀，用于指定侧边栏项的子项相对于根目录所在的路径，这里指的根目录是指源文件
       link: "acrticle/vue学习/",   // link: "acrticle/demo/" 指向的是 acrticle/demo/ 目录。这意味着当用户点击这个侧边栏项时，他们将被带到 acrticle/demo/ 目录的主页（通常是 index.html 或 README.md）。
       children: "structure",    // 用于侧边栏的自动生成
@@ -58,9 +58,17 @@ export default sidebar({
     },
     {
       text: "CSS属性",
-      icon: "laptop-code",
+      icon: "fa-brands fa-css3",
       prefix: "acrticle/CSS属性",
       link: "acrticle/CSS属性/",
+      children: "structure",
+      collapsible: true
+    },
+    {
+      text: "JS学习",
+      icon: "fa-brands fa-node-js",
+      prefix: "acrticle/JS学习",
+      link: "acrticle/JS学习/",
       children: "structure",
       collapsible: true
     },

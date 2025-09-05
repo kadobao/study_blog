@@ -1,6 +1,6 @@
 ---
 title: vue3项目里面使用axios
-icon: 
+icon: fa-brands fa-vuejs
 order: 32
 category:
   - vue3学习

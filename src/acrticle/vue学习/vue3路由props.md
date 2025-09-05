@@ -1,6 +1,6 @@
 ---
 title: vue3路由props
-icon: 
+icon: fa-brands fa-vuejs
 order: 30
 category:
   - vue学习

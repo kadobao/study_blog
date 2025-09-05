@@ -1,6 +1,6 @@
 ---
 title: CSS常用属性
-icon: database
+icon: fa-brands fa-css3
 order: 1
 category:
   - CSS

@@ -1,6 +1,6 @@
 ---
 title: vue3全屏模式
-icon: 
+icon: fa-brands fa-vuejs
 order: 31
 category:
   - vue3学习

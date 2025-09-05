@@ -1,6 +1,6 @@
 ---
 title: vue3的v-model
-icon: 
+icon: fa-brands fa-vuejs
 order: 27
 category:
   - vue学习

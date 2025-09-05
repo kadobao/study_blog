@@ -1,6 +1,6 @@
 ---
 title: vue3的useAttrs
-icon: 
+icon: fa-brands fa-vuejs
 order: 23
 category:
   - vue学习

@@ -1,7 +1,7 @@
 ---
 title: C#学习
 index: false
-icon: pen-to-square
+icon: code
 category:
   - C#学习
 ---

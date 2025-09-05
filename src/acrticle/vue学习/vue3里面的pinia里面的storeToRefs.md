@@ -1,6 +1,6 @@
 ---
 title: vue3里面的pinia里面的storeToRefs
-icon: 
+icon: fa-brands fa-vuejs
 order: 28
 category:
   - vue学习

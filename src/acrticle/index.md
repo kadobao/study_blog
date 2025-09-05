@@ -1,7 +1,7 @@
 ---
 title: 学习记录
 index: false
-icon: laptop-code
+icon: fas fa-user
 category:
   - 使用指南
 ---

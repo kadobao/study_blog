@@ -1,6 +1,6 @@
 ---
 title: Vue3 实例挂载过程图
-icon: 
+icon: fa-brands fa-vuejs
 order: 14
 category:
   - vue学习

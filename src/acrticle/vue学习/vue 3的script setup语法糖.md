@@ -1,6 +1,6 @@
 ---
 title: vue 3的script setup语法糖
-icon: 
+icon: fa-brands fa-vuejs
 order: 13
 category:
   - vue学习

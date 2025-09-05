@@ -1,6 +1,6 @@
 ---
 title: vue3的v-if和v-show
-icon: 
+icon: fa-brands fa-vuejs
 order: 25
 category:
   - vue学习

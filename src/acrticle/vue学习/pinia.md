@@ -1,6 +1,6 @@
 ---
 title: pinia
-icon: 
+icon: fa-brands fa-vuejs
 order: 10
 category:
   - vue学习

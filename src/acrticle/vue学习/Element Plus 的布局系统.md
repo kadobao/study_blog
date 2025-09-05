@@ -1,6 +1,6 @@
 ---
 title: Element Plus 的布局系统
-icon: 
+icon: fa-brands fa-vuejs
 order: 9
 category:
   - vue学习

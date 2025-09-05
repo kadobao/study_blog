@@ -1,6 +1,6 @@
 ---
 title: vue3路由
-icon: 
+icon: fa-brands fa-vuejs
 order: 29
 category:
   - vue学习

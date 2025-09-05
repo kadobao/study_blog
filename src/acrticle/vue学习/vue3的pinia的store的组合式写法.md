@@ -1,6 +1,6 @@
 ---
 title: vue3的pinia的store的组合式写法
-icon: 
+icon: fa-brands fa-vuejs
 order: 18
 category:
   - vue学习

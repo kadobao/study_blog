@@ -1,6 +1,6 @@
 ---
 title: vue3的v-if与v-for的优先级
-icon: 
+icon: fa-brands fa-vuejs
 order: 26
 category:
   - vue学习
