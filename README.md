@@ -58,7 +58,7 @@ npm run docs:update-package
 ### 添加新的文章分类
 
 1. 在 `src/acrticle/` 下新建文件夹（如：`新分类/`）
-2. 在新文件夹下创建 `README.md` 文件作为分类首页
+2. 在新文件夹下创建 `README.md` 文件作为分类首页.
 3. 在 `src/.vuepress/sidebar.ts` 中添加侧边栏配置：
    ```typescript
    {
