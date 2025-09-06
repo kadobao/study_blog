@@ -20,7 +20,7 @@ JavaScript 有几种基本数据类型，每种类型都有其相关的方法和
 ```
 int: tostring()
 
-string: length，includes，trim，replace，split，concat，slice
+string: length，includes，trim，replace，split，concat，slice，indexOf，lastIndexOf
 
 bool: tostring()
 
@@ -51,8 +51,13 @@ let str = "Hello World";
 str.length; // 11
 
 // 获取字符
-str.charAt(1); // "e"
 str[1]; // "e" (ES6)
+
+// 获取字符的索引
+str.indexOf("W"); // 6 (返回第一次出现的索引)
+str.indexOf("w"); // -1 (区分大小写，未找到返回-1)
+str.lastIndexOf("o"); // 7 (从后往前搜索，返回最后一次出现的索引)
+
 
 // 查找
 str.includes("Hello"); // true

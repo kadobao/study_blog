@@ -35,8 +35,8 @@ export default sidebar({
     {
       text: "C#学习",
       icon: "code",
-      prefix: "acrticle/csharp",
-      link: "acrticle/csharp/",    
+      prefix: "acrticle/Csharp",
+      link: "acrticle/Csharp/",    
       children: "structure",    // 用于侧边栏的自动生成
       collapsible: true    // 是否可折叠
     },
