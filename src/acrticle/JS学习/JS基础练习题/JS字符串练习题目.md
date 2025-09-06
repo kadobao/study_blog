@@ -151,21 +151,13 @@ let secretMessage = "xJavascriptxIsxAwesomex";
 
 ### 题目 17
 ```javascript
-let mixedCase = "HeLlO WoRlD";
-// 将字符串转换为全小写，检查是否包含"world"
-```
-
----
-
-### 题目 18
-```javascript
 let timestamp = "2024-03-20T15:30:00Z";
 // 提取日期部分（2024-03-20）和时间部分（15:30:00）
 ```
 
 ---
 
-### 题目 19
+### 题目 18
 ```javascript
 let items = ["苹果", "香蕉", "橙子"];
 // 使用模板字符串和map()创建购物清单："购物清单：苹果、香蕉、橙子"
@@ -173,7 +165,7 @@ let items = ["苹果", "香蕉", "橙子"];
 
 ---
 
-### 题目 20
+### 题目 19
 ```javascript
 let nestedText = "Start[[innerText]]End";
 // 提取双中括号内的内容 "innerText"
@@ -181,7 +173,7 @@ let nestedText = "Start[[innerText]]End";
 
 ---
 
-### 题目 21
+### 题目 20
 ```javascript
 let sentence = "The cat in the hat. The cat on the mat.";
 // 使用lastIndexOf查找"cat"最后一次出现的位置
@@ -189,7 +181,7 @@ let sentence = "The cat in the hat. The cat on the mat.";
 
 ---
 
-### 题目 22
+### 题目 21
 ```javascript
 let user = {name: "李四", score: 95};
 // 使用模板字符串嵌套对象属性："用户李四的得分是95分"
@@ -197,17 +189,7 @@ let user = {name: "李四", score: 95};
 
 ---
 
-### 题目 23
-```javascript
-let multilineText = `第一行
-第二行
-第三行`;
-// 使用模板字符串创建多行文本，并获取行数
-```
-
----
-
-### 题目 24
+### 题目 22
 ```javascript
 let date = new Date();
 // 使用模板字符串和Date对象创建当前时间字符串："当前时间：2024-03-20 15:30:00"
@@ -215,7 +197,7 @@ let date = new Date();
 
 ---
 
-### 题目 25
+### 题目 23
 ```javascript
 let a = 5;
 let b = 3;
@@ -224,7 +206,7 @@ let b = 3;
 
 ---
 
-### 题目 26
+### 题目 24
 ```javascript
 let temperature = 28.5;
 let city = "北京";
@@ -233,7 +215,7 @@ let city = "北京";
 
 ---
 
-### 题目 27
+### 题目 25
 ```javascript
 let isMember = true;
 let discountText = isMember ? "会员8折" : "原价";
@@ -242,7 +224,7 @@ let discountText = isMember ? "会员8折" : "原价";
 
 ---
 
-### 题目 28
+### 题目 26
 ```javascript
 let email = "user.name@example.com";
 // 使用indexOf和lastIndexOf提取用户名（@符号前的部分）和域名（最后一个.后的部分）
@@ -250,7 +232,7 @@ let email = "user.name@example.com";
 
 ---
 
-### 题目 29
+### 题目 27
 ```javascript
 let data = {title: "会议", time: "14:00", location: "会议室A"};
 // 使用模板字符串和Object.values()创建会议通知
@@ -258,7 +240,7 @@ let data = {title: "会议", time: "14:00", location: "会议室A"};
 
 ---
 
-### 题目 30
+### 题目 28
 ```javascript
 let numbers = [1, 2, 3, 4, 5];
 // 使用模板字符串和reduce()计算总和："数字总和：15"
@@ -266,7 +248,7 @@ let numbers = [1, 2, 3, 4, 5];
 
 ---
 
-### 题目 31
+### 题目 29
 ```javascript
 let firstName = "John";
 let lastName = "Doe";
@@ -275,17 +257,11 @@ let lastName = "Doe";
 
 ---
 
-### 题目 32
-```javascript
-let userInput = "Hello World";
-// 使用模板字符串和字符串方法创建反转文本："dlroW olleH"
-```
-
----
-
-### 题目 33
+### 题目 30
 ```javascript
 let template = "欢迎{name}，您的余额是{balance}元";
 let data = {name: "王五", balance: 1000};
 // 使用replace()方法替换字符串中的占位符
 ```
+
+---
