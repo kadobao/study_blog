@@ -1,8 +1,8 @@
 ---
 dir:
   index: true
-  order: 1
-title: JS基础知识
+  order: 2
+title: JS基础练习题
 index: false
 icon: fa-brands fa-node-js
 category:
