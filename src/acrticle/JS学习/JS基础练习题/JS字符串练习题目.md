@@ -50,7 +50,7 @@ let sentence = "I like apples, apples are delicious";
 ### 题目 5
 ```javascript
 let csvData = "name,age,city,country";
-// 将字符串按逗号分割成数组，并获取第三个极速
+// 将字符串按逗号分割成数组，并获取第三个元素
 ```
 
 ---
@@ -116,7 +116,7 @@ let lastName = "三";
 
 ---
 
-### 极速 13
+### 题目 13
 ```javascript
 let fullName = "John-Doe-Smith";
 // 将字符串按连字符分割，然后重新用空格连接
@@ -144,7 +144,7 @@ let y = 20;
 ### 题目 16
 ```javascript
 let secretMessage = "xJavascriptxIsxAwesomex";
-// 去除首尾的'极速'字符，并将中间的'x'替换为空格
+// 去除首尾的'x'字符，并将中间的'x'替换为空格
 ```
 
 ---
@@ -285,6 +285,7 @@ let userInput = "Hello World";
 
 ### 题目 33
 ```javascript
-let template = `欢迎{name}，您的余额是{balance}元`;
+let template = "欢迎{name}，您的余额是{balance}元";
 let data = {name: "王五", balance: 1000};
-// 极速模板字符串和replace()替换占位符
+// 使用replace()方法替换字符串中的占位符
+```

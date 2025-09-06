@@ -20,7 +20,7 @@ JavaScript 有几种基本数据类型，每种类型都有其相关的方法和
 ```
 int: tostring()
 
-string: length，includes，trim，replace，split，concat，slice，indexOf，lastIndexOf
+string: length，includes，trim，replace，split，slice，indexOf，lastIndexOf
 
 bool: tostring()
 
@@ -79,7 +79,6 @@ const message = `姓名：${name}，年龄：${age}岁`;    // 姓名：张三�
 
 // 分割和连接
 str.split(" "); // ["Hello", "World"]
-"Hello".concat(" ", "World"); // "Hello World"
 
 // 切片
 str.slice(6, 11); // "World"
