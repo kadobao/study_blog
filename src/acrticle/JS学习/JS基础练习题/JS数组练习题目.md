@@ -35,15 +35,7 @@ let numbers = [1, 2, 3];
 
 ---
 
-### **题目 3**  
-```javascript
-let words = ["hello", "world", "javascript"];
-// 将数组中的每个单词转换为大写形式
-```
-
----
-
-### **题目 4**  
+### **题目 3**
 ```javascript
 let data = [10, 20, 30, 40, 50];
 // 提取索引 1 到 3 的子数组（包括 1，不包括 3）
@@ -51,7 +43,7 @@ let data = [10, 20, 30, 40, 50];
 
 ---
 
-### **题目 5**  
+### **题目 4**
 ```javascript
 let values = [15, 25, 35, 45, 55];
 // 筛选出大于 30 的元素
@@ -59,7 +51,7 @@ let values = [15, 25, 35, 45, 55];
 
 ---
 
-### **题目 6**  
+### **题目 5**
 ```javascript
 let letters = ["a", "b", "c", "d"];
 // 将数组元素用 "-" 连接成一个字符串
@@ -67,7 +59,7 @@ let letters = ["a", "b", "c", "d"];
 
 ---
 
-### **题目 7**  
+### **题目 6**
 ```javascript
 let mixed = [1, "apple", true, null, 5.6];
 // 检查数组中是否包含 `null`，并获取数组的长度
@@ -75,7 +67,7 @@ let mixed = [1, "apple", true, null, 5.6];
 
 ---
 
-### **题目 8**  
+### **题目 7**
 ```javascript
 let queue = ["task1", "task2", "task3"];
 // 模拟队列操作：添加 "task4"，然后移除第一个任务
@@ -83,7 +75,7 @@ let queue = ["task1", "task2", "task3"];
 
 ---
 
-### **题目 9**  
+### **题目 8**
 ```javascript
 let nums = [2, 4, 6, 8, 10];
 // 对数组中的每个数字求平方，得到新数组
@@ -91,7 +83,7 @@ let nums = [2, 4, 6, 8, 10];
 
 ---
 
-### **题目 10**  
+### **题目 9**
 ```javascript
 let animals = ["cat", "dog", "elephant", "lion", "tiger"];
 // 获取前 3 个动物，并检查是否包含 "lion"
@@ -99,7 +91,7 @@ let animals = ["cat", "dog", "elephant", "lion", "tiger"];
 
 ---
 
-### **题目 11**  
+### **题目 10**
 ```javascript
 let temperatures = [28, 32, 25, 40, 18];
 // 找出温度低于 30 的元素，并用 `join` 把它们连接成字符串
@@ -107,7 +99,7 @@ let temperatures = [28, 32, 25, 40, 18];
 
 ---
 
-### **题目 12**  
+### **题目 11**
 ```javascript
 let colors = ["red", "green", "blue", "yellow"];
 // 移除最后一个颜色，然后添加 "purple" 和 "pink"
@@ -115,7 +107,7 @@ let colors = ["red", "green", "blue", "yellow"];
 
 ---
 
-### **题目 13**  
+### **题目 12**
 ```javascript
 let scores = [85, 92, 78, 95, 88];
 // 检查是否有满分（100 分），并计算及格（≥60）的数量
@@ -123,7 +115,7 @@ let scores = [85, 92, 78, 95, 88];
 
 ---
 
-### **题目 14**  
+### **题目 13**
 ```javascript
 let names = ["Alice", "Bob", "Charlie", "David"];
 // 提取第 2 和第 3 个名字，并拼接成 "Bob and Charlie"
@@ -131,7 +123,7 @@ let names = ["Alice", "Bob", "Charlie", "David"];
 
 ---
 
-### **题目 15**  
+### **题目 14**
 ```javascript
 let inventory = [
   { item: "apple", stock: 10 },
