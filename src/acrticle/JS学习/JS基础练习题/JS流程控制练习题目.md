@@ -79,7 +79,7 @@ let count = 0;
 
 ---
 
-### 题目 10
+### 题目 9
 ```javascript
 let data = '{"name": "李四", "age": 30}';
 // 使用try...catch安全地解析JSON，处理可能的解析错误
@@ -87,16 +87,7 @@ let data = '{"name": "李四", "age": 30}';
 
 ---
 
-### 题目 12
-```javascript
-let temperature = 28;
-// 使用嵌套三元运算符：
-// 温度>30输出"炎热"，25-30输出"温暖"，<25输出"凉爽"
-```
-
----
-
-### 题目 13
+### 题目 10
 ```javascript
 let numbers = [2, 7, 1, 9, 4, 6];
 // 使用for循环找出数组中的最大值
@@ -104,7 +95,7 @@ let numbers = [2, 7, 1, 9, 4, 6];
 
 ---
 
-### 题目 14
+### 题目 11
 ```javascript
 let password = "abc123";
 // 使用if语句检查密码长度是否至少6位，并包含数字和字母
@@ -112,7 +103,7 @@ let password = "abc123";
 
 ---
 
-### 题目 15
+### 题目 12
 ```javascript
 let user = {name: "", age: 20};
 // 使用if语句检查用户名是否为空，如果为空则使用throw抛出错误
@@ -120,7 +111,7 @@ let user = {name: "", age: 20};
 
 ---
 
-### 题目 16
+### 题目 13
 ```javascript
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 // 使用for循环和continue语句跳过偶数，只输出奇数
@@ -128,7 +119,7 @@ let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 ---
 
-### 题目 17
+### 题目 14
 ```javascript
 let str = "Hello World";
 // 使用for循环和break语句，找到第一个空格的位置后停止循环
@@ -136,7 +127,7 @@ let str = "Hello World";
 
 ---
 
-### 题目 18
+### 题目 15
 ```javascript
 let operations = ["create", "read", "update", "delete"];
 // 使用switch语句根据操作类型输出相应的CRUD描述
@@ -144,7 +135,7 @@ let operations = ["create", "read", "update", "delete"];
 
 ---
 
-### 题目 19
+### 题目 16
 ```javascript
 let numbers = [10, 20, 30, 40, 50];
 let target = 35;
@@ -153,7 +144,7 @@ let target = 35;
 
 ---
 
-### 题目 20
+### 题目 17
 ```javascript
 let data = [
     {name: "产品A", price: 100, inStock: true},
@@ -165,7 +156,7 @@ let data = [
 
 ---
 
-### 题目 21
+### 题目 18
 ```javascript
 let userInput = "admin";
 // 使用switch语句实现简单的权限检查：
@@ -174,7 +165,7 @@ let userInput = "admin";
 
 ---
 
-### 题目 22
+### 题目 19
 ```javascript
 let count = 5;
 // 使用while循环实现倒计时，从5到1，然后输出"发射！"
@@ -182,7 +173,7 @@ let count = 5;
 
 ---
 
-### 题目 23
+### 题目 20
 ```javascript
 let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 // 使用for循环和continue，只输出能被3整除的数字
@@ -190,7 +181,7 @@ let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 ---
 
-### 题目 24
+### 题目 21
 ```javascript
 let str = "programming";
 // 使用for循环统计字符串中字母'g'出现的次数
@@ -198,7 +189,7 @@ let str = "programming";
 
 ---
 
-### 题目 25
+### 题目 22
 ```javascript
 let values = [null, undefined, 0, "", false, "hello", 123, true];
 // 使用for循环过滤出所有真值(truthy values)
@@ -206,7 +197,7 @@ let values = [null, undefined, 0, "", false, "hello", 123, true];
 
 ---
 
-### 题目 27
+### 题目 23
 ```javascript
 let attempts = 3;
 let correctPassword = "secret123";
@@ -215,7 +206,7 @@ let correctPassword = "secret123";
 
 ---
 
-### 题目 28
+### 题目 24
 ```javascript
 let data = '{"name": "John", "age": "25"}';
 // 使用try...catch...finally，无论解析成功与否都输出"解析完成"
@@ -223,7 +214,7 @@ let data = '{"name": "John", "age": "25"}';
 
 ---
 
-### 题目 29
+### 题目 25
 ```javascript
 let numbers = [10, 20, 30, 40, 50];
 // 使用for循环和标签(label)结合break，跳出外层循环
@@ -231,7 +222,7 @@ let numbers = [10, 20, 30, 40, 50];
 
 ---
 
-### 题目 30
+### 题目 26
 ```javascript
 let user = {role: "editor", permissions: ["read", "write"]};
 // 使用switch和if嵌套，根据角色和权限输出相应的操作提示
