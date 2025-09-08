@@ -109,6 +109,10 @@ Object.keys(obj); // ["name", "age"]  返回的是数组
 // 获取值
 Object.values(obj); // ["John", 30]   返回的是数组
 
+// 添加/修改键值对
+obj.city = "NY"; // 添加新属性
+obj.age = 31; // 修改已有属性
+
 // 获取键值对
 Object.entries(obj); // [["name", "John"], ["age", 30]]
 
