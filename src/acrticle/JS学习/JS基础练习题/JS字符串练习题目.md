@@ -210,7 +210,7 @@ let b = 3;
 ```javascript
 let temperature = 28.5;
 let city = "北京";
-// 使用模板字符串和toFixed()："北京当前温度：28.5°C"
+// 使用模板字符串："北京当前温度：28.5°C"
 ```
 
 ---
