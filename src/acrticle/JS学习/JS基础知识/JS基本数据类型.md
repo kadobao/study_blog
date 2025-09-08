@@ -116,12 +116,6 @@ Object.entries(obj); // [["name", "John"], ["age", 30]]
 obj.hasOwnProperty("name"); // true
 "name" in obj; // true
 
-// 合并对象
-Object.assign({}, obj, { city: "NY" }); // {name: "John", age: 30, city: "NY"}
-
-// 冻结对象
-Object.freeze(obj); // 防止对象被修改
-
 // 遍历
 for (let key in obj) {
   console.log(key, obj[key]);
