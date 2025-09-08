@@ -191,38 +191,6 @@ let str = "programming";
 
 ### 题目 22
 ```javascript
-let values = [null, undefined, 0, "", false, "hello", 123, true];
-// 使用for循环过滤出所有真值(truthy values)
-```
-
----
-
-### 题目 23
-```javascript
-let attempts = 3;
-let correctPassword = "secret123";
-// 使用while循环实现密码验证，最多尝试3次
-```
-
----
-
-### 题目 24
-```javascript
 let data = '{"name": "John", "age": "25"}';
 // 使用try...catch...finally，无论解析成功与否都输出"解析完成"
 ```
-
----
-
-### 题目 25
-```javascript
-let numbers = [10, 20, 30, 40, 50];
-// 使用for循环和标签(label)结合break，跳出外层循环
-```
-
----
-
-### 题目 26
-```javascript
-let user = {role: "editor", permissions: ["read", "write"]};
-// 使用switch和if嵌套，根据角色和权限输出相应的操作提示
