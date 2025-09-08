@@ -79,28 +79,10 @@ let count = 0;
 
 ---
 
-### 题目 9
-```javascript
-let i = 10;
-// 使用do...while循环输出数字10到14
-```
-
----
-
 ### 题目 10
 ```javascript
 let data = '{"name": "李四", "age": 30}';
 // 使用try...catch安全地解析JSON，处理可能的解析错误
-```
-
----
-
-### 题目 11
-```javascript
-function divide(a, b) {
-    // 如果b为0，使用throw抛出错误"除数不能为零"
-}
-// 调用divide(10, 0)并使用try...catch捕获错误
 ```
 
 ---
@@ -220,18 +202,6 @@ let str = "programming";
 ```javascript
 let values = [null, undefined, 0, "", false, "hello", 123, true];
 // 使用for循环过滤出所有真值(truthy values)
-```
-
----
-
-### 题目 26
-```javascript
-let matrix = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
-];
-// 使用嵌套for循环遍历二维数组并输出所有元素
 ```
 
 ---

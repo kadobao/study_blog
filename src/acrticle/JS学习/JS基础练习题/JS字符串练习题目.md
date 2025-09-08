@@ -240,14 +240,6 @@ let data = {title: "会议", time: "14:00", location: "会议室A"};
 
 ---
 
-### 题目 28
-```javascript
-let numbers = [1, 2, 3, 4, 5];
-// 使用模板字符串和reduce()计算总和："数字总和：15"
-```
-
----
-
 ### 题目 29
 ```javascript
 let firstName = "John";

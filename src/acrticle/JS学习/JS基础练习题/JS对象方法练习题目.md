@@ -31,14 +31,6 @@ let bool = true;
 
 ---
 
-### 题目 3
-```javascript
-let num = 255;
-// 使用toString(16)将数字转换为十六进制字符串
-```
-
----
-
 ### 题目 4
 ```javascript
 let obj = {name: "张三", age: 25};
@@ -91,14 +83,6 @@ let config = {theme: "dark", language: "zh-CN", notifications: true};
 ```javascript
 let product = {id: 101, name: "手机", price: 2999, inStock: true};
 // 使用hasOwnProperty()检查产品是否有价格属性，然后转换为字符串
-```
-
----
-
-### 题目 11
-```javascript
-let num = 42;
-// 使用toString(2)将数字转换为二进制字符串
 ```
 
 ---
@@ -171,14 +155,6 @@ let flags = {isLoggedIn: true, hasPermission: false, isAdmin: true};
 ```javascript
 let emptyObj = {};
 // 使用Object.keys()检查空对象，然后使用hasOwnProperty()检查任意属性
-```
-
----
-
-### 题目 21
-```javascript
-let num = 123.456;
-// 使用toString()保留小数点后两位（先处理数字再转换）
 ```
 
 ---
