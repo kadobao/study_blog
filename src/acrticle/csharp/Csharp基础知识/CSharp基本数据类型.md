@@ -360,11 +360,12 @@ Dictionary<int, string> names = new Dictionary<int, string>
 Dictionary<string, int> dict = new Dictionary<string, int>();
 
 // 添加元素
-dict.Add("Alice", 25);
 dict["Bob"] = 30;                           // 也可用于更新
 
 // 访问元素
 int age = dict["Alice"];                    // 25
+
+// 检测是否存在指定的键或者值
 bool hasKey = dict.ContainsKey("Charlie");  // false
 bool hasValue = dict.ContainsValue(25);     // true
 
