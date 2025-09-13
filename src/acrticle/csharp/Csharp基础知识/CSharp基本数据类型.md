@@ -135,7 +135,19 @@ string sub = text.Substring(0, 5);          // "Hello"
 // 声明和初始化
 int[] numbers = new int[5];                 // 长度为5的数组
 int[] values = {1, 2, 3, 4, 5};            // 初始化数组
+
+
+// 声明和初始化
+string[] numbers = new string[3];      // 长度为3的数组          
+string[] values = {"Alice", "Bob", "Charlie"};    // 初始化数组
+
+
+// 也可以直接声明和初始化
 string[] names = new string[] {"Alice", "Bob", "Charlie"};
+
+
+// 还可以编译器自动推断长度
+string[] values = { "Alice", "Bob", "Charlie" }; 
 ```
 
 ### 常用方法和操作

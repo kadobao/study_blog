@@ -1,7 +1,7 @@
 ---
 title: WPF和WinForm事件绑定的区别
 icon: code
-order: 5
+order: 1
 category:
   - C#学习
 tag:
