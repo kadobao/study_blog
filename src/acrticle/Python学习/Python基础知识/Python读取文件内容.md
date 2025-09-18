@@ -45,3 +45,4 @@ except FileNotFoundError:
     print(f"错误：找不到文件 {svg_file_path}")
 except Exception as e:
     print(f"读取文件时发生错误: {e}")
+```

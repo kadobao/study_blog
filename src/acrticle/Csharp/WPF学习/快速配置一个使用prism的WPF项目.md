@@ -192,6 +192,9 @@ override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
 
 下面是一个完整的EdgeViewModel示例，展示了如何访问Model数据和使用共享服务：
 
+
+::: details 完整的EdgeViewModel示例
+
 ```csharp
 using Prism.Mvvm;
 using Prism.Navigation.Regions;
@@ -280,6 +283,10 @@ namespace WPF的MVVM模式的Prism框架.ViewModels
     }
 }
 ```
+
+:::
+
+
 
 ## 五、完整的App.xaml.cs示例
 

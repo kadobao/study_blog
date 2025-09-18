@@ -44,3 +44,31 @@ SVG文件中的每个`Path`元素对应于`PathGeometry`中的一段以`M`开头
 在WPF项目中使用这个PathGeometry的方法：
 1. 将上述代码添加`\Assets\Icons\Icons.xaml`，然后`\Assets\Icons\Icons.xaml`添加到资源字典中
 2. 在需要使用图标的地方，通过`{DynamicResource setting2}`引用该几何图形
+
+
+::: details Python转换方法
+
+```py
+import re
+
+# SVG文件路径
+svg_file_path = r"C:\Users\XJ\Downloads\Setting.svg"
+
+try:
+    # 读取SVG文件内容
+    with open(svg_file_path, 'r', encoding='utf-8') as file:
+        svg_content = file.read()
+    
+    # 使用正则表达式提取所有<path d="">中的内容
+    path_data_list = re.findall(r'<path d="([^"]+)"', svg_content)
+
+    final_string = f'<PathGeometry x:Key="根据功能命名" Figures="{"".join(path_data_list)}"/>'
+    print(final_string)
+    
+except FileNotFoundError:
+    print(f"错误：找不到文件 {svg_file_path}")
+except Exception as e:
+    print(f"读取文件时发生错误: {e}")
+```
+
+:::
