@@ -101,6 +101,9 @@ mixed = [1, "hello", 3.14, True]
 # 长度
 length = len(numbers)  # 5
 
+# 合并元素
+Merge = "-".join(numbers)
+
 # 访问元素
 first = numbers[0]  # 1
 last = numbers[-1]  # 5
