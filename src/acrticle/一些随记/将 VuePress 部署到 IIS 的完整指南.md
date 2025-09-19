@@ -9,15 +9,23 @@ tag:
   - IIS
 ---
 
-
 # 将 VuePress 部署到 IIS 的完整指南
+
+在开始之前，请确保已安装以下组件：
+- [URL Rewrite](https://www.iis.net/downloads/microsoft/url-rewrite)
+- [Application Request Routing](https://www.iis.net/downloads/microsoft/application-request-routing)
+
+---
 
 ## 构建静态文件
 
 1. 在项目根目录执行构建命令：
+
 ```bash
 npm run docs:build
 ```
+
+---
 
 ## 配置 IIS 支持
 
@@ -53,6 +61,8 @@ npm run docs:build
 </configuration>
 ```
 
+---
+
 ### 2. 设置文件夹权限
 
 1. 找到 `dist` 文件夹
@@ -62,6 +72,8 @@ npm run docs:build
    - `IUSR`
    - 应用程序池账户（默认是应用程序池上一级目录的名字）
 4. 给这些账户赋予 **完全控制** 权限（至少需要"读取和执行"、"列出文件夹内容"、"读取"权限）
+
+---
 
 ### 3. 在 IIS 中创建网站
 
@@ -76,15 +88,19 @@ npm run docs:build
      - 端口：设置未被占用的端口号（如8080）
      - 主机名：留空
 
+---
+
 ## 访问网站
 
 部署完成后，可以通过以下方式访问：
 
-1. **本地访问**：
-   - 在浏览器地址栏输入：`http://localhost:端口号`
-   - 或使用本机IP地址：`http://[你的本地IP地址]:端口号`
+### 1. 本地访问
 
-2. **局域网访问**：
-   - 同一局域网内的其他设备可以通过：`http://[服务器IP地址]:端口号`
+- 在浏览器地址栏输入：`http://localhost:端口号`
+- 或使用本机IP地址：`http://[你的本地IP地址]:端口号`
+
+### 2. 局域网访问
+
+- 同一局域网内的其他设备可以通过：`http://[服务器IP地址]:端口号`
 
 > 提示：要查看本机IP地址，可以在命令提示符中输入 `ipconfig`（Windows）或 `ifconfig`（Mac/Linux），查找IPv4地址。
