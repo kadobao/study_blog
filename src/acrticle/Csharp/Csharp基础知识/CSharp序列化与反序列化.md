@@ -45,7 +45,7 @@ Console.WriteLine(jsonString);
 // 输出: {"Name":"张三","Age":30,"Hobbies":["阅读","游泳"]}
 ```
 
-### 2. JsonConvert.DeserializeObject`&lt;T&gt;`() - 反序列化
+### 2. JsonConvert.DeserializeObject() - 反序列化
 
 **T 表示泛型类型参数**，指定要将 JSON 反序列化为什么类型的对象。
 
