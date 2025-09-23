@@ -11,10 +11,22 @@ tag:
 
 # 将 VuePress 部署到 IIS 的完整指南
 
+## 准备工作
+
+### 启用 IIS 功能
+
+在开始之前，确保已启用以下 Windows 功能：
+
+1. 在 Windows 搜索框中搜索"启用或关闭 Windows 功能"并打开它
+2. 找到并展开"Internet Information Services"
+3. 全部勾选，然后点击确定
+
+### 安装必要组件
+
 在开始之前，请确保已安装以下组件：
+
 - [URL Rewrite](https://www.iis.net/downloads/microsoft/url-rewrite)
 - [Application Request Routing](https://www.iis.net/downloads/microsoft/application-request-routing)
-
 ---
 
 ## 构建静态文件
