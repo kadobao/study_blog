@@ -14,6 +14,18 @@ tag:
 ### 1. 背景颜色
 
 - **属性名**：`Background`
+- **数据类型**: `Brush`
+- **初始化**: `private Brush _background = Brushes.LightBlue;`
+- **双向绑定**: 
+```cs
+private Brush _background = Brushes.LightBlue;
+
+public Brush Background
+{
+    get => _background;
+    set => SetProperty(ref _background, value);
+}
+```
 - **说明**：用于设置控件的背景颜色。
 - **示例**: 
 ```xaml
@@ -23,6 +35,18 @@ tag:
 ### 2. 文本颜色
 
 - **属性名**：`Foreground`
+- **数据类型**: `Brush`
+- **初始化**: `private Brush _foreground = Brushes.Black;`
+- **双向绑定**:
+```cs
+private Brush _foreground = Brushes.Black;
+
+public Brush Foreground
+{
+    get => _foreground;
+    set => SetProperty(ref _foreground, value);
+}
+```
 - **说明**：用于设置控件（如`TextBlock`、`Label`、`Button`等）的文本颜色。
 - **示例**:
 ```xaml
@@ -32,6 +56,18 @@ tag:
 ### 3. 外边距
 
 - **属性名**：`Margin`
+- **数据类型**: `Thickness`
+- **初始化**: `private Thickness _margin = new Thickness(0);`
+- **双向绑定**:
+```cs
+private Thickness _margin = new Thickness(0);
+
+public Thickness Margin
+{
+    get => _margin;
+    set => SetProperty(ref _margin, value);
+}
+```
 - **说明**：用于设置控件与其他控件之间的外边距。`Margin`是一个`Thickness`结构，可以分别设置上下左右的外边距，例如`Margin="10,20,30,40"`表示左边距为10，上边距为20，边右距为30，下边距为40。
 - **示例**:
 ```xaml
@@ -41,6 +77,18 @@ tag:
 ### 4. 内边距
 
 - **属性名**：`Padding`
+- **数据类型**: `Thickness`
+- **初始化**: `private Thickness _padding = new Thickness(0);`
+- **双向绑定**:
+```cs
+private Thickness _padding = new Thickness(0);
+
+public Thickness Padding
+{
+    get => _padding;
+    set => SetProperty(ref _padding, value);
+}
+```
 - **说明**：用于设置控件内部内容与控件边框之间的内边距。`Padding`也是一个`Thickness`结构，用法与`Margin`类似，例如`Padding="5,10"`表示左右内边距为5，上下内边距为10。
 - **示例**:
 ```xaml
@@ -52,11 +100,443 @@ tag:
 ### 5. 圆角边框
 
 - **属性名**：`CornerRadius`
+- **数据类型**: `CornerRadius`
+- **初始化**: `private CornerRadius _cornerRadius = new CornerRadius(0);`
+- **双向绑定**:
+```cs
+private CornerRadius _cornerRadius = new CornerRadius(0);
+
+public CornerRadius CornerRadius
+{
+    get => _cornerRadius;
+    set => SetProperty(ref _cornerRadius, value);
+}
+```
 - **说明**：用于设置控件（如`Border`、`Button`等）的边框圆角。`CornerRadius`是一个结构，可以分别设置四个角的圆角大小，例如`CornerRadius="10"`表示四个角的圆角半径均为10，`CornerRadius="10,20,30,40"`分别表示左上角、右上角、右下角、左下角的圆角半径。
 - **示例**:
 ```xaml
 <Button CornerRadius="10" Content="圆角按钮"/>
 ```
+
+### 6.宽度
+
+- **属性名**：`Width`
+- **数据类型**: `double`
+- **初始化**: `private double _width = 0;`
+- **双向绑定**:
+```cs
+private double _width = 0;
+
+public double Width
+{
+    get => _width;
+    set => SetProperty(ref _width, value);
+}
+```
+- **说明**：用于设置控件的宽度。
+- **示例**:
+```xaml
+<Button Width="100" Content="固定宽度按钮"/>
+```
+
+### 7.高度
+
+- **属性名**：`Height`
+- **数据类型**: `double`
+- **初始化**: `private double _height = 0;`
+- **双向绑定**:
+```cs
+private double _height = 0;
+
+public double Height
+{
+    get => _height;
+    set => SetProperty(ref _height, value);
+}
+```
+- **说明**：用于设置控件的高度。
+- **示例**:
+```xaml
+<Button Height="50" Content="固定高度按钮"/>
+```
+
+
+### 8.最小宽度
+
+- **属性名**：`MinWidth`
+- **数据类型**: `double`
+- **初始化**: `private double _minWidth = 0;`
+- **双向绑定**:
+```cs
+private double _minWidth = 0;
+
+public double MinWidth
+{
+    get => _minWidth;
+    set => SetProperty(ref _minWidth, value);
+}
+```
+- **说明**：用于设置控件的最小宽度。
+- **示例**:
+```xaml
+<Button MinWidth="100" Content="最小宽度按钮"/>
+```
+
+### 9. 最小高度
+
+- **属性名**：`MinHeight`
+- **数据类型**: `double`
+- **初始化**: `private double _minHeight = 0;`
+- **双向绑定**:
+```cs
+private double _minHeight = 0;
+
+public double MinHeight
+{
+    get => _minHeight;
+    set => SetProperty(ref _minHeight, value);
+}
+```
+- **说明**：用于设置控件的最小高度。
+- **示例**:
+```xaml
+<Button MinHeight="50" Content="最小高度按钮"/>
+```
+
+### 10. 最大宽度
+
+- **属性名**：`MaxWidth`
+- **数据类型**: `double`
+- **初始化**: `private double _maxWidth = double.PositiveInfinity;`
+- **双向绑定**:
+```cs
+private double _maxWidth = double.PositiveInfinity;
+
+public double MaxWidth
+{
+    get => _maxWidth;
+    set => SetProperty(ref _maxWidth, value);
+}
+```
+- **说明**：用于设置控件的最大宽度。
+- **示例**:
+```xaml
+<Button MaxWidth="200" Content="最大宽度按钮"/>
+```
+
+### 11. 最大高度
+
+- **属性名**：`MaxHeight`
+- **数据类型**: `double`
+- **初始化**: `private double _maxHeight = double.PositiveInfinity;`
+- **双向绑定**:
+```cs
+private double _maxHeight = double.PositiveInfinity;
+
+public double MaxHeight
+{
+    get => _maxHeight;
+    set => SetProperty(ref _maxHeight, value);
+}
+```
+- **说明**：用于设置控件的最大高度。
+- **示例**:
+```xaml
+<Button MaxHeight="100" Content="最大高度按钮"/>
+```
+
+
+### 13. 水平对齐方式
+
+- **属性名**：`HorizontalAlignment`
+- **数据类型**: `HorizontalAlignment`
+- **初始化**: `private HorizontalAlignment _horizontalAlignment = HorizontalAlignment.Left;`
+- **双向绑定**:
+```cs
+private HorizontalAlignment _horizontalAlignment = HorizontalAlignment.Left;
+
+public HorizontalAlignment HorizontalAlignment
+{
+    get => _horizontalAlignment;
+    set => SetProperty(ref _horizontalAlignment, value);
+}
+```
+- **说明**：用于设置控件在父容器中的水平对齐方式。
+- **示例**:
+```xaml
+<Button HorizontalAlignment="Center" Content="居中对齐按钮"/>
+```
+
+### 14. 垂直对齐方式
+
+- **属性名**：`VerticalAlignment`
+- **数据类型**: `VerticalAlignment`
+- **初始化**: `private VerticalAlignment _verticalAlignment = VerticalAlignment.Top;`
+- **双向绑定**:
+```cs
+private VerticalAlignment _verticalAlignment = VerticalAlignment.Top;
+
+public VerticalAlignment VerticalAlignment
+{
+    get => _verticalAlignment;
+    set => SetProperty(ref _verticalAlignment, value);
+}
+```
+- **说明**：用于设置控件在父容器中的垂直对齐方式。
+- **示例**:
+```xaml
+<Button VerticalAlignment="Center" Content="垂直居中对齐按钮"/>
+```
+
+### 15. 可见性
+
+- **属性名**：`Visibility`
+- **数据类型**: `Visibility`
+- **初始化**: `private Visibility _visibility = Visibility.Visible;`
+- **双向绑定**:
+```cs
+private Visibility _visibility = Visibility.Visible;
+
+public Visibility Visibility
+{
+    get => _visibility;
+    set => SetProperty(ref _visibility, value);
+}
+```
+- **说明**：用于设置控件的可见性。
+- **示例**:
+```xaml
+<Button Visibility="Collapsed" Content="不可见按钮"/>
+```
+
+### 16. 边框颜色
+
+- **属性名**：`BorderBrush`
+- **数据类型**: `Brush`
+- **初始化**: `private Brush _borderBrush = Brushes.Black;`
+- **双向绑定**:
+```cs
+private Brush _borderBrush = Brushes.Black;
+
+public Brush BorderBrush
+{
+    get => _borderBrush;
+    set => SetProperty(ref _borderBrush, value);
+}
+```
+- **说明**：用于设置控件的边框颜色。
+- **示例**:
+```xaml
+<Button BorderBrush="Red" Content="红色边框按钮"/>
+```
+
+### 17. 边框宽度
+
+- **属性名**：`BorderThickness`
+- **数据类型**: `Thickness`
+- **初始化**: `private Thickness _borderThickness = new Thickness(0);`
+- **双向绑定**:
+```cs
+private Thickness _borderThickness = new Thickness(0);
+
+public Thickness BorderThickness
+{
+    get => _borderThickness;
+    set => SetProperty(ref _borderThickness, value);
+}
+```
+- **说明**：用于设置控件的边框宽度。
+- **示例**:
+```xaml
+<Button BorderThickness="2" Content="边框宽度按钮"/>
+```
+
+### 18. 字体大小
+
+- **属性名**：`FontSize`
+- **数据类型**: `double`
+- **初始化**: `private double _fontSize = 12;`
+- **双向绑定**:
+```cs
+private double _fontSize = 12;
+
+public double FontSize
+{
+    get => _fontSize;
+    set => SetProperty(ref _fontSize, value);
+}
+```
+- **说明**：用于设置控件的字体大小。
+- **示例**:
+```xaml
+<Button FontSize="16" Content="字体大小按钮"/>
+```
+
+### 19. 字体
+
+- **属性名**：`FontFamily`
+- **数据类型**: `FontFamily`
+- **初始化**: `private FontFamily _fontFamily = new FontFamily("微软雅黑");`
+- **双向绑定**:
+```cs
+private FontFamily _fontFamily = new FontFamily("微软雅黑");
+
+public FontFamily FontFamily
+{
+    get => _fontFamily;
+    set => SetProperty(ref _fontFamily, value);
+}
+```
+- **说明**：用于设置控件的字体。
+- **示例**:
+```xaml
+<Button FontFamily="宋体" Content="宋体字体按钮"/>
+```
+
+### 20. 字重
+
+- **属性名**：`FontWeight`
+- **数据类型**: `FontWeight`
+- **初始化**: `private FontWeight _fontWeight = FontWeights.Normal;`
+- **双向绑定**:
+```cs
+private FontWeight _fontWeight = FontWeights.Normal;
+
+public FontWeight FontWeight
+{
+    get => _fontWeight;
+    set => SetProperty(ref _fontWeight, value);
+}
+```
+- **说明**：用于设置控件的字体粗细。
+- **示例**:
+```xaml
+<Button FontWeight="Bold" Content="加粗字体按钮"/>
+```
+
+### 21. 透明度
+
+- **属性名**：`Opacity`
+- **数据类型**: `double`
+- **初始化**: `private double _opacity = 1;`
+- **双向绑定**:
+```cs
+private double _opacity = 1;
+
+public double Opacity
+{
+    get => _opacity;
+    set => SetProperty(ref _opacity, value);
+}
+```
+- **说明**：用于设置控件的透明度。
+- **示例**:
+```xaml
+<Button Opacity="0.5" Content="半透明按钮"/>
+```
+
+### 22. 文本
+
+- **属性名**：`Text`
+- **数据类型**: `string`
+- **初始化**: `private string _text = "默认文本";`
+- **双向绑定**:
+```cs
+private string _text = "默认文本";
+
+public string Text
+{
+    get => _text;
+    set => SetProperty(ref _text, value);
+}
+```
+- **说明**：用于设置控件的文本内容。
+- **示例**:
+```xaml
+<Button Text="按钮文本"/>
+```
+
+### 23. 内容
+
+- **属性名**：`Content`
+- **数据类型**: `object`
+- **初始化**: `private object _content = null;`
+- **双向绑定**:
+```cs
+private object _content = null;
+
+public object Content
+{
+    get => _content;
+    set => SetProperty(ref _content, value);
+}
+```
+- **说明**：用于设置控件的内容。
+- **示例**:
+```xaml
+<Button Content="按钮内容"/>
+```
+
+### 24. 获取焦点
+
+- **属性名**：`Focusable`
+- **数据类型**: `bool`
+- **初始化**: `private bool _focusable = true;`
+- **双向绑定**: 
+```cs
+private bool _focusable = true;
+
+public bool Focusable
+{
+    get => _focusable;
+    set => SetProperty(ref _focusable, value);
+}
+```
+- **说明**：用于设置控件是否可以获取焦点。
+- **示例**:
+```xaml
+<Button Focusable="False" Content="不可获取焦点按钮"/>
+```
+
+### 25. 检测控件是否可见
+
+- **属性名**：`IsVisible`
+- **数据类型**: `bool`
+- **初始化**: 不支持双向数据绑定
+- **说明**：用于检测控件是否可见。
+- **示例**:
+```Csharp
+if (myTextBox.IsVisible)
+{
+    // 只有当文本框可见时执行操作
+    Console.WriteLine("文本框当前可见");
+
+    MessageBox.Show("文本框当前可见");
+}
+```
+
+### 26. 设置控件是否启用
+
+- **属性名**：`IsEnabled`
+- **数据类型**: `bool`
+- **初始化**: `private bool _isEnabled = true;`
+- **双向绑定**: 
+```cs
+private bool _isEnabled = true;
+
+public bool IsEnabled
+{
+    get => _isEnabled;
+    set => SetProperty(ref _isEnabled, value);
+}
+```
+- **说明**：用于设置控件是否启用。
+- **示例**:
+```xaml
+<Button IsEnabled="False" Content="不可用按钮"/>
+```
+
+
 
 ---
 
