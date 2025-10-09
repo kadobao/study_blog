@@ -59,7 +59,7 @@ tag:
 
 使用以下命令配置Git远程仓库URL，将令牌集成到URL中：
 
-```
+```bash
 git remote set-url origin https://kadobao:新令牌@github.com/kadobao/study_blog.git
 ```
 

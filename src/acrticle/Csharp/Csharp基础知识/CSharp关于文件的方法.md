@@ -30,6 +30,9 @@ string parentDirectory = Directory.GetParent(folderPath)?.Name;
 string currentPath = System.Reflection.Assembly.GetExecutingAssembly().Location;
 // 获取当前应用程序的目录
 string currentDirectory = Path.GetDirectoryName(currentPath);
+
+// 或者更直接一点
+string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
 ```
 
 ### 检测文件夹是否存在

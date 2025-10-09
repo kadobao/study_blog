@@ -170,7 +170,7 @@ foreach (int item in array)
 
 ---
 
-## 5. 列表类型 (List`&lt;T&gt;`)
+## 5. 列表类型 (List)
 
 **描述**：动态大小的泛型集合，最常用的集合类型
 
