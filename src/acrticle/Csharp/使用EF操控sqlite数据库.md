@@ -22,14 +22,8 @@ Entity Framework (EF) 是一个强大的对象关系映射 (ORM) 框架，它允
 5. [基本数据库操作](#步骤5基本数据库操作)
 <!-- 6. [进阶技巧](#步骤6进阶技巧) -->
 
-## 步骤1：准备工作
 
-在开始之前，请确保你已经安装了：
-- Visual Studio 2019 或更高版本
-- .NET Core 3.1 或更高版本
-- 基本的 C# 和 WPF 知识
-
-## 步骤2：安装必要的NuGet包
+## 步骤1：安装必要的NuGet包
 
 首先需要安装以下两个NuGet包：
 
@@ -46,7 +40,7 @@ Install-Package Microsoft.EntityFrameworkCore
 Install-Package Microsoft.EntityFrameworkCore.Sqlite
 ```
 
-## 步骤3：创建实体类
+## 步骤2：创建实体类
 
 实体类是与数据库表对应的 C# 类。我们可以通过以下方式创建：
 
@@ -78,7 +72,7 @@ public class WpfTest
 - `[Key]` 特性表示该字段是主键
 - 每个属性对应数据库表中的一个字段
 
-## 步骤4：创建数据库上下文
+## 步骤3：创建数据库上下文
 
 数据库上下文 (DbContext) 是 EF Core 的核心类，它负责与数据库进行交互。
 
@@ -114,9 +108,9 @@ namespace WPF_EF_Sqlite
 - `OnConfiguring` 方法配置数据库连接
 - `OnModelCreating` 方法用于配置数据库模型
 
-## 步骤5：基本数据库操作
+## 步骤4：基本数据库操作
 
-### 5.1 测试数据库连接
+### 4.1 测试数据库连接
 
 ```csharp
 private void TestDatabaseConnection()
@@ -143,7 +137,7 @@ private void TestDatabaseConnection()
 }
 ```
 
-### 5.2 添加数据
+### 4.2 添加数据
 
 ```csharp
 private void AddData()
@@ -186,7 +180,7 @@ private void AddData()
 }
 ```
 
-### 5.3 查询数据
+### 4.3 查询数据
 
 ```csharp
 private void QueryData()
@@ -219,7 +213,7 @@ private void QueryData()
 }
 ```
 
-### 5.4 更新数据
+### 4.4 更新数据
 
 ```csharp
 private void UpdateData()
@@ -254,7 +248,7 @@ private void UpdateData()
 }
 ```
 
-### 5.5 删除数据
+### 4.5 删除数据
 
 ```csharp
 private void DeleteData()
@@ -289,7 +283,7 @@ private void DeleteData()
 }
 ```
 
-### 5.6 将查询到的数据绑定到DataGrid
+### 4.6 将查询到的数据绑定到DataGrid
 
 ```csharp
 private void LoadDataToDataGrid()
@@ -316,9 +310,9 @@ private void LoadDataToDataGrid()
 }
 ```
 
-<!-- ## 步骤6：进阶技巧
+<!-- ## 步骤5：进阶技巧
 
-### 6.1 使用单例模式管理数据库上下文
+### 5.1 使用单例模式管理数据库上下文
 一般情况下，每个数据库操作都创建一个新的数据库上下文是比较安全的，因为它可以确保每个操作都在一个独立的事务中进行，避免了并发问题。这里只是为了演示单例模式的使用，实际项目中可能需要根据具体情况来决定是否使用单例模式。
 
 
@@ -417,7 +411,7 @@ namespace WPF_EF_Sqlite
 }
 ```
 
-### 6.2 使用单例模式获取数据库服务
+### 5.2 使用单例模式获取数据库服务
 
 ```csharp
 // 使用全局数据库服务
@@ -451,7 +445,7 @@ private void LoadDataToDataGrid()
 }
 ```
 
-### 6.3 关闭应用程序时释放数据库服务资源
+### 5.3 关闭应用程序时释放数据库服务资源
 
 为了避免内存泄漏，我们需要在应用程序关闭时释放数据库服务资源。
 
