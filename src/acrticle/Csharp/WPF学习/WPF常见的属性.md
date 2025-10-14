@@ -292,7 +292,7 @@ public VerticalAlignment VerticalAlignment
 
 - **属性名**：`Visibility`
 - **数据类型**: `Visibility`
-- **初始化**: `private Visibility _visibility = Visibility.Visible;`
+- **属性值**: `Visible`（可见）, `Collapsed`（不可见，不占用空间）, `Hidden`（不可见，占用空间）
 - **双向绑定**:
 ```cs
 private Visibility _visibility = Visibility.Visible;
@@ -397,7 +397,7 @@ public FontFamily FontFamily
 
 - **属性名**：`FontWeight`
 - **数据类型**: `FontWeight`
-- **初始化**: `private FontWeight _fontWeight = FontWeights.Normal;`
+- **属性值**: `FontWeights.Normal`（正常）, `FontWeights.Bold`（加粗）, `FontWeights.ExtraBlack`（超黑）, `FontWeights.ExtraBold`（超粗）, `FontWeights.ExtraLight`（超轻）, `FontWeights.Light`（轻）, `FontWeights.Medium`（中）, `FontWeights.SemiBold`（半粗）, `FontWeights.SemiLight`（半轻）
 - **双向绑定**:
 ```cs
 private FontWeight _fontWeight = FontWeights.Normal;
@@ -414,7 +414,29 @@ public FontWeight FontWeight
 <Button FontWeight="Bold" Content="加粗字体按钮"/>
 ```
 
-### 21. 透明度
+
+### 21. 字体样式
+
+- **属性名**：`FontStyle`
+- **数据类型**: `FontStyle`
+- **属性值**: `FontStyles.Normal`（正常）, `FontStyles.Italic`（斜体）, `FontStyles.Oblique`（倾斜）
+- **双向绑定**:
+```cs
+private FontStyle _fontStyle = FontStyles.Normal;
+
+public FontStyle FontStyle
+{
+    get => _fontStyle;
+    set => SetProperty(ref _fontStyle, value);
+}
+```
+- **说明**：用于设置控件的字体样式。
+- **示例**:
+```xaml
+<Button FontStyle="Italic" Content="斜体字体按钮"/>
+```
+
+### 22. 透明度
 
 - **属性名**：`Opacity`
 - **数据类型**: `double`
@@ -435,7 +457,7 @@ public double Opacity
 <Button Opacity="0.5" Content="半透明按钮"/>
 ```
 
-### 22. 文本
+### 23. 文本
 
 - **属性名**：`Text`
 - **数据类型**: `string`
@@ -456,7 +478,7 @@ public string Text
 <Button Text="按钮文本"/>
 ```
 
-### 23. 内容
+### 24. 内容
 
 - **属性名**：`Content`
 - **数据类型**: `object`
@@ -477,7 +499,7 @@ public object Content
 <Button Content="按钮内容"/>
 ```
 
-### 24. 获取焦点
+### 25. 获取焦点
 
 - **属性名**：`Focusable`
 - **数据类型**: `bool`
@@ -498,7 +520,7 @@ public bool Focusable
 <Button Focusable="False" Content="不可获取焦点按钮"/>
 ```
 
-### 25. 检测控件是否可见
+### 26. 检测控件是否可见
 
 - **属性名**：`IsVisible`
 - **数据类型**: `bool`
@@ -515,7 +537,7 @@ if (myTextBox.IsVisible)
 }
 ```
 
-### 26. 设置控件是否启用
+### 27. 设置控件是否启用
 
 - **属性名**：`IsEnabled`
 - **数据类型**: `bool`

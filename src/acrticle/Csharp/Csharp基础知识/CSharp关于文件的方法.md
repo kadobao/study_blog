@@ -108,3 +108,15 @@ string currentDirectory = Path.GetDirectoryName(currentPath);
 ```csharp
 string.IsNullOrEmpty(parentDirectory)
 ```
+
+
+## 文件内容操作
+
+### 读取文件内容
+```csharp
+// SVG 文件路径
+string svgFilePath = @"C:\Users\86159\Downloads\输入框.svg";
+
+// 读取 SVG 文件内容
+string svgContent = File.ReadAllText(svgFilePath);
+```
