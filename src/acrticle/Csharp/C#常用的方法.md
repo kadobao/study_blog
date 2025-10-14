@@ -26,3 +26,18 @@ TimeText = DateTime.Now.ToString("T"); // T相当于HH:mm:ss
 ```csharp
 Clipboard.SetText(TimeText);
 ```
+
+
+
+prism里面：当ViewModel中的属性值发生变化时，通过RaisePropertyChanged方法通知UI界面更新
+```csharp
+private string _timeText;
+public string TimeText
+{
+    get { return _timeText; }
+    set { SetProperty(ref _timeText, value); }
+}
+
+// 添加这行代码来通知UI更新
+RaisePropertyChanged(nameof(TimeText));
+```
