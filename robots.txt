@@ -1,4 +1,2 @@
-User-agent:*
-Disallow:
-
+# Algolia-Crawler-Verif: 2836AF2B2A50F87E
 Sitemap: https://mister-hope.github.io/study_blog/sitemap.xml
