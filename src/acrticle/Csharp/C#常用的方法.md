@@ -41,3 +41,14 @@ public string TimeText
 // 添加这行代码来通知UI更新
 RaisePropertyChanged(nameof(TimeText));
 ```
+
+
+
+使用`StringBuilder`类可以更高效地拼接字符串，避免频繁创建新的字符串对象。
+```csharp
+StringBuilder sb = new StringBuilder();  // SELECT * FROM jobs WHERE NOT degree = '本科';
+
+sb.Append("SELECT * FROM jobs WHERE NOT degree = '本科';");
+
+string query = sb.ToString();
+```
