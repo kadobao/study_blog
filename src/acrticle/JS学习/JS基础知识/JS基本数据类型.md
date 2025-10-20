@@ -168,4 +168,18 @@ for (let item of arr) {
 }
 ```
 
+### 打印对象数组
+
+```javascript
+let objArr = [{ name: "张三", age: 25 }, { name: "李四", age: 30 }];
+
+console.log(JSON.stringify(objArr, null, 2));
+
+// JSON.stringify(value, replacer, space) 有三个参数：
+// value：要序列化的对象 / 数组（必填）。
+// replacer：过滤 / 转换属性的函数或数组（可选，这里填 null 表示不做过滤）。
+// space：缩进空格数（可选，这里填 2 表示用 2 个空格缩进）。
+```
+
+
 这些是 JavaScript 中基本数据类型最常用的方法。根据不同的需求，可以选择合适的方法来操作数据。

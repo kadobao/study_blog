@@ -43,6 +43,11 @@ RaisePropertyChanged(nameof(TimeText));
 ```
 
 
+EF和prism结合里面：查询数据表一共多少条记录
+```csharp
+int rowCount = context.Products.Count();
+```
+
 
 使用`StringBuilder`类可以更高效地拼接字符串，避免频繁创建新的字符串对象。
 ```csharp
