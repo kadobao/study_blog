@@ -126,10 +126,20 @@ for (let key in obj) {
 }
 ```
 
+### 打印对象
+
+```javascript
+let obj = { name: "John", age: 30 };
+
+console.log(JSON.stringify(obj, null, 2));
+```
+
 ## Array
 
 ```javascript
 let arr = [1, 2, 3, 4, 5];
+
+console.log(arr);
 
 // 长度
 arr.length; // 5

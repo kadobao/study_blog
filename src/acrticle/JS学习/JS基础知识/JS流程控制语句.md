@@ -134,6 +134,8 @@ console.log(dayName); // 输出: 星期三
 
 `for...in` 循环 (遍历对象属性)
 
+`forEach`循环（遍历数组）
+
 ### 语法
 ```javascript
 for (initialization; condition; increment) {
@@ -164,6 +166,14 @@ let person = {name: "张三", age: 25, city: "北京"};
 for (let key in person) {
     console.log(key + ": " + person[key]);
 }
+
+
+// `foreach`循环（遍历数组），缺点：不能使用break和continue语句
+
+const fruits = ["apple", "banana", "orange"];
+fruits.forEach(function(fruit) {
+  console.log(fruit);
+});
 ```
 
 ## 5. while 循环
