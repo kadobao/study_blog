@@ -169,11 +169,37 @@ for (let key in person) {
 
 
 // `foreach`循环（遍历数组），缺点：不能使用break和continue语句
+// 数组的forEach方法的参数是一个函数（回调函数）。这个回调函数会被forEach为数组中的每个元素调用一次。
 
-const fruits = ["apple", "banana", "orange"];
+// 回调函数（必需） - 为每个元素执行的函数，接收三个参数：
+//    - currentValue：当前处理的元素
+//    - index（可选）：当前元素的索引
+//    - array（可选）：正在操作的数组
+
+
+const fruits = ['苹果', '香蕉', '橙子'];
+
 fruits.forEach(function(fruit) {
   console.log(fruit);
 });
+
+// 输出：
+// 苹果
+// 香蕉
+// 橙子
+
+
+
+const numbers = [10, 20, 30];
+
+numbers.forEach(function(number, index) {
+  console.log(`索引 ${index} 的值是 ${number}`);
+});
+
+// 输出：
+// 索引 0 的值是 10
+// 索引 1 的值是 20
+// 索引 2 的值是 30
 ```
 
 ## 5. while 循环

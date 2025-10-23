@@ -191,5 +191,69 @@ console.log(JSON.stringify(objArr, null, 2));
 // space：缩进空格数（可选，这里填 2 表示用 2 个空格缩进）。
 ```
 
+### 创建空数组，往数组里面添加对象
+
+```javascript
+const employees = [];
+employees.push({ id: 101, name: '赵六', department: '销售' });
+employees.push({ id: 102, name: '钱七', department: '技术' });
+
+console.log(JSON.stringify(employees, null, 2));
+
+// [
+//   {
+//     "id": 101,
+//     "name": "赵六",
+//     "department": "销售"
+//   },
+//   {
+//     "id": 102,
+//     "name": "钱七",
+//     "department": "技术"
+//   }
+// ]
+```
+
+
+### 使用forEach遍历一个对象数组，然后使用这个数据创建一个对象数组
+```javascript
+const users = [
+  { id: 1, name: '张三', age: 25 },
+  { id: 2, name: '李四', age: 30 },
+  { id: 3, name: '王五', age: 28 }
+];
+
+const newUsers = []; // 初始化空数组
+
+users.forEach((user) => {
+  // 创建新对象并添加到新数组
+  newUsers.push({
+    userId: user.id,
+    userName: user.name,
+    isAdult: user.age >= 18
+  });
+});
+
+console.log(JSON.stringify(newUsers, null, 2));
+// [
+//   {
+//     "userId": 1,
+//     "userName": "张三",
+//     "isAdult": true
+//   },
+//   {
+//     "userId": 2,
+//     "userName": "李四",
+//     "isAdult": true
+//   },
+//   {
+//     "userId": 3,
+//     "userName": "王五",
+//     "isAdult": true
+//   }
+// ]
+```
+
+
 
 这些是 JavaScript 中基本数据类型最常用的方法。根据不同的需求，可以选择合适的方法来操作数据。
