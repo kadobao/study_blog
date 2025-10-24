@@ -193,67 +193,6 @@ SELECT * FROM Customers
 WHERE Country = 'Germany' OR Country = 'France' OR Country = 'UK';
 ```
 
-## 高级概念
-
-### 存储过程
-- **关键字**：`CREATE PROCEDURE`    `[prəˈsiːdʒə(r)]prosedure     存储过程`
-- **定义**：存储过程是一组预编译的SQL语句，用于执行一系列的操作
-
-**示例**：创建一个获取员工信息的存储过程
-```sql
--- 创建存储过程
-CREATE PROCEDURE GetEmployeeInfo(IN emp_id INT)
-BEGIN
-    SELECT name, department, salary 
-    FROM employees 
-    WHERE id = emp_id;
-END;
-
--- 调用存储过程
-CALL GetEmployeeInfo(123);
-```
-
-### 视图
-- **关键字**：`CREATE VIEW`
-- **定义**：视图（View）是数据库中的一种虚拟表，其内容由SQL查询定义
-
-**示例**：创建一个显示高薪员工的视图
-```sql
--- 创建视图
-CREATE VIEW HighSalaryEmployees AS
-SELECT name, department, salary
-FROM employees
-WHERE salary > 50000;
-
--- 使用视图（像使用普通表一样）
-SELECT * FROM HighSalaryEmployees;
-```
-
-### 事务
-- **关键字**：`START TRANSACTION`      `[trænˈzækʃ(ə)n]transaction   事务`
-- **定义**：事务是数据库管理系统执行过程中的一个逻辑单位，由一个有限的数据库操作序列构成
-
-**示例**：银行转账事务
-```sql
--- 开始事务
-START TRANSACTION;
-
--- 从账户A扣款
-UPDATE accounts 
-SET balance = balance - 1000 
-WHERE account_id = 'A001';
-
--- 向账户B存款
-UPDATE accounts 
-SET balance = balance + 1000 
-WHERE account_id = 'B002';
-
--- 提交事务（确认所有操作）
-COMMIT;
-
--- 如果出错，可以回滚事务
--- ROLLBACK;
-```
 
 ## 总结
 
