@@ -2,6 +2,7 @@
 title: vue3项目里面使用axios
 icon: fa-brands fa-vuejs
 order: 32
+index: false
 category:
   - vue3学习
 tag:

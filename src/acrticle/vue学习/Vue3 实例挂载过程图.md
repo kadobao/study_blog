@@ -2,6 +2,7 @@
 title: Vue3 实例挂载过程图
 icon: fa-brands fa-vuejs
 order: 14
+index: false
 category:
   - vue学习
 tag:

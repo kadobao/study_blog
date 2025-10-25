@@ -2,6 +2,7 @@
 title: vue3的props通信
 icon: fa-brands fa-vuejs
 order: 20
+index: false
 category:
   - vue学习
 tag:

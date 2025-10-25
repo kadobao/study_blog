@@ -2,6 +2,7 @@
 title: vue3的slot插槽
 icon: fa-brands fa-vuejs
 order: 22
+index: false
 category:
   - vue学习
 tag:

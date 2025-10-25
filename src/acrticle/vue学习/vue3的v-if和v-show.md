@@ -2,6 +2,7 @@
 title: vue3的v-if和v-show
 icon: fa-brands fa-vuejs
 order: 25
+index: false
 category:
   - vue学习
 tag:

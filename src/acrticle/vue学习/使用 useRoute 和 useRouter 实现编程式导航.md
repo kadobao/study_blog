@@ -2,6 +2,7 @@
 title: 使用 useRoute 和 useRouter 实现编程式导航
 icon: fa-brands fa-vuejs
 order: 4
+index: false
 category:
   - vue学习
 tag:

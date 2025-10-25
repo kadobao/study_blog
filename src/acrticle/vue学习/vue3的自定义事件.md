@@ -2,6 +2,7 @@
 title: vue3的自定义事件
 icon: fa-brands fa-vuejs
 order: 16
+index: false
 category:
   - vue学习
 tag:

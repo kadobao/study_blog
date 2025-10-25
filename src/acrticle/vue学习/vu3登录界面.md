@@ -2,6 +2,7 @@
 title: vue3登录界面
 icon: fa-brands fa-vuejs
 order: 11
+index: false
 category:
   - vue3学习
 tag:

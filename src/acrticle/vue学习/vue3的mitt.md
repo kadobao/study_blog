@@ -2,6 +2,7 @@
 title: vue3的mitt
 icon: fa-brands fa-vuejs
 order: 17
+index: false
 category:
   - vue学习
 tag:

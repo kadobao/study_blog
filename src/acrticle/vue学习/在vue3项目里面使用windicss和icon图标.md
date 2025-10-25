@@ -2,6 +2,7 @@
 title: 在vue3项目里面使用windicss和icon图标
 icon: fa-brands fa-vuejs
 order: 7
+index: false
 category:
   - vue学习
 tag:

@@ -2,6 +2,7 @@
 title: vue3的pinia的store的组合式写法
 icon: fa-brands fa-vuejs
 order: 18
+index: false
 category:
   - vue学习
 tag:

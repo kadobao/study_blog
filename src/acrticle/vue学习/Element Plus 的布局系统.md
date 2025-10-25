@@ -2,6 +2,7 @@
 title: Element Plus 的布局系统
 icon: fa-brands fa-vuejs
 order: 9
+index: false
 category:
   - vue学习
 tag:

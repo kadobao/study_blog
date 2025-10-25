@@ -2,6 +2,7 @@
 title: vue3中<router-view>的使用
 icon: fa-brands fa-vuejs
 order: 33
+index: false
 category:
   - vue3学习
 tag:

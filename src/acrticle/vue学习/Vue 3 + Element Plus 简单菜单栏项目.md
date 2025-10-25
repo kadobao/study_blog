@@ -2,6 +2,7 @@
 title: Vue 3 + Element Plus 简单菜单栏项目
 icon: fa-brands fa-vuejs
 order: 12
+index: false
 category:
   - vue学习
 tag:

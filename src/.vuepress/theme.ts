@@ -177,6 +177,12 @@ export default hopeTheme({
     icon: {
       assets: "fontawesome-with-brands",
     },
+
+    // catalog: {
+    //   // 排除特定文件夹，不为其生成目录页
+    //   exclude: ["/vue学习/"],
+    // },
+
     
     blog: true,
 

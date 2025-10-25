@@ -2,6 +2,7 @@
 title: vue3的useslots
 icon: fa-brands fa-vuejs
 order: 24
+index: false
 category:
   - vue学习
 tag:

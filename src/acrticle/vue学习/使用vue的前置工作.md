@@ -2,6 +2,7 @@
 title: 使用vue的前置工作
 icon: fa-brands fa-vuejs
 order: 5
+index: false
 category:
   - vue学习
 tag:

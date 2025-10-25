@@ -2,6 +2,7 @@
 title: vue 3的script setup语法糖
 icon: fa-brands fa-vuejs
 order: 13
+index: false
 category:
   - vue学习
 tag:

@@ -2,6 +2,7 @@
 title: vue3的provide和inject
 icon: fa-brands fa-vuejs
 order: 21
+index: false
 category:
   - vue学习
 tag:

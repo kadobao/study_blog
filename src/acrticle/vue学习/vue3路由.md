@@ -2,6 +2,7 @@
 title: vue3路由
 icon: fa-brands fa-vuejs
 order: 29
+index: false
 category:
   - vue学习
 tag:
