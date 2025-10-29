@@ -57,10 +57,16 @@ tag:
 
 ### 配置Git远程仓库URL
 
-使用以下命令配置Git远程仓库URL，将令牌集成到URL中：
+使用以下命令重新配置Git远程仓库URL，将令牌集成到URL中：
 
 ```bash
 git remote set-url origin https://kadobao:新令牌@github.com/kadobao/study_blog.git
+```
+
+如果是没有设置过远程仓库URL，使用这个命令：
+
+```bash
+git remote add origin https://kadobao:新令牌@github.com/kadobao/study_blog.git
 ```
 
 将上面的 `新令牌` 替换为实际生成的令牌。
