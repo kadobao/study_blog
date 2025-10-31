@@ -19,4 +19,7 @@ export default defineUserConfig({
 
   // 和 PWA 一起启用
   // shouldPrefetch: false,
+  head: [
+    ['link', { rel: 'icon', href: '/favicon.ico' }]
+  ],
 });

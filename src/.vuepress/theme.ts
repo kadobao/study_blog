@@ -13,12 +13,12 @@ export default hopeTheme({
 
   author: {
     name: "XJ",
-    url: "https://mister-hope.com",
+    url: "https://kadobao.github.io/study_blog/acrticle/",
   },
 
   // iconAssets: "fontawesome-with-brands",  // 移除这行
   
-  logo: "https://theme-hope-assets.vuejs.press/logo.svg",
+  logo: "/XJ.ico",
   
 
   
