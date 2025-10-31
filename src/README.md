@@ -6,6 +6,8 @@ title: 博客主页
 heroImage: https://theme-hope-assets.vuejs.press/logo.svg
 heroText: 学习笔记
 heroFullScreen: true
+bgImageStyle:
+  background: 'url(/home.jpg) center/contain no-repeat, url(assets/images/cover2.jpg) center/cover no-repeat'
 # bgImageStyle:
 #   background: 'url(https://assets-global.website-files.com/5db63dc519de55e028ef4816/5f2ded0348b56d016fbdeece_%E5%91%A8%E9%BA%9F%E5%98%89%20-%203.jpg) center/contain no-repeat, url(assets/images/cover2.jpg) center/cover no-repeat'
 # bgImageStyle:
