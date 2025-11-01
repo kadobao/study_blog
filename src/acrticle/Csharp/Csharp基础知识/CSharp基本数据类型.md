@@ -359,20 +359,24 @@ var (minimum, maximum) = GetMinMax(new[] {1, 5, 3, 9, 2});
 using System.Collections.Generic;
 
 Dictionary<string, int> ages = new Dictionary<string, int>();
-Dictionary<int, string> names = new Dictionary<int, string>
+Dictionary<string, int> names = new Dictionary<string, int>
 {
-    {1, "Alice"},
-    {2, "Bob"},
-    {3, "Charlie"}
+    {"Alice", 25},
+    {"Bob", 30},
+    {"Charlie", 35}
 };
 ```
 
 ### 常用方法和操作
 ```csharp
-Dictionary<string, int> dict = new Dictionary<string, int>();
+Dictionary<string, int> dict = new Dictionary<string, int>
+{
+    {"Alice", 25},
+    {"Bob", 30}
+};
 
 // 添加元素
-dict["Bob"] = 30;                           // 也可用于更新
+dict["Charlie"] = 35;                       // 也可用于更新
 
 // 访问元素
 int age = dict["Alice"];                    // 25
