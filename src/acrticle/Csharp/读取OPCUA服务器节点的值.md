@@ -1,11 +1,11 @@
 ---
 title: 读取OPCUA服务器节点的值
-icon:
-order: 28
+icon: code
+order: 22
 category:
-  - 一些随记
+  - C#学习
 tag:
-  - OPC UA
+  - OPCUA协议
   - OpcUaHelper
 ---
 
