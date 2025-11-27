@@ -22,6 +22,13 @@ TimeText = DateTime.Now.ToString("D"); // D相当于yyyy-MM-dd
 TimeText = DateTime.Now.ToString("T"); // T相当于HH:mm:ss
 ```
 
+打印当前日期和时间：
+```csharp
+TimeText = DateTime.Now.ToString("G"); // G相当于yyyy-MM-dd HH:mm:ss
+```
+
+
+
 将文本复制到剪贴板：
 ```csharp
 Clipboard.SetText(TimeText);
