@@ -64,3 +64,43 @@ sb.Append("SELECT * FROM jobs WHERE NOT degree = '本科';");
 
 string query = sb.ToString();
 ```
+
+
+
+打印返回类型是`json`格式的数据
+```csharp
+using Newtonsoft.Json;
+
+// 直接打印响应的完整内容
+if (response != null)
+{
+    Console.WriteLine("\n=== 完整响应内容 ===");
+
+    // 使用JSON序列化打印所有属性
+    try
+    {
+        var json = JsonConvert.SerializeObject(response, Formatting.Indented);
+        Console.WriteLine($"JSON格式:\n{json}");
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"JSON序列化失败: {ex.Message}");
+    }
+}
+```
+
+
+测量执行一个代码，需要消耗的时间
+```Csharp
+// 创建并启动 Stopwatch
+var stopwatch = Stopwatch.StartNew();
+
+// 消耗时间的代码
+Thread.Sleep(100);
+
+// 停止计时
+stopwatch.Stop();
+
+// 输出耗时（单位：毫秒）
+Console.WriteLine($"执行耗时: {stopwatch.ElapsedMilliseconds} 毫秒");
+```
