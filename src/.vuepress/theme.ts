@@ -41,10 +41,6 @@ export default hopeTheme({
     description: "一个程序员",
     intro: "/intro.html",
     medias: {
-      LinuxDO: {
-        icon: "https://cdn.jsdelivr.net/gh/kadobao/picx-images-hosting@master/20241023/image.8l032720c6.jpg",
-        link: "https://linux.do/u/momo4/activity/topics",
-      },
       // Baidu: "https://example.com",
       // BiliBili: "https://example.com",
       // Bitbucket: "https://example.com",
