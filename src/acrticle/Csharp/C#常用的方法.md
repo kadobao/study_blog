@@ -92,6 +92,9 @@ if (response != null)
 
 测量执行一个代码，需要消耗的时间
 ```Csharp
+using System.Diagnostics;
+
+
 // 创建并启动 Stopwatch
 var stopwatch = Stopwatch.StartNew();
 
@@ -103,4 +106,20 @@ stopwatch.Stop();
 
 // 输出耗时（单位：毫秒）
 Console.WriteLine($"执行耗时: {stopwatch.ElapsedMilliseconds} 毫秒");
+```
+
+
+
+
+判断白晚班
+```csharp
+using System;
+
+// 获取当前小时（24小时制）
+int currentHour = DateTime.Now.Hour;
+
+// 判断班次
+int shift = (currentHour >= 8 && currentHour < 20) ? 0 : 1;
+
+Console.WriteLine(shift == 0 ? "当前是白班" : "当前是晚班");
 ```
