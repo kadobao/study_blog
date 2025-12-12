@@ -94,7 +94,12 @@ namespace Test_Http.Models
 
 ### 4. 配置单例模式
 
-在 `Program.cs` 里面将模型注册为单例（当作全局变量），然后在使用的类文件里面声明：
+在 `Program.cs` 里面将模型注册为单例（当作全局变量）:
+```csharp
+builder.Services.AddSingleton<Ip_Response2>();
+```
+
+然后在使用的类文件里面声明：
 
 ```csharp
 private Ip_Response2 _ip_response2;
