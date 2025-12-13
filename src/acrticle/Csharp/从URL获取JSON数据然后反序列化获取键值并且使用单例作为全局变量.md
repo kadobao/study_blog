@@ -119,8 +119,16 @@ Console.WriteLine(response);
 // 解析 JSON 字符串为 Ip_Response 对象
 var ipResponse2 = JsonConvert.DeserializeObject<Ip_Response2>(response);
 
-// 赋值给单例
-_ip_response2 = ipResponse2;
+// 更新单例实例的属性值（而不是替换整个实例）
+_ip_response2.success = ipResponse2.success;
+_ip_response2.ip = ipResponse2.ip;
+_ip_response2.type = ipResponse2.type;
+_ip_response2.country = ipResponse2.country;
+_ip_response2.region = ipResponse2.region;
+_ip_response2.city = ipResponse2.city;
+_ip_response2.location = ipResponse2.location;
+_ip_response2.timeZone = ipResponse2.timeZone;
+_ip_response2.asn = ipResponse2.asn;
 ```
 
 ## 总结
