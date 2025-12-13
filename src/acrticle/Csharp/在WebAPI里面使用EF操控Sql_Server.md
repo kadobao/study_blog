@@ -281,14 +281,14 @@ public class ReportController : ControllerBase
 public async Task<int> AddAsync<T>(T entity) where T : class
 ```
 
-- **`<T>`**：表示这是一个泛型方法（Generic Method）
+- **`\<T\>`**：表示这是一个泛型方法（Generic Method）
 - **`T entity`**：表示参数 entity 的类型是 T
 - **`where T : class`**：限制 T 必须是一个类（class），不能是 int、string 这种值类型（EF Core 实体必须是类）
 - **T 在运行时会被替换成你传入的具体类型！**
 
 ### Set<T>() 方法
 
-`Set<T>()` 的意思是操控某个表，EF Core 会根据泛型类型 T 自动映射到对应的数据库表。
+`Set\<T\>()` 的意思是操控某个表，EF Core 会根据泛型类型 T 自动映射到对应的数据库表。
 
 ## 9. 最佳实践总结
 
