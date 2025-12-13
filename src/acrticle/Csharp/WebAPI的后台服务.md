@@ -60,6 +60,8 @@ namespace Test_WebAPI.BackgroundTasks
 - 后台数据处理
 - 消息处理等
 
+> **注意**：ExecuteAsync 方法在整个后台服务的生命周期中只会被调用一次
+
 ### 方法参数
 
 | 参数名 | 类型 | 说明 |
