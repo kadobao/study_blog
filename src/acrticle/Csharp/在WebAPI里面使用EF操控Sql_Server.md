@@ -69,10 +69,10 @@ public class Order
 // Data/UserDbContext.cs
 public class UserDbContext : DbContext
 {
-    public UserDbContext(DbContextOptions<UserDbContext> options)
+    public UserDbContext(DbContextOptions\<UserDbContext\> options)
         : base(options) { }
 
-    public DbSet<User> Users { get; set; }
+    public DbSet\<User\> Users { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -90,10 +90,10 @@ public class UserDbContext : DbContext
 // Data/OrderDbContext.cs
 public class OrderDbContext : DbContext
 {
-    public OrderDbContext(DbContextOptions<OrderDbContext> options)
+    public OrderDbContext(DbContextOptions\<OrderDbContext\> options)
         : base(options) { }
 
-    public DbSet<Order> Orders { get; set; }
+    public DbSet\<Order\> Orders { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -113,14 +113,14 @@ public class OrderDbContext : DbContext
 var builder = WebApplication.CreateBuilder(args);
 
 // 注册 UserDbContext，使用 UserDbConnection
-builder.Services.AddDbContext<UserDbContext>(options =>
+builder.Services.AddDbContext\<UserDbContext\>(options =>
     options.UseSqlServer(
         builder.Configuration.GetConnectionString("UserDbConnection")
     )
 );
 
 // 注册 OrderDbContext，使用 OrderDbConnection
-builder.Services.AddDbContext<OrderDbContext>(options =>
+builder.Services.AddDbContext\<OrderDbContext\>(options =>
     options.UseSqlServer(
         builder.Configuration.GetConnectionString("OrderDbConnection")
     )
@@ -145,10 +145,10 @@ builder.Services.AddControllers();
 // program.cs
 
 // 注册数据库服务为单例服务
-builder.Services.AddSingleton<DatabaseService>();
+builder.Services.AddSingleton\<DatabaseService\>();
 
 // 注册数据库上下文为作用域服务
-builder.Services.AddDbContext<DbContext>(options => 
+builder.Services.AddDbContext\<DbContext\>(options => 
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 ```
 
@@ -187,7 +187,7 @@ namespace Test_WebAPI.Services
         {
             // 创建服务作用域，用于获取DbContext实例
             using var scope = _scopeFactory.CreateScope();
-            var dbContext = scope.ServiceProvider.GetRequiredService<DbContext>();
+            var dbContext = scope.ServiceProvider.GetRequiredService\<DbContext\>();
             
             // 测试数据库连接是否成功并返回结果
             return await dbContext.Database.CanConnectAsync();
@@ -198,12 +198,12 @@ namespace Test_WebAPI.Services
         /// </summary>
         /// <typeparam name="T">实体类型</typeparam>
         /// <returns>记录数</returns>
-        public async Task<int> GetRecordCountAsync<T>() where T : class
+        public async Task<int> GetRecordCountAsync\<T\>() where T : class
         {
             using var scope = _scopeFactory.CreateScope();
-            var dbContext = scope.ServiceProvider.GetRequiredService<DbContext>();
+            var dbContext = scope.ServiceProvider.GetRequiredService\<DbContext\>();
             
-            return await dbContext.Set<T>().CountAsync();
+            return await dbContext.Set\<T\>().CountAsync();
         }
 
         /// <summary>
@@ -211,12 +211,12 @@ namespace Test_WebAPI.Services
         /// </summary>
         /// <typeparam name="T">实体类型</typeparam>
         /// <returns>所有记录列表</returns>
-        public async Task<List<T>> GetAllAsync<T>() where T : class
+        public async Task\<List\<T\>\> GetAllAsync\<T\>() where T : class
         {
             using var scope = _scopeFactory.CreateScope();
-            var dbContext = scope.ServiceProvider.GetRequiredService<DbContext>();
+            var dbContext = scope.ServiceProvider.GetRequiredService\<DbContext\>();
             
-            return await dbContext.Set<T>().ToListAsync();
+            return await dbContext.Set\<T\>().ToListAsync();
         }
 
         /// <summary>
@@ -225,13 +225,13 @@ namespace Test_WebAPI.Services
         /// <typeparam name="T">实体类型</typeparam>
         /// <param name="entity">实体对象</param>
         /// <returns>受影响的行数</returns>
-        public async Task<int> AddAsync<T>(T entity) where T : class
+        public async Task<int> AddAsync\<T\>(T entity) where T : class
         {
             using var scope = _scopeFactory.CreateScope();
-            var dbContext = scope.ServiceProvider.GetRequiredService<DbContext>();
+            var dbContext = scope.ServiceProvider.GetRequiredService\<DbContext\>();
             
             // 将实体对象添加到数据库上下文的指定集合中
-            await dbContext.Set<T>().AddAsync(entity);
+            await dbContext.Set\<T\>().AddAsync(entity);
             
             // 保存所有更改到数据库并返回受影响的行数
             return await dbContext.SaveChangesAsync();
@@ -278,7 +278,7 @@ public class ReportController : ControllerBase
 ### 方法签名解析
 
 ```csharp
-public async Task<int> AddAsync<T>(T entity) where T : class
+public async Task<int> AddAsync\<T\>(T entity) where T : class
 ```
 
 - **`\<T\>`**：表示这是一个泛型方法（Generic Method）
@@ -286,7 +286,7 @@ public async Task<int> AddAsync<T>(T entity) where T : class
 - **`where T : class`**：限制 T 必须是一个类（class），不能是 int、string 这种值类型（EF Core 实体必须是类）
 - **T 在运行时会被替换成你传入的具体类型！**
 
-### Set<T>() 方法
+### Set\<T\>() 方法
 
 `Set\<T\>()` 的意思是操控某个表，EF Core 会根据泛型类型 T 自动映射到对应的数据库表。
 
