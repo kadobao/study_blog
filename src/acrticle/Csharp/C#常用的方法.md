@@ -123,3 +123,26 @@ int shift = (currentHour >= 8 && currentHour < 20) ? 0 : 1;
 
 Console.WriteLine(shift == 0 ? "当前是白班" : "当前是晚班");
 ```
+
+
+使用`True`和`False`实现第一次立即执行，第二次延时10min
+```csharp
+bool isFirstRun = true;
+
+while (true)
+{
+    if (isFirstRun)
+    {
+        // 第一次立即执行的代码
+        Console.WriteLine("第一次立即执行");
+        isFirstRun = false;
+    }
+    else
+    {
+        // 第二次延时10分钟执行的代码
+        Console.WriteLine("第二次延时10分钟执行");
+        Thread.Sleep(TimeSpan.FromMinutes(10));
+        // await Task.Delay(TimeSpan.FromMinutes(60));
+    }
+}
+```
