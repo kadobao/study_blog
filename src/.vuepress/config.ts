@@ -8,10 +8,10 @@ import theme from "./theme.js";
 
 export default defineUserConfig({
   // 没有配置自定义域名的写法
-  // base: process.env.NODE_ENV === 'production' ? "/study_blog/" : "/",
+  base: process.env.NODE_ENV === 'production' ? "/study_blog/" : "/",
 
-  // 配置了自定义域名的写法
-  base: "/",
+  // // 配置了自定义域名的写法
+  // base: "/",
 
   port: 4343,
 

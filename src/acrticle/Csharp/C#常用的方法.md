@@ -146,3 +146,9 @@ while (true)
     }
 }
 ```
+
+
+获取字典中所有键名的列表
+```Csharp
+List<string> keyList = Dictionary.Keys.ToList();
+```

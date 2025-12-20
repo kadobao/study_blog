@@ -7,11 +7,12 @@ tag:
   - C#基础
 ---
 
+# C# 列表操作指南
 
-### 使用foreach循环遍历一个对象列表，然后使用这个数据创建一个对象列表
+## 使用 foreach 循环遍历对象列表并创建新的对象列表
 
 
-```Csharp
+```csharp
 // 创建包含字典的列表
 List<Dictionary<string, object>> listOfDictionaries = new List<Dictionary<string, object>>();
 
@@ -95,4 +96,64 @@ for (int i = 0; i < newUnqualifiedDetails.Count; i++)
     }
     Console.WriteLine();
 }
+```
+
+
+
+
+
+## 创建列表
+
+```csharp
+List<string> dldevices = new List<string>();
+```
+
+## 使用 foreach 筛选列表 - 检测字符串是否包含某个字符
+
+```csharp
+foreach (var deviceId in currentOnlineDevices)
+{
+    // 如果字符串包含`多列机`就添加到 dldevices
+    if (deviceId.Contains("多列机"))
+    {
+        dldevices.Add(deviceId);
+    }
+}
+```
+
+## 使用 foreach 从列表中移除匹配项
+
+```csharp
+// 如果 currentOnlineDevices 包含`多列机`就移除
+foreach (var deviceId in currentOnlineDevices)
+{
+    if (deviceId.Contains("多列机"))
+    {
+        currentOnlineDevices.Remove(deviceId);
+    }
+}
+```
+
+## 使用 RemoveAll 方法批量移除匹配项
+
+```csharp
+// 如果 currentOnlineDevices 包含`多列机`就移除
+currentOnlineDevices.RemoveAll(deviceId => deviceId.Contains("多列机"));
+```
+
+
+
+## 字符串空值判断
+
+`string.IsNullOrEmpty` 是 C# 中的一个静态方法，用于判断一个字符串是否为 null 或空字符串（""）。
+
+```csharp
+bool result = string.IsNullOrEmpty(value);
+```
+
+
+## 使用 LINQ 查询筛选列表
+
+```csharp
+List<string> ModbusTcpNodeNames = allNodeNames.Where(s => s.Contains("ModbusTcp")).ToList();
 ```
