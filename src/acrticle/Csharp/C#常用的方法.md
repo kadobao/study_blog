@@ -152,3 +152,49 @@ while (true)
 ```Csharp
 List<string> keyList = Dictionary.Keys.ToList();
 ```
+
+
+检查字典中是否包含指定的键（key），返回一个布尔值
+```Csharp
+bool containsKey = Dictionary.ContainsKey(key);
+```
+
+
+
+
+判断传入的时间是否为当前班次：
+```Csharp
+private bool IsInCurrentShift(DateTime targetTime)
+{
+    // 获取当前时间
+    DateTime now = DateTime.Now;
+    // 定义班次开始和结束时间
+    DateTime shiftStart, shiftEnd;
+
+    // 判断当前时间处于哪个班次
+    if (now.Hour >= 8 && now.Hour < 20)
+    {
+        // 白班：8:00 - 20:00
+        shiftStart = now.Date.AddHours(8);
+        shiftEnd = now.Date.AddHours(20);
+    }
+    else
+    {
+        // 晚班：20:00 - 次日8:00
+        if (now.Hour >= 20)
+        {
+            // 当前时间在20:00之后，晚班刚开始
+            shiftStart = now.Date.AddHours(20);
+            shiftEnd = now.Date.AddDays(1).AddHours(8);
+        }
+        else
+        {
+            // 当前时间在8:00之前，晚班还未结束（跨天）
+            shiftStart = now.Date.AddDays(-1).AddHours(20);
+            shiftEnd = now.Date.AddHours(8);
+        }
+    }
+    // 判断目标时间是否在当前班次范围内（左闭右开区间）
+    return targetTime >= shiftStart && targetTime < shiftEnd;
+}
+```
