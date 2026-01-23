@@ -198,3 +198,42 @@ private bool IsInCurrentShift(DateTime targetTime)
     return targetTime >= shiftStart && targetTime < shiftEnd;
 }
 ```
+
+
+
+获取运行程序的文件路径
+```Csharp
+string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
+```
+
+
+读取`json`文件数据，然后赋值给字典
+```Csharp
+// 获取运行程序的文件路径
+string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
+
+// 组合文件路径
+string filePath = Path.Combine(currentDirectory, "repair_nodes.json");
+
+if (File.Exists(filePath))
+{
+    // 读取文件内容
+    string json = await File.ReadAllTextAsync(filePath);
+    // 反序列化JSON字符串为字典
+    var loadedDictionary = JsonConvert.DeserializeObject<Dictionary<string, long>>(json);
+    if (loadedDictionary != null)
+    {
+        _repairNodes.repairNodes = loadedDictionary;
+        _nodeTimestamps = loadedDictionary;
+        _loggingService.Info("MyBackgroundService.LoadRepairNodesFromJsonAsync函数", $"成功从repair_nodes.json文件加载了{_repairNodes.repairNodes.Count}条维修节点记录");
+    }
+}
+else
+{
+    // 序列化字典为JSON字符串
+    string json = JsonConvert.SerializeObject(_repairNodes.repairNodes, Formatting.Indented);
+    // 写入文件，如果文件不存在则创建
+    await File.WriteAllTextAsync(filePath, json);
+    _loggingService.Info("MyBackgroundService.LoadRepairNodesFromJsonAsync函数", $"repair_nodes.json文件不存在, 已创建新文件");
+}
+```
