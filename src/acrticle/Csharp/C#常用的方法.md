@@ -237,3 +237,13 @@ else
     _loggingService.Info("MyBackgroundService.LoadRepairNodesFromJsonAsync函数", $"repair_nodes.json文件不存在, 已创建新文件");
 }
 ```
+
+
+
+将字符串全部转换为小写进行比较
+```Csharp
+string str1 = "Hello";
+string str2 = "hello";
+
+bool areEqual = str1.ToLower() == str2.ToLower();
+```
