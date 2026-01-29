@@ -160,6 +160,13 @@ bool containsKey = Dictionary.ContainsKey(key);
 ```
 
 
+打印字典
+```Csharp
+using Newtonsoft.Json;
+
+Console.WriteLine(JsonConvert.SerializeObject(myDict, Formatting.Indented));
+``` 
+
 
 
 判断传入的时间是否为当前班次：
