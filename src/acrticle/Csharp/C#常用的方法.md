@@ -168,6 +168,12 @@ Console.WriteLine(JsonConvert.SerializeObject(myDict, Formatting.Indented));
 ``` 
 
 
+打印列表
+```Csharp
+Console.WriteLine(string.Join(", ", myList));
+``` 
+
+
 检测字符串是否包含指定的子字符串，返回一个布尔值
 ```Csharp
 bool containsSubstring = myString.Contains("substring");
