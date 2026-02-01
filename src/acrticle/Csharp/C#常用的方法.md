@@ -260,3 +260,21 @@ string str2 = "hello";
 
 bool areEqual = str1.ToLower() == str2.ToLower();
 ```
+
+
+
+堵塞异步操作1min
+```Csharp
+await Task.Delay(TimeSpan.FromMinutes(1));
+```
+
+
+
+每隔10min执行一次(使用不堵塞的方式执行)
+```Csharp
+// 每15分钟重新订阅所有节点
+if (DateTime.Now.Minute % 15 == 0)
+{
+    
+}
+``` 
