@@ -278,3 +278,21 @@ if (DateTime.Now.Minute % 15 == 0)
     
 }
 ``` 
+
+
+
+字典赋值：
+```Csharp
+scores["Alice"] = 95;   // 如果 "Alice" 不存在，就添加；如果存在，就覆盖
+scores["Bob"] = 88;
+```
+
+
+字典取值
+```Csharp
+int aliceScore = scores["Alice"];  
+int bobScore = scores["Bob"];
+```
+
+
+在foreach循环里面取字典指定的键值要使用.value[]，编程要大胆试错，现在有AI可以纠错
