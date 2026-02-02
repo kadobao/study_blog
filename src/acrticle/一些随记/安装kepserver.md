@@ -1,7 +1,7 @@
 ---
 title: 安装KepServer
 icon:
-order: 38
+order: 39
 category:
   - 一些随记
 tag:
