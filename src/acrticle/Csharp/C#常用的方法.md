@@ -28,6 +28,13 @@ TimeText = DateTime.Now.ToString("G"); // G相当于yyyy-MM-dd HH:mm:ss
 ```
 
 
+打印当前日期和时间（ISO 8601 格式），例如: 2023-10-15T14:30:45.1234567Z
+```csharp
+// 打印当前日期和时间
+TimeText = DateTime.Now.ToString("o"); // o相当于yyyy-MM-ddTHH:mm:ss.fffffffZ
+```
+
+
 
 将文本复制到剪贴板：
 ```csharp
@@ -302,3 +309,140 @@ int bobScore = scores["Bob"];
 
 
 在foreach循环里面取字典指定的键值要使用.value[]，编程要大胆试错，现在有AI可以纠错
+
+
+
+列表赋值
+```Csharp
+List<int> numbers = new List<int> {};
+
+numbers.Add(1);
+numbers.Add(2);
+numbers.Add(3);
+```
+
+
+列表取值
+```Csharp
+int firstNumber = numbers[0];  // 1
+int secondNumber = numbers[1]; // 2
+```
+
+
+
+
+
+
+
+
+
+
+
+获取当天0时0分0秒和23时59分59秒的时间，并且转换为时间戳(单位: 毫秒)
+```Csharp
+// 1. 获取本地当天的 00:00:00
+DateTime startOfDay = DateTime.Today; // 本地时间，00:00:00
+
+// 2. 获取本地当天的 23:59:59
+DateTime endOfDay = DateTime.Today.AddDays(1).AddSeconds(-1); // 即 23:59:59
+
+// 3. 转换为 Unix 时间戳（毫秒）
+DateTime unixEpoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+
+long timestampStart = (long)(startOfDay.ToUniversalTime() - unixEpoch).TotalMilliseconds;
+long timestampEnd   = (long)(endOfDay.ToUniversalTime()   - unixEpoch).TotalMilliseconds;
+
+// 输出结果
+Console.WriteLine($"开始时间戳: {timestampStart}");
+Console.WriteLine($"结束时间戳: {timestampEnd}");
+```
+
+
+
+
+网络请求获取到的数据是对象字典
+
+字典多层嵌套的第二层是object，一个方法就是使用foreach循环，另一个方法是使用`as`关键字进行转换
+
+假设网络请求返回的数据结构如下：
+```Csharp
+{
+  "Body": {
+    "Data": {
+      "formDataList": [
+        {
+          "id": 1,
+          "name": "表单1",
+          "fields": {
+            "field1": "值1",
+            "field2": "值2"
+          }
+        },
+        {
+          "id": 2,
+          "name": "表单2",
+          "fields": {
+            "field1": "值3",
+            "field2": "值4"
+          }
+        }
+      ]
+    }
+  }
+}
+```
+
+
+```Csharp
+var formDataList = response.Body.Data;
+
+foreach (var formData in formDataList["formDataList"])
+{
+    var id = formData["id"];
+    Console.WriteLine($"id: {id}");
+    var name = formData["name"];
+    Console.WriteLine($"name: {name}");
+    var fields = formData["fields"] as Dictionary<string, object>;
+    Console.WriteLine($"fields: {JsonConvert.SerializeObject(fields)}");
+}
+```
+
+
+
+
+
+假设网络请求返回的数据结构如下：
+```
+{
+  "device_id": "DEV001",
+  "field_data": {
+    "temperature": "25.5",
+    "status": "online",
+    "tags": ["sensor", "room1"]
+  }
+}
+```
+
+
+
+
+
+返回的`response`先进行了序列化（比如请求用的是`httpClient.GetStringAsync`方法），然后使用`JsonConvert.DeserializeObject<JObject>`方法进行转换，将其转换为`JObject`对象; 或者使用`JsonConvert.DeserializeObject<Dictionary<string, object>>`方法将其转换为`Dictionary<string, object>`字典。
+
+这个要区分的：
+
+```csharp
+// 处理JObject
+var fieldData = deviceInfo["field_data"]?.ToObject<Dictionary<string, object>>();
+```
+
+
+```csharp
+// 处理Dictionary<string, object>
+var fieldData = deviceInfo["field_data"] as Dictionary<string, object>;
+```
+
+ToObject<T>() 是 Newtonsoft.Json（Json.NET）库中 JToken 类的一个扩展方法，它的核心作用是：
+```csharp
+将一个 JToken（比如 JObject、JArray、JValue）安全地转换为指定的 .NET 类型 T。
+```
