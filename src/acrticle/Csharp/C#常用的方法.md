@@ -8,42 +8,43 @@ tag:
   - 常用方法
 ---
 
+### 打印当前日期
 
-
-打印当前日期：
 ```csharp
 TimeText = DateTime.Now.ToString("D"); // D相当于yyyy-MM-dd
 ```
 
+### 打印当前时间
 
-
-打印当前时间：
 ```csharp
 TimeText = DateTime.Now.ToString("T"); // T相当于HH:mm:ss
 ```
 
-打印当前日期和时间：
+### 打印当前日期和时间
+
 ```csharp
 TimeText = DateTime.Now.ToString("G"); // G相当于yyyy-MM-dd HH:mm:ss
 ```
 
+### 打印当前日期和时间（ISO 8601 格式）
 
-打印当前日期和时间（ISO 8601 格式），例如: 2023-10-15T14:30:45.1234567Z
+例如: 2023-10-15T14:30:45.1234567Z
+
 ```csharp
 // 打印当前日期和时间
 TimeText = DateTime.Now.ToString("o"); // o相当于yyyy-MM-ddTHH:mm:ss.fffffffZ
 ```
 
+### 将文本复制到剪贴板
 
-
-将文本复制到剪贴板：
 ```csharp
 Clipboard.SetText(TimeText);
 ```
 
+### Prism 中通知 UI 更新
 
+当 ViewModel 中的属性值发生变化时，通过 RaisePropertyChanged 方法通知 UI 界面更新
 
-prism里面：当ViewModel中的属性值发生变化时，通过RaisePropertyChanged方法通知UI界面更新
 ```csharp
 private string _timeText;
 public string TimeText
@@ -56,14 +57,16 @@ public string TimeText
 RaisePropertyChanged(nameof(TimeText));
 ```
 
+### EF 和 Prism 结合查询数据表记录数
 
-EF和prism结合里面：查询数据表一共多少条记录
 ```csharp
 int rowCount = context.Products.Count();
 ```
 
+### 使用 StringBuilder 拼接字符串
 
-使用`StringBuilder`类可以更高效地拼接字符串，避免频繁创建新的字符串对象。
+可以更高效地拼接字符串，避免频繁创建新的字符串对象。
+
 ```csharp
 StringBuilder sb = new StringBuilder();  // SELECT * FROM jobs WHERE NOT degree = '本科';
 
@@ -72,9 +75,8 @@ sb.Append("SELECT * FROM jobs WHERE NOT degree = '本科';");
 string query = sb.ToString();
 ```
 
+### 打印返回类型是 json 格式的数据
 
-
-打印返回类型是`json`格式的数据
 ```csharp
 using Newtonsoft.Json;
 
@@ -96,11 +98,10 @@ if (response != null)
 }
 ```
 
+### 测量代码执行时间
 
-测量执行一个代码，需要消耗的时间
-```Csharp
+```csharp
 using System.Diagnostics;
-
 
 // 创建并启动 Stopwatch
 var stopwatch = Stopwatch.StartNew();
@@ -115,10 +116,8 @@ stopwatch.Stop();
 Console.WriteLine($"执行耗时: {stopwatch.ElapsedMilliseconds} 毫秒");
 ```
 
+### 判断白晚班
 
-
-
-判断白晚班
 ```csharp
 using System;
 
@@ -131,8 +130,8 @@ int shift = (currentHour >= 8 && currentHour < 20) ? 0 : 1;
 Console.WriteLine(shift == 0 ? "当前是白班" : "当前是晚班");
 ```
 
+### 使用 True 和 False 实现第一次立即执行，第二次延时 10min
 
-使用`True`和`False`实现第一次立即执行，第二次延时10min
 ```csharp
 bool isFirstRun = true;
 
@@ -154,42 +153,45 @@ while (true)
 }
 ```
 
+### 获取字典中所有键名的列表
 
-获取字典中所有键名的列表
-```Csharp
+```csharp
 List<string> keyList = Dictionary.Keys.ToList();
 ```
 
+### 检查字典中是否包含指定的键
 
-检查字典中是否包含指定的键（key），返回一个布尔值
-```Csharp
+返回一个布尔值
+
+```csharp
 bool containsKey = Dictionary.ContainsKey(key);
 ```
 
+### 打印字典
 
-打印字典
-```Csharp
+```csharp
 using Newtonsoft.Json;
 
 Console.WriteLine(JsonConvert.SerializeObject(myDict, Formatting.Indented));
-``` 
+```
 
+### 打印列表
 
-打印列表
-```Csharp
+```csharp
 Console.WriteLine(string.Join(", ", myList));
-``` 
+```
 
+### 检测字符串是否包含指定的子字符串
 
-检测字符串是否包含指定的子字符串，返回一个布尔值
-```Csharp
+返回一个布尔值
+
+```csharp
 bool containsSubstring = myString.Contains("substring");
 ```
 
+### 判断传入的时间是否为当前班次
 
-
-判断传入的时间是否为当前班次：
-```Csharp
+```csharp
 private bool IsInCurrentShift(DateTime targetTime)
 {
     // 获取当前时间
@@ -225,16 +227,15 @@ private bool IsInCurrentShift(DateTime targetTime)
 }
 ```
 
+### 获取运行程序的文件路径
 
-
-获取运行程序的文件路径
-```Csharp
+```csharp
 string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
 ```
 
+### 读取 json 文件数据并赋值给字典
 
-读取`json`文件数据，然后赋值给字典
-```Csharp
+```csharp
 // 获取运行程序的文件路径
 string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
 
@@ -264,56 +265,52 @@ else
 }
 ```
 
+### 将字符串全部转换为小写进行比较
 
-
-将字符串全部转换为小写进行比较
-```Csharp
+```csharp
 string str1 = "Hello";
 string str2 = "hello";
 
 bool areEqual = str1.ToLower() == str2.ToLower();
 ```
 
+### 堵塞异步操作 1min
 
-
-堵塞异步操作1min
-```Csharp
+```csharp
 await Task.Delay(TimeSpan.FromMinutes(1));
 ```
 
+### 每隔 10min 执行一次（使用不堵塞的方式）
 
-
-每隔10min执行一次(使用不堵塞的方式执行)
-```Csharp
+```csharp
 // 每15分钟重新订阅所有节点
 if (DateTime.Now.Minute % 15 == 0)
 {
-    
+
 }
-``` 
+```
 
+### 字典赋值
 
-
-字典赋值：
-```Csharp
+```csharp
 scores["Alice"] = 95;   // 如果 "Alice" 不存在，就添加；如果存在，就覆盖
 scores["Bob"] = 88;
 ```
 
+### 字典取值
 
-字典取值
-```Csharp
-int aliceScore = scores["Alice"];  
+```csharp
+int aliceScore = scores["Alice"];
 int bobScore = scores["Bob"];
 ```
 
+### 在 foreach 循环中取字典指定的键值
 
-在foreach循环里面取字典指定的键值要使用.value[]，编程要大胆试错，现在有AI可以纠错
+要使用 .value[]，编程要大胆试错，现在有 AI 可以纠错
 
+### 列表赋值
 
-
-列表赋值
-```Csharp
+```csharp
 List<int> numbers = new List<int> {};
 
 numbers.Add(1);
@@ -321,25 +318,18 @@ numbers.Add(2);
 numbers.Add(3);
 ```
 
+### 列表取值
 
-列表取值
-```Csharp
+```csharp
 int firstNumber = numbers[0];  // 1
 int secondNumber = numbers[1]; // 2
 ```
 
+### 获取当天 0 时 0 分 0 秒和 23 时 59 分 59 秒的时间并转换为时间戳
 
+单位: 毫秒
 
-
-
-
-
-
-
-
-
-获取当天0时0分0秒和23时59分59秒的时间，并且转换为时间戳(单位: 毫秒)
-```Csharp
+```csharp
 // 1. 获取本地当天的 00:00:00
 DateTime startOfDay = DateTime.Today; // 本地时间，00:00:00
 
@@ -357,15 +347,13 @@ Console.WriteLine($"开始时间戳: {timestampStart}");
 Console.WriteLine($"结束时间戳: {timestampEnd}");
 ```
 
+### 网络请求获取到的数据是对象字典
 
-
-
-网络请求获取到的数据是对象字典
-
-字典多层嵌套的第二层是object，一个方法就是使用foreach循环，另一个方法是使用`as`关键字进行转换
+字典多层嵌套的第二层是 object，一个方法就是使用 foreach 循环，另一个方法是使用 `as` 关键字进行转换
 
 假设网络请求返回的数据结构如下：
-```Csharp
+
+```json
 {
   "Body": {
     "Data": {
@@ -392,8 +380,9 @@ Console.WriteLine($"结束时间戳: {timestampEnd}");
 }
 ```
 
+使用 foreach 循环处理：
 
-```Csharp
+```csharp
 var formDataList = response.Body.Data;
 
 foreach (var formData in formDataList["formDataList"])
@@ -407,12 +396,11 @@ foreach (var formData in formDataList["formDataList"])
 }
 ```
 
-
-
-
+### 处理 JObject 和 Dictionary<string, object> 的区别
 
 假设网络请求返回的数据结构如下：
-```
+
+```json
 {
   "device_id": "DEV001",
   "field_data": {
@@ -423,26 +411,26 @@ foreach (var formData in formDataList["formDataList"])
 }
 ```
 
+返回的 `response` 先进行了序列化（比如请求用的是 `httpClient.GetStringAsync` 方法），然后使用 `JsonConvert.DeserializeObject<JObject>` 方法进行转换，将其转换为 `JObject` 对象；或者使用 `JsonConvert.DeserializeObject<Dictionary<string, object>>` 方法将其转换为 `Dictionary<string, object>` 字典。
 
-
-
-
-返回的`response`先进行了序列化（比如请求用的是`httpClient.GetStringAsync`方法），然后使用`JsonConvert.DeserializeObject<JObject>`方法进行转换，将其转换为`JObject`对象; 或者使用`JsonConvert.DeserializeObject<Dictionary<string, object>>`方法将其转换为`Dictionary<string, object>`字典。
-
-这个要区分的：
+处理 JObject：
 
 ```csharp
 // 处理JObject
 var fieldData = deviceInfo["field_data"]?.ToObject<Dictionary<string, object>>();
 ```
 
+处理 Dictionary<string, object>：
 
 ```csharp
 // 处理Dictionary<string, object>
 var fieldData = deviceInfo["field_data"] as Dictionary<string, object>;
 ```
 
+### ToObject<T>() 方法说明
+
 ToObject<T>() 是 Newtonsoft.Json（Json.NET）库中 JToken 类的一个扩展方法，它的核心作用是：
+
 ```csharp
 将一个 JToken（比如 JObject、JArray、JValue）安全地转换为指定的 .NET 类型 T。
 ```
