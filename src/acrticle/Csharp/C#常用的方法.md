@@ -396,7 +396,7 @@ foreach (var formData in formDataList["formDataList"])
 }
 ```
 
-### 处理 JObject 和 Dictionary<string, object> 的区别
+### 处理 JObject 和 Dictionary&lt;string, object&gt; 的区别
 
 假设网络请求返回的数据结构如下：
 
@@ -421,16 +421,16 @@ var jObject = deviceInfo["field_data"] as Newtonsoft.Json.Linq.JObject;
 var fieldData = jObject?.ToObject<Dictionary<string, object>>();
 ```
 
-处理 Dictionary<string, object>：
+处理 Dictionary&lt;string, object&gt;：
 
 ```csharp
 // 处理Dictionary<string, object>
 var fieldData = deviceInfo["field_data"] as Dictionary<string, object>;
 ```
 
-### ToObject<T>() 方法说明
+### ToObject&lt;T&gt;() 方法说明
 
-ToObject<T>() 是 Newtonsoft.Json（Json.NET）库中 JToken 类的一个扩展方法，它的核心作用是：
+ToObject&lt;T&gt;() 是 Newtonsoft.Json（Json.NET）库中 JToken 类的一个扩展方法，它的核心作用是：
 
 ```csharp
 将一个 JToken（比如 JObject、JArray、JValue）安全地转换为指定的 .NET 类型 T。
