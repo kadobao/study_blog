@@ -411,13 +411,14 @@ foreach (var formData in formDataList["formDataList"])
 }
 ```
 
-返回的 `response` 先进行了序列化（比如请求用的是 `httpClient.GetStringAsync` 方法），然后使用 `JsonConvert.DeserializeObject<JObject>` 方法进行转换，将其转换为 `JObject` 对象；或者使用 `JsonConvert.DeserializeObject<Dictionary<string, object>>` 方法将其转换为 `Dictionary<string, object>` 字典。
+返回的 `response` 进行了序列化（比如请求用的是 `httpClient.GetStringAsync` 方法）：使用 `JsonConvert.DeserializeObject<JObject>` 方法进行转换，将其转换为 `JObject` 对象；或者使用 `JsonConvert.DeserializeObject<Dictionary<string, object>>` 方法将其转换为 `Dictionary<string, object>` 字典。
 
 处理 JObject：
 
 ```csharp
 // 处理JObject
-var fieldData = deviceInfo["field_data"]?.ToObject<Dictionary<string, object>>();
+var jObject = deviceInfo["field_data"] as Newtonsoft.Json.Linq.JObject;
+var fieldData = jObject?.ToObject<Dictionary<string, object>>();
 ```
 
 处理 Dictionary<string, object>：
