@@ -122,6 +122,61 @@ string interpolated = $"Hello {name}!";     // 字符串插值
 string sub = text.Substring(0, 5);          // "Hello"
 ```
 
+## 字符串常用方法
+
+### Substring(startIndex, length)
+
+截取指定位置和长度的子串
+
+```csharp
+string text = "Hello World";
+string sub = text.Substring(0, 5);  // "Hello"
+string sub2 = text.Substring(6, 5); // "World"
+```
+
+### IndexOf("xxx")
+
+找某个子串第一次出现的位置
+
+```csharp
+string text = "Hello World";
+int index = text.IndexOf("World");  // 6
+int index2 = text.IndexOf("o");      // 4
+```
+
+### LastIndexOf("xxx")
+
+找最后一次出现的位置
+
+```csharp
+string text = "Hello World";
+int lastIndex = text.LastIndexOf("o");  // 7
+```
+
+### StartsWith("xxx") / EndsWith("xxx")
+
+判断开头或结尾是否匹配
+
+```csharp
+string text = "Hello World";
+bool starts = text.StartsWith("Hello");  // true
+bool ends = text.EndsWith("World");      // true
+```
+
+### 获取字符串的一部分
+
+```csharp
+string nodeId = "车间A.生产线1.设备001";
+var deviceName = nodeId.Substring(0, nodeId.LastIndexOf('.'));
+Console.WriteLine(deviceName);
+```
+
+**说明：**
+
+- `LastIndexOf('.')` 找到最后一个 `.` 的位置（索引）
+- `Substring(0, index)` 表示从开头截取到不包含该索引位置的子串
+```
+
 ---
 
 ## 4. 数组类型 (Array)
