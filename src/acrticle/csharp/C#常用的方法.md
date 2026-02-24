@@ -466,3 +466,28 @@ Console.WriteLine(deviceName);
 
 - `LastIndexOf('.')` 找到最后一个 `.` 的位置（索引）
 - `Substring(0, index)` 表示从开头截取到不包含该索引位置的子串
+
+
+
+### 字符串拼接
+
+```csharp
+string name = "张三";
+string text = "你好";
+
+// 使用 $ 插值
+string combined = $"你好，{name}！";  // "你好，张三！"
+
+// 使用 + 拼接
+string combined2 = text + "，" + name + "！";  // "你好，张三！"
+```
+
+
+### 数组/列表拼接
+
+```csharp
+int[] numbers = { 1, 2, 3, 4, 5 };
+
+// 使用 Join 方法拼接数组元素
+string joined = string.Join(", ", numbers);  // "1, 2, 3, 4, 5"
+```

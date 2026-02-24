@@ -111,6 +111,12 @@ string replaced = text.Replace("World", "C#"); // "Hello C#"
 // 字符串查找
 bool contains = text.Contains("Hello");     // true
 
+// 字符串拼接
+string combined = $"Hello {name}!";        // "Hello 张三!"
+
+// 字符串`+`拼接
+string combined2 = text + "!";             // "Hello World!"
+
 // 字符串分割和连接
 string[] parts = text.Split(' ');           // ["Hello", "World"]
 string joined = string.Join("-", parts);    // "Hello-World"
@@ -186,6 +192,7 @@ Console.WriteLine(deviceName);
 **特性**：引用类型，长度固定
 
 ### 基本用法
+
 ```csharp
 // 声明和初始化
 int[] numbers = new int[5];                 // 长度为5的数组
@@ -205,6 +212,8 @@ string[] names = new string[] {"Alice", "Bob", "Charlie"};
 string[] values = { "Alice", "Bob", "Charlie" }; 
 ```
 
+
+
 ### 常用方法和操作
 ```csharp
 int[] array = {5, 2, 8, 1, 9};
@@ -221,6 +230,11 @@ foreach (int item in array)
 {
     Console.WriteLine(item);
 }
+
+
+// `Join` 拼接数组元素
+string joined = string.Join(", ", array);  // "5, 2, 8, 1, 9"
+
 ```
 
 ---
