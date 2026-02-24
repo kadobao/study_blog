@@ -8,7 +8,7 @@ tag:
   - HttpClient
 ---
 
-## 概述
+## 概述（HttpClient 类：用于网络请求）
 
 HttpClient 是 .NET 中用于发送 HTTP 请求的核心类，支持同步和异步操作。
 
