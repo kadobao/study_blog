@@ -8,7 +8,7 @@ tag:
   - LINQ
 ---
 
-适用于任何 IEnumerable<T> 类型的集合，如 List<T>, Array<T>, Dictionary<TKey, TValue> 等。
+适用于任何 IEnumerable&lt;T&gt; 类型的集合，如 List&lt;T&gt;, Array&lt;T&gt;, Dictionary&lt;TKey, TValue&gt; 等。
 
 
 ## 🧒 假设你有一筐水果（数据）
