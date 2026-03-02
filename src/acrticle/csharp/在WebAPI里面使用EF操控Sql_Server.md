@@ -211,10 +211,11 @@ namespace Test_WebAPI.Services
         {
             // 创建服务作用域，用于获取DbContext实例
             using var scope = _scopeFactory.CreateScope();
+            // 从服务作用域中获取DbContext实例
             var dbContext = scope.ServiceProvider.GetRequiredService<DbContext>();
         
-        // 测试数据库连接是否成功并返回结果
-        return await dbContext.Database.CanConnectAsync();
+            // 测试数据库连接是否成功并返回结果
+            return await dbContext.Database.CanConnectAsync();
         }
 
         /// <summary>
@@ -225,9 +226,9 @@ namespace Test_WebAPI.Services
         public async Task<int> GetRecordCountAsync\<T\>() where T : class
         {
             using var scope = _scopeFactory.CreateScope();
-        var dbContext = scope.ServiceProvider.GetRequiredService<DbContext>();
-        
-        return await dbContext.Set<T>().CountAsync();
+            var dbContext = scope.ServiceProvider.GetRequiredService<DbContext>();
+            
+            return await dbContext.Set<T>().CountAsync();
         }
 
         /// <summary>
@@ -238,9 +239,9 @@ namespace Test_WebAPI.Services
         public async Task\<List\<T\>\> GetAllAsync\<T\>() where T : class
         {
             using var scope = _scopeFactory.CreateScope();
-        var dbContext = scope.ServiceProvider.GetRequiredService<DbContext>();
-        
-        return await dbContext.Set<T>().ToListAsync();
+            var dbContext = scope.ServiceProvider.GetRequiredService<DbContext>();
+            
+            return await dbContext.Set<T>().ToListAsync();
         }
 
         /// <summary>
@@ -252,10 +253,10 @@ namespace Test_WebAPI.Services
         public async Task<int> AddAsync\<T\>(T entity) where T : class
         {
             using var scope = _scopeFactory.CreateScope();
-        var dbContext = scope.ServiceProvider.GetRequiredService<DbContext>();
-        
-        // 将实体对象添加到数据库上下文的指定集合中
-        await dbContext.Set<T>().AddAsync(entity);
+            var dbContext = scope.ServiceProvider.GetRequiredService<DbContext>();
+            
+            // 将实体对象添加到数据库上下文的指定集合中
+            await dbContext.Set<T>().AddAsync(entity);
             
             // 保存所有更改到数据库并返回受影响的行数
             return await dbContext.SaveChangesAsync();
