@@ -126,11 +126,15 @@ string interpolated = $"Hello {name}!";     // 字符串插值
 
 // 切片
 string sub = text.Substring(0, 5);          // "Hello"
+
+// 检测空字符串
+// string.IsNullOrEmpty 的作用：判断一个字符串是否是 null（空引用）或者 ""（空字符串）
+bool isEmpty = string.IsNullOrEmpty(text);  // false
 ```
 
-## 字符串常用方法
+### 字符串常用方法
 
-### Substring(startIndex, length)
+#### Substring(startIndex, length)
 
 截取指定位置和长度的子串
 
@@ -140,7 +144,7 @@ string sub = text.Substring(0, 5);  // "Hello"
 string sub2 = text.Substring(6, 5); // "World"
 ```
 
-### IndexOf("xxx")
+#### IndexOf("xxx")
 
 找某个子串第一次出现的位置
 
@@ -150,7 +154,7 @@ int index = text.IndexOf("World");  // 6
 int index2 = text.IndexOf("o");      // 4
 ```
 
-### LastIndexOf("xxx")
+#### LastIndexOf("xxx")
 
 找最后一次出现的位置
 
@@ -159,7 +163,7 @@ string text = "Hello World";
 int lastIndex = text.LastIndexOf("o");  // 7
 ```
 
-### StartsWith("xxx") / EndsWith("xxx")
+#### StartsWith("xxx") / EndsWith("xxx")
 
 判断开头或结尾是否匹配
 
@@ -181,7 +185,6 @@ Console.WriteLine(deviceName);
 
 - `LastIndexOf('.')` 找到最后一个 `.` 的位置（索引）
 - `Substring(0, index)` 表示从开头截取到不包含该索引位置的子串
-```
 
 ---
 
@@ -198,21 +201,9 @@ Console.WriteLine(deviceName);
 int[] numbers = new int[5];                 // 长度为5的数组
 int[] values = {1, 2, 3, 4, 5};            // 初始化数组
 
-
-// 声明和初始化
-string[] numbers = new string[3];      // 长度为3的数组          
-string[] values = {"Alice", "Bob", "Charlie"};    // 初始化数组
-
-
-// 也可以直接声明和初始化
-string[] names = new string[] {"Alice", "Bob", "Charlie"};
-
-
-// 还可以编译器自动推断长度
-string[] values = { "Alice", "Bob", "Charlie" }; 
+string[] names = new string[3];            // 长度为3的数组
+string[] fruits = {"Alice", "Bob", "Charlie"};  // 初始化数组
 ```
-
-
 
 ### 常用方法和操作
 ```csharp
@@ -231,10 +222,8 @@ foreach (int item in array)
     Console.WriteLine(item);
 }
 
-
-// `Join` 拼接数组元素
+// Join 拼接数组元素
 string joined = string.Join(", ", array);  // "5, 2, 8, 1, 9"
-
 ```
 
 ---

@@ -469,6 +469,21 @@ Console.WriteLine(deviceName);
 
 
 
+### 检测空字符串或者 null
+
+```csharp
+string text = "Hello World";
+string empty = "";
+
+// 检测是否为空字符串
+bool isEmpty = string.IsNullOrEmpty(text);  // false
+
+// 检测是否为 null
+bool isNull = string.IsNullOrEmpty(empty);  // true
+```
+
+
+
 ### 字符串拼接
 
 ```csharp
