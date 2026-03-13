@@ -167,6 +167,16 @@ List<string> keyList = Dictionary.Keys.ToList();
 bool containsKey = Dictionary.ContainsKey(key);
 ```
 
+
+## 检查字典中是否包含指定的值
+
+返回一个布尔值
+
+```csharp
+bool containsValue = Dictionary.ContainsValue(value);
+```
+
+
 ## 打印字典
 
 ```csharp
@@ -505,4 +515,24 @@ int[] numbers = { 1, 2, 3, 4, 5 };
 
 // 使用 Join 方法拼接数组元素
 string joined = string.Join(", ", numbers);  // "1, 2, 3, 4, 5"
+```
+
+## Math.Round 四舍五入
+
+将数值四舍五入为整数或指定的小数位数
+
+```csharp
+// 四舍五入为整数
+double num1 = 3.5;
+int rounded1 = (int)Math.Round(num1);  // 4
+
+double num2 = 3.4;
+int rounded2 = (int)Math.Round(num2);  // 3
+
+// 四舍五入到指定小数位数
+double num3 = 3.14159;
+double rounded3 = Math.Round(num3, 2);  // 3.14
+
+double num4 = 3.14559;
+double rounded4 = Math.Round(num4, 2);  // 3.15
 ```

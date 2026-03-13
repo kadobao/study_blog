@@ -32,7 +32,7 @@ var apples = fruits.Where(f => f == "苹果");
 ---
 
 ### 2. `Select` —— 把每个东西变个样
-> 把水果名变成“好吃的XX”
+> 把水果名变成“好吃的XX”，获取里面的元素或者元素的属性，和where不同的是，select可以对每个元素进行操作，而where只能筛选出符合条件的元素
 
 ```csharp
 var yummy = fruits.Select(f => "好吃的" + f).ToList();
