@@ -177,6 +177,14 @@ bool containsValue = Dictionary.ContainsValue(value);
 ```
 
 
+## 字典根据键值找键名
+
+```csharp
+string key = Dictionary.FirstOrDefault(x => x.Value == value).Key;
+```
+
+
+
 ## 打印字典
 
 ```csharp
@@ -535,4 +543,27 @@ double rounded3 = Math.Round(num3, 2);  // 3.14
 
 double num4 = 3.14559;
 double rounded4 = Math.Round(num4, 2);  // 3.15
+```
+
+
+## 使用`复合键`：`日期 + 班次`，防止防重复提交
+
+```c#
+int currentHour = DateTime.Now.Hour;
+
+// 0代表白班，1代表夜班
+int shift2 = (currentHour >= 8 && currentHour < 20) ? 0 : 1;
+
+DateTime queryDate = DateTime.Now;   // 查询日期，默认当前日期
+
+// 当为夜班且当前时间为00:00-08:00时，查询昨日数据
+if (shift2 == 1 && currentHour >= 0 && currentHour < 8)
+{
+    queryDate = queryDate.AddDays(-1);
+}
+
+string shiftName = shift2 == 0 ? "白班" : "晚班";
+
+// 构建班次提交记录Key: "yyyy-MM-dd_白班/晚班"
+string shiftKey = $"{queryDate:yyyy-MM-dd}_{shiftName}";
 ```

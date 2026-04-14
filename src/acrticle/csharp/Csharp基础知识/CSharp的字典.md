@@ -77,7 +77,38 @@ class Program
 }
 ```
 
-### 3.2 常用字典操作方法
+### 3.2 根据值找键名
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class Program
+{
+    static void Main()
+    {
+        Dictionary<string, int> ages = new Dictionary<string, int>
+        {
+            { "Alice", 30 },
+            { "Bob", 25 },
+            { "Charlie", 35 }
+        };
+
+        // 根据值找键名
+        int searchValue = 30;
+        string key = ages.FirstOrDefault(x => x.Value == searchValue).Key;
+
+        Console.WriteLine($"值 {searchValue} 对应的键名是: {key}");
+    }
+}
+```
+
+> 注意：如果值不存在，会返回默认键名（空字符串或默认值），建议先判断值是否存在
+
+
+
+### 3.3 常用字典操作方法
 
 | 操作 | 方法 | 说明 |
 |------|------|------|
