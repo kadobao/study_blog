@@ -25,11 +25,8 @@ tag:
 1. 新建一个 C# 文件，比如 `ApiResponse.cs`
 2. 在空文件中，点击顶部菜单：**编辑 → 选择性粘贴 → 将 JSON 粘贴为类**
 
-### 2. 优化生成的模型类
 
-生成的类需要修改，如果 JSON 里面存在字典类型，需要改为 `Dictionary<string, object>`。
-
-#### 原始生成的模型：
+#### 生成的模型：
 
 ```csharp
 public class Rootobject
@@ -65,34 +62,11 @@ public class Asn
 }
 ```
 
-#### 优化后的模型：
-
-```csharp
-using System;
-using System.Collections.Generic;
-
-namespace Test_Http.Models
-{
-    public class Ip_Response2
-    {
-        public bool success { get; set; }
-        public string ip { get; set; }
-        public string type { get; set; }
-        public Dictionary<string, object> country { get; set; }
-        public string region { get; set; }
-        public string city { get; set; }
-        public Dictionary<string, object> location { get; set; }
-        public string timeZone { get; set; }
-        public Dictionary<string, object> asn { get; set; }
-    }
-}
-```
-
-### 3. 安装依赖包
+### 2. 安装依赖包
 
 安装 `Newtonsoft.Json` 包用于 JSON 序列化/反序列化操作。
 
-### 4. 配置单例模式
+### 3. 配置单例模式
 
 在 `Program.cs` 里面将模型注册为单例（当作全局变量）:
 ```csharp
@@ -107,7 +81,7 @@ private Ip_Response2 _ip_response2;
 
 并使用 **依赖注入** 方式获取实例。
 
-### 5. 使用示例
+### 4. 使用示例
 
 ```csharp
 // 发送 GET 请求

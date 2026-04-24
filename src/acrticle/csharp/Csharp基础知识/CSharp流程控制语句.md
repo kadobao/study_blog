@@ -127,6 +127,8 @@ for (int i = 0; i < 10; i++)
 
 **描述**：用于遍历集合（如数组、列表、字典等）中的每个元素。代码更简洁，可读性更高。
 
+foreach 拿到的循环变量是对象的引用；修改循环变量里面的属性或字段，原列表、字典里的元素会同步变化。
+
 ### 基本用法
 ```csharp
 List<string> fruits = new List<string> { "Apple", "Banana", "Cherry" };
