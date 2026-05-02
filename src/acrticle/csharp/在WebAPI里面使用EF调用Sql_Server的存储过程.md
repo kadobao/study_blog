@@ -185,5 +185,5 @@ END
 ## AI提示词
 
 ```
-先为存储过程的返回值建立模型，然后在OnModelCreating里面使用entity.HasNoKey标记模型属于DTO 模型；然后在DatabaseService 中添加调用存储过程的方法；最后在后台任务里面调用这个方法，将结果使用`JsonConvert.SerializeObject`打印。
+先为存储过程的返回值建立模型，然后在OnModelCreating里面使用entity.HasNoKey标记模型属于DTO 模型；然后在DatabaseService 中添加调用存储过程的方法；最后在后台任务的ExecuteAsync 方法中添加一个新的任务，任务里面调用这个方法，将结果使用`JsonConvert.SerializeObject`打印。
 ```
