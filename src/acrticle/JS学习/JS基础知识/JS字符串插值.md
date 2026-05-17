@@ -36,3 +36,18 @@ console.log(info);
 // 输出：姓名：Alice，身高：1.65 米
 ```
 
+## JSON 数据的格式化打印
+
+在开发中，经常需要打印对象或数组数据，使用 `JSON.stringify()` 配合模板字符串可以方便地格式化输出。
+
+```javascript
+const filteredData = [
+  { id: 1, name: "Alice", age: 30 },
+  { id: 2, name: "Bob", age: 25 },
+  { id: 3, name: "Charlie", age: 35 }
+];
+
+// 使用模板字符串打印格式化的 JSON 数据
+console.log(`筛选后的数据: ${JSON.stringify(filteredData, null, 2)}`);
+```
+
