@@ -103,17 +103,83 @@ WHERE degree != '本科';
 
 **作用**：数据分组统计
 - 相同的列值归为一组，会产生多个组
-- **重要规则**：SELECT中的非聚合字段必须出现在GROUP BY中
+- 窗口函数和分组函数都是将相同列值分成一组，然后基本会在SELECT语句里面使用聚合函数
+- **重要规则**：SELECT中的非聚合字段必须出现在GROUP BY中（SELECT 里凡是没套聚合函数（SUM/COUNT/AVG…）的普通字段，必须全部写到 GROUP BY 后面，一个都不能少、也不能多。）
+
+### 基础语法
+
+```sql
+SELECT 分组列, 聚合函数(列名)
+FROM 表名
+GROUP BY 分组列;  -- 必须和 SELECT 里的非聚合列完全一致
+```
+
+### 重要规则
+
+- `SELECT` 后面**只能写两种内容**：
+  1. 你用来分组的列（`GROUP BY` 里的列）
+  2. 聚合函数（`COUNT/SUM/AVG` 等）
+- 不能直接查询未分组、也未聚合的普通列。
+
+### 超简单示例（一看就懂）
+
+假设我们有一张 **员工表（Employee）**：
+
+| ID | Name | Department | Salary |
+|----|------|------------|--------|
+| 1  | 张三 | 技术部     | 8000   |
+| 2  | 李四 | 技术部     | 9000   |
+| 3  | 王五 | 市场部     | 6000   |
+| 4  | 赵六 | 市场部     | 7000   |
+| 5  | 孙七 | 人事部     | 5000   |
+
+#### 示例1：按部门分组，统计每个部门的人数
+
+```sql
+SELECT
+  Department,  -- 分组列
+  COUNT(*) AS 人数  -- 聚合函数：统计每组行数
+FROM Employee
+GROUP BY Department;  -- 按部门分组
+```
+
+**结果**：
+
+| Department | 人数 |
+|------------|------|
+| 技术部     | 2    |
+| 市场部     | 2    |
+| 人事部     | 1    |
+
+#### 示例2：按部门分组，计算每个部门的总工资
+
+```sql
+SELECT
+  Department,
+  SUM(Salary) AS 总工资
+FROM Employee
+GROUP BY Department;
+```
+
+**结果**：
+
+| Department | 总工资 |
+|------------|--------|
+| 技术部     | 17000  |
+| 市场部     | 13000  |
+| 人事部     | 5000   |
 
 ### 错误示例
+
 ```sql
 -- 错误：company_name不在GROUP BY中
-SELECT city, company_name, COUNT(*) 
-FROM jobs 
+SELECT city, company_name, COUNT(*)
+FROM jobs
 GROUP BY city;
 ```
 
 ### 正确示例
+
 ```sql
 SELECT city, COUNT(*) AS job_count
 FROM jobs
@@ -244,6 +310,18 @@ WHERE Country = 'Germany' OR Country = 'France' OR Country = 'UK';
 
 - `PARTITION BY` 的意思就是：把列值相同的行划到同一个窗口（分组）里
 - 窗口函数 = 函数 + OVER()，核心是保留所有行做计算
+
+### 小诀窍
+
+**OVER 划圈子（分组），函数在圈子里干活，函数结果当新列。**
+
+例如：
+
+```sql
+SUM(分数) OVER(PARTITION BY 班级) AS 班级总分
+
+LAG(数量) OVER(PARTITION BY 设备号,单号 ORDER BY 采集时间) - 数量 AS 数量差值
+```
 
 ### 标准语法
 
@@ -452,6 +530,289 @@ FROM Users;
 | 1  | 张三     |
 | 2  | 小李     |
 | 3  | 匿名用户 |
+
+## CASE WHEN 条件判断
+
+`CASE WHEN` 是 SQL Server 里用于条件判断的表达式，作用和编程语言里的 `if...else if...else` 完全一样。
+
+### 基础语法
+
+```sql
+CASE
+    WHEN 条件1 THEN 返回结果1
+    WHEN 条件2 THEN 返回结果2
+    WHEN 条件3 THEN 返回结果3
+    ELSE 其他情况默认结果
+END
+```
+
+### 核心规则
+
+1. 从上到下判断，满足第一个条件就直接返回结果，不再往下判断
+2. 所有条件都不满足时，返回 ELSE 后的内容
+3. 不写 ELSE，不满足条件时返回 NULL
+4. 最后必须加 END 结尾
+
+### 实用示例（一看就懂）
+
+假设有一张学生成绩表 `StudentScores`：
+
+| ID | Name  | Score |
+|----|-------|-------|
+| 1  | 张三  | 95    |
+| 2  | 李四  | 82    |
+| 3  | 王五  | 65    |
+| 4  | 赵六  | 50    |
+
+#### 示例1：用 CASE WHEN 给成绩评级（搜索写法）
+
+```sql
+SELECT
+    Name,
+    Score,
+    CASE
+        WHEN Score >= 90 THEN '优秀'
+        WHEN Score >= 80 THEN '良好'
+        WHEN Score >= 60 THEN '及格'
+        ELSE '不及格'
+    END AS 成绩等级  -- 给计算结果起别名
+FROM StudentScores
+```
+
+**查询结果**：
+
+| Name  | Score | 成绩等级 |
+|-------|-------|----------|
+| 张三  | 95    | 优秀     |
+| 李四  | 82    | 良好     |
+| 王五  | 65    | 及格     |
+| 赵六  | 50    | 不及格   |
+
+#### 示例2：简单 CASE（等值判断）
+
+```sql
+SELECT
+    Name,
+    CASE Score
+        WHEN 100 THEN '满分'
+        WHEN 95 THEN '顶尖'
+        ELSE '普通'
+    END AS 评价
+FROM StudentScores
+```
+
+**查询结果**：
+
+| Name  | 评价 |
+|-------|------|
+| 张三  | 顶尖 |
+| 李四  | 普通 |
+| 王五  | 普通 |
+| 赵六  | 普通 |
+
+### 进阶用法
+
+#### 配合聚合函数统计（常用）
+
+统计不同成绩等级的人数：
+
+```sql
+SELECT
+    COUNT(CASE WHEN Score >= 90 THEN 1 END) AS 优秀人数,
+    COUNT(CASE WHEN Score BETWEEN 80 AND 89 THEN 1 END) AS 良好人数,
+    COUNT(CASE WHEN Score < 60 THEN 1 END) AS 不及格人数
+FROM StudentScores
+```
+
+**查询结果**：
+
+| 优秀人数 | 良好人数 | 不及格人数 |
+|---------|---------|-----------|
+| 1       | 1       | 1         |
+
+## CTE (WITH...AS) 临时表
+
+SQL Server 中用 `WITH...AS` 语法定义的一次性的临时视图/临时表；只在当前一条 SQL 查询、插入、更新、删除语句中有效，执行完就自动销毁，不用手动创建和删除。
+
+### 基础语法
+
+```sql
+WITH CTE名称 AS
+(
+    -- 子查询语句
+    SELECT 列名 FROM 表名 WHERE 条件
+)
+-- 主查询（使用CTE）
+SELECT * FROM CTE名称 WHERE 条件;
+```
+
+### 示例1：基础CTE（最常用）
+
+#### 场景
+有一张学生表 `Students`，我们先用 CTE 筛选出**年龄 >= 20**的学生，再从里面查男生。
+
+#### 建表 + 插入测试数据
+
+```sql
+CREATE TABLE Students (
+    ID INT,
+    Name VARCHAR(20),
+    Age INT,
+    Gender VARCHAR(10)
+);
+
+INSERT INTO Students VALUES
+(1, '张三', 19, '男'),
+(2, '李四', 21, '男'),
+(3, '王五', 22, '女'),
+(4, '赵六', 20, '男');
+```
+
+#### CTE查询语句
+
+```sql
+WITH AdultStudents AS  -- CTE名字：AdultStudents（成年学生）
+(
+    -- 第一步：筛选年龄 >=20 的学生
+    SELECT ID, Name, Age, Gender
+    FROM Students
+    WHERE Age >= 20
+)
+-- 第二步：从CTE中查男生
+SELECT * FROM AdultStudents WHERE Gender = '男';
+```
+
+#### 执行结果
+
+| ID | Name | Age | Gender |
+|----|------|-----|--------|
+| 2  | 李四 | 21  | 男     |
+| 4  | 赵六 | 20  | 男     |
+
+### 示例2：多个CTE一起用
+
+#### 场景
+先定义 CTE1 筛选男生，再定义 CTE2 筛选成年男生。
+
+```sql
+WITH
+CTE_Male AS  -- CTE1：男生
+(
+    SELECT * FROM Students WHERE Gender = '男'
+),
+CTE_AdultMale AS  -- CTE2：引用CTE1，成年男生
+(
+    SELECT * FROM CTE_Male WHERE Age >= 20
+)
+SELECT * FROM CTE_AdultMale;
+```
+
+#### 结果
+
+| ID | Name | Age | Gender |
+|----|------|-----|--------|
+| 2  | 李四 | 21  | 男     |
+| 4  | 赵六 | 20  | 男     |
+
+### CTE + UNION ALL 完整实战示例
+
+#### 1. 前置建表+测试数据
+
+##### 员工表 Employee
+
+```sql
+CREATE TABLE Employee(
+    ID INT,
+    Name VARCHAR(20),
+    Department VARCHAR(20),
+    Salary INT
+);
+
+INSERT INTO Employee
+VALUES
+(1,'张三','技术部',8000),
+(2,'李四','技术部',9000),
+(3,'王五','市场部',6000),
+(4,'赵六','市场部',7000),
+(5,'孙七','人事部',5000);
+```
+
+原始表数据：
+
+| ID | Name | Department | Salary |
+|----|------|------------|--------|
+| 1  | 张三 | 技术部     | 8000   |
+| 2  | 李四 | 技术部     | 9000   |
+| 3  | 王五 | 市场部     | 6000   |
+| 4  | 赵六 | 市场部     | 7000   |
+| 5  | 孙七 | 人事部     | 5000   |
+
+#### 2. 业务场景
+
+用**两个CTE**分别查出：
+1. CTE1：**技术部员工**
+2. CTE2：**市场部员工**
+再用 `UNION ALL` 把两个CTE结果合并查询
+
+#### 3. 带UNION ALL的CTE语句
+
+```sql
+WITH
+-- CTE1：查询技术部员工
+CTE_Tech AS
+(
+    SELECT ID,Name,Department,Salary
+    FROM Employee
+    WHERE Department='技术部'
+),
+-- CTE2：查询市场部员工
+CTE_Market AS
+(
+    SELECT ID,Name,Department,Salary
+    FROM Employee
+    WHERE Department='市场部'
+)
+-- UNION ALL 合并两个CTE结果
+SELECT * FROM CTE_Tech
+UNION ALL
+SELECT * FROM CTE_Market;
+```
+
+#### 4. 最终查询结果
+
+| ID | Name | Department | Salary |
+|----|------|------------|--------|
+| 1  | 张三 | 技术部     | 8000   |
+| 2  | 李四 | 技术部     | 9000   |
+| 3  | 王五 | 市场部     | 6000   |
+| 4  | 赵六 | 市场部     | 7000   |
+
+### 拓展：单CTE内部用UNION ALL
+
+#### 需求：直接在一个CTE里拼接两类人员
+
+```sql
+WITH CTE_UnionData AS
+(
+    SELECT ID,Name,Department,Salary FROM Employee WHERE Salary>=8000
+    UNION ALL
+    SELECT ID,Name,Department,Salary FROM Employee WHERE Salary<6000
+)
+SELECT * FROM CTE_UnionData;
+```
+
+#### 执行结果
+
+| ID | Name | Department | Salary |
+|----|------|------------|--------|
+| 1  | 张三 | 技术部     | 8000   |
+| 2  | 李四 | 技术部     | 9000   |
+| 5  | 孙七 | 人事部     | 5000   |
+
+#### 补充区别
+
+- `UNION ALL`：**不去重、效率高**，直接拼接所有数据
+- `UNION`：自动去重，速度更慢
 
 ## 总结
 
