@@ -44,3 +44,16 @@ tag:
 3. 点击 `确定` 按钮
 
 ![KEPServerEX Configuration API 服务_3](/assets/images/配置KEPServerEX_Configuration_API_服务_3.png)
+
+## 4. 验证配置
+
+配置完成后，可以使用以下命令验证Configuration API服务是否正常工作：
+
+```bash
+curl -X GET "http://127.0.0.1:57412/config/v1/project" -u "用户名:密码"
+```
+
+> **说明**：
+> - 将 `用户名:密码` 替换为实际添加的用户名和密码
+> - 如果配置成功，会返回项目配置信息的JSON数据
+> - 如果返回认证错误，请检查用户名和密码是否正确
