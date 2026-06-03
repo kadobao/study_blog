@@ -19,7 +19,9 @@ tag:
 
 ### 2. 设置IIS_IUSRS权限
 
-确保 `IIS_IUSRS` 用户有相应的权限。
+使用 `go build` 生成可执行文件 `Test_HelloWorld_WebAPI.exe`，然后将其和 `web.config` 放到**同一个部署文件夹**中。
+
+右键部署文件夹 → 属性 → 安全 → 编辑 → 添加，添加 `IIS_IUSRS` 用户，给「IIS_IUSRS」分配权限：勾选「读取」「读取和执行」「列出文件夹内容」→ 点击「确定」
 
 ---
 
