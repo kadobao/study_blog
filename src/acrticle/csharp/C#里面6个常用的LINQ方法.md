@@ -79,7 +79,7 @@ bool hasGrape = fruits.Any(f => f == "葡萄");   // true
 
 ---
 
-## 💡 补充说明
+## � 补充说明
 
 ### ToList() 示例
 ```csharp
@@ -105,6 +105,39 @@ var filteredDict = dict
     .Where(pair => pair.Value > 3)
     .ToDictionary(pair => pair.Key, pair => pair.Value);
 // 结果：{ "Apple": 5, "Cherry": 9 }
+```
+
+### Select 操作字典示例
+
+> 使用 Select 从字典中提取键、值或进行转换
+
+```csharp
+var dict = new Dictionary<string, int>
+{
+    { "Apple", 5 },
+    { "Banana", 2 },
+    { "Cherry", 9 },
+    { "Date", 1 }
+};
+
+// 提取所有键（水果名称）
+var names = dict.Select(pair => pair.Key).ToList();
+// 结果：["Apple", "Banana", "Cherry", "Date"]
+
+// 提取所有值（数量）
+var counts = dict.Select(pair => pair.Value).ToList();
+// 结果：[5, 2, 9, 1]
+
+// 将键值对转换为新格式，如 "Apple-5"
+var labels = dict.Select(pair => pair.Key + "-" + pair.Value).ToList();
+// 结果：["Apple-5", "Banana-2", "Cherry-9", "Date-1"]
+
+// 筛选数量大于3的项，并转换为新对象
+var expensiveItems = dict
+    .Where(pair => pair.Value > 3)
+    .Select(pair => new { Name = pair.Key, Count = pair.Value })
+    .ToList();
+// 结果：[{ Name = "Apple", Count = 5 }, { Name = "Cherry", Count = 9 }]
 ```
 
 这两个方法都是将查询结果转换为列表或字典，这在需要对查询结果进行后续操作时非常有用。
