@@ -207,7 +207,7 @@ Console.WriteLine(string.Join(", ", myList));
 bool containsSubstring = myString.Contains("substring");
 ```
 
-## 判断传入的时间是否为当前班次
+## 判断传入的时间是否为当前班次（判断白晚班和跨天情况（凌晨00:00-次日0:00））
 
 ```csharp
 private bool IsInCurrentShift(DateTime targetTime)
