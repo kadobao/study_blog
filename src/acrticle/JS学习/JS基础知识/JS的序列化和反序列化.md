@@ -25,6 +25,8 @@ JavaScript提供了两个核心方法：
 
 ### 1. JSON.stringify() - 序列化
 
+公式：`JSON.stringify(你的变量, null, 2)`
+
 ```javascript
 const obj = {
   name: "张三",
@@ -36,7 +38,7 @@ const obj = {
   }
 };
 
-const jsonString = JSON.stringify(obj);
+const jsonString = JSON.stringify(obj, null, 2);
 console.log(jsonString);
 // 输出: {"name":"张三","age":30,"hobbies":["阅读","游泳"],"address":{"city":"北京","district":"海淀区"}}
 ```
