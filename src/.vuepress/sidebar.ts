@@ -72,6 +72,14 @@ export default sidebar({
       children: "structure",
       collapsible: true
     },
+    {
+      text: "MES",
+      icon: "industry",
+      prefix: "acrticle/MES",
+      link: "acrticle/MES/",
+      children: "structure",
+      collapsible: true
+    },
 
     // {
     //   text: "C#学习",
