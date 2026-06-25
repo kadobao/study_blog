@@ -120,3 +120,33 @@ string svgFilePath = @"C:\Users\86159\Downloads\输入框.svg";
 // 读取 SVG 文件内容
 string svgContent = File.ReadAllText(svgFilePath);
 ```
+
+### 写入文件内容
+```csharp
+// 要写入的内容
+string content = "这是要写入的文本内容";
+
+// 文件路径
+string filePath = @"C:\Users\86159\Downloads\output.txt";
+
+// 写入内容到文件（如果文件存在则覆盖）
+File.WriteAllText(filePath, content);
+
+// 如果需要追加内容而不是覆盖，使用以下方法
+File.AppendAllText(filePath, "追加的内容");
+```
+
+### 异步写入文件内容
+```csharp
+// 要写入的内容
+string content = "这是要写入的文本内容";
+
+// 文件路径
+string filePath = @"C:\Users\86159\Downloads\output.txt";
+
+// 异步写入内容到文件（如果文件存在则覆盖）
+await File.WriteAllTextAsync(filePath, content);
+
+// 异步追加内容到文件
+await File.AppendAllTextAsync(filePath, "异步追加的内容");
+```
