@@ -57,6 +57,13 @@ string newFolderPath = Path.Combine(currentDirectory, "新文件夹");
 Directory.CreateDirectory(newFolderPath);
 ```
 
+### 创建以当前日期命名的文件夹
+```csharp
+string newFolderPath = Path.Combine(basePath, DateTime.Now.ToString("yyyy-MM-dd"));
+
+Directory.CreateDirectory(newFolderPath);
+```
+
 ### 删除文件夹
 ```csharp
 Directory.Delete(folderPath);
