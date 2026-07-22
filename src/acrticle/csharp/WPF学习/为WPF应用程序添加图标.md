@@ -1,5 +1,5 @@
 ---
-title: 为WPF添加图标
+title: 为WPF应用程序添加图标
 icon: code
 order: 22
 category:
@@ -9,11 +9,11 @@ tag:
   - 图标
 ---
 
-# 为WPF添加图标
+# 为WPF应用程序添加图标
 
 在WPF应用程序中添加图标是一个简单但重要的步骤，可以让你的应用程序更加专业和易于识别。以下是详细的操作步骤：
 
-## 操作步骤
+## 方法一：通过 Visual Studio 图形界面设置
 
 1. **右键点击项目**
    
@@ -32,6 +32,26 @@ tag:
    - 找到"Win32资源"部分
    - 在"图标"选项旁边，点击"浏览"按钮
    - 选择你要添加的图标文件（通常是 `.ico` 格式）
+
+## 方法二：直接编辑 .csproj 文件
+
+在 Visual Studio 中也可以直接编辑项目文件：
+
+1. 在解决方案资源管理器中，双击项目（或右键 →「编辑项目文件」）
+
+2. 找到 `<PropertyGroup>` 中的这一行：
+
+   ```xml
+   <ApplicationIcon>Assets\Images\logo_2.ico</ApplicationIcon>
+   ```
+
+3. 修改路径为你想要的 `.ico` 文件路径
+
+4. 保存后重新编译
+
+::: tip 两种方式的关系
+两种方式效果完全一样，方法一本质上是 Visual Studio 帮你自动修改了 `.csproj` 中的 `<ApplicationIcon>` 节点。
+:::
 
 ## 注意事项
 
