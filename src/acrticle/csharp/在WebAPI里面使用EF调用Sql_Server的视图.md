@@ -99,3 +99,13 @@ public async Task<List<ProductionSummaryView>> GetProductionSummaryByDateAsync(D
         .ToListAsync();
 }
 ```
+
+
+
+
+
+## AI提示词
+
+```
+先为视图的返回值建立模型，然后在OnModelCreating里面使用entity.HasNoKey标记模型属于DTO 模型，使用 ToView 方法指定视图名称，在 DbContext 中添加 DbSet；然后在DatabaseService 中添加调用视图的方法；最后在后台任务的ExecuteAsync 方法中添加一个新的任务，任务里面调用这个方法，将结果使用`JsonConvert.SerializeObject`打印。
+```

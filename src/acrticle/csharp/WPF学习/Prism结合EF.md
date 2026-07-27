@@ -124,8 +124,8 @@ namespace WPF_MVVM_Prism
     {
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            // 注册DbContext为瞬态服务
-            containerRegistry.Register<AppDbContext>(AppDbContext);
+            // 注册DbContext为单例服务
+            containerRegistry.RegisterSingleton<AppDbContext>();
         }
     }
 }
@@ -133,8 +133,9 @@ namespace WPF_MVVM_Prism
 
 **代码说明：**
 - `RegisterTypes` 方法是 Prism 中用于注册服务的地方
-- `containerRegistry.Register<AppDbContext>(AppDbContext)` 将 DbContext 注册为瞬态服务
-- 瞬态服务意味着每次请求时都会创建一个新的实例，这对于数据库上下文是推荐的做法
+- `containerRegistry.RegisterSingleton<AppDbContext>()` 将 DbContext 注册为单例服务
+- 单例服务意味着整个应用程序生命周期内只创建一个实例，在 WPF 桌面应用中，DbContext 通常注册为单例
+- **注意**：在 ASP.NET Core 中，DbContext 应注册为 Scoped（作用域），单例服务通过 `IServiceScopeFactory` 手动创建作用域来获取 DbContext 实例，这是标准做法
 
 ## 使用DbContext
 
