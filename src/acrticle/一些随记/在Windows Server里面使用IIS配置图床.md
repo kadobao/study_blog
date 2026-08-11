@@ -193,6 +193,72 @@ IIS 应用池默认配置会在固定时间间隔或闲置超时后自动回收�
 
 ---
 
+## 第七步：配置 MIME 类型（支持非图片文件下载）
+
+IIS 默认只允许访问**已知 MIME 类型**的文件（如 `.png`、`.jpg`、`.gif` 等常见图片类型）。对于不在默认列表中的文件类型（如 `.apk`、`.exe`、`.zip` 等），IIS 出于安全考虑会直接返回 **404 - 找不到文件或目录**，而不是提供下载。
+
+> ⚠️ **注意**：这不是文件权限问题，也不是路径问题，而是 IIS 的安全策略——未知 MIME 类型的文件一律不提供下载。
+
+### 常见需要手动添加 MIME 类型的文件
+
+| 文件扩展名 | MIME 类型 |
+| ---------- | --------- |
+| `.apk` | `application/vnd.android.package-archive` |
+| `.exe` | `application/octet-stream` |
+| `.zip` | `application/zip` |
+| `.dmg` | `application/x-apple-diskimage` |
+
+### 方式一：通过 IIS 管理器手动添加
+
+1. 打开 **IIS 管理器**（`Win + R` → 输入 `inetmgr`）
+2. 在左侧「连接」面板中，**点击服务器名称**（最顶层节点，不是单个网站）
+3. 在中间面板（功能视图）中，找到并**双击「MIME 类型」**
+4. 在右侧「操作」面板中，点击**「添加」**
+5. 填写以下信息：
+
+   | 配置项 | 值 |
+   | ------ | --- |
+   | 文件扩展名 | `.apk` |
+   | MIME 类型 | `application/vnd.android.package-archive` |
+
+6. 点击「确定」，**立即生效**，无需重启 IIS
+
+> 💡 **提示**：在服务器节点级别添加会对所有网站生效；如果只想对单个网站生效，选中那个网站再操作即可。
+
+### 方式二：通过 web.config 文件添加（推荐，可复用、可移植）
+
+在你的网站物理路径根目录下（如 `D:\Publish\StaticImageSite\`）创建一个 `web.config` 文件，内容如下：
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <system.webServer>
+    <staticContent>
+      <!-- APK 安装包 -->
+      <mimeMap fileExtension=".apk" mimeType="application/vnd.android.package-archive" />
+      <!-- 可根据需要继续添加其他类型 -->
+      <!-- <mimeMap fileExtension=".exe" mimeType="application/octet-stream" /> -->
+      <!-- <mimeMap fileExtension=".zip" mimeType="application/zip" /> -->
+    </staticContent>
+  </system.webServer>
+</configuration>
+```
+
+> 💡 **提示**：放下文件后**立即生效**，无需重启 IIS。以后要加其他类型，只需要在 `<staticContent>` 里加一行 `<mimeMap ... />` 即可。
+
+### 两种方式对比
+
+| | 方式一 IIS 管理器 | 方式二 web.config |
+| -------- | ---------------- | ----------------- |
+| 操作方式 | 图形界面点击 | 放置一个文件 |
+| 作用范围 | 全局（所有网站）或单个网站 | 仅当前网站 |
+| 可复用/可移植 | ❌ 不可复用 | ✅ 跟着目录走 |
+| 后续维护 | 每次都要打开 IIS 管理器 | 加一行 XML 即可 |
+
+**推荐使用方式二 `web.config`**，既是一键放置即可生效，又方便后续维护和服务器迁移。
+
+---
+
 ## 使用说明
 
 之后就可以正常地放置图片到目录里面，然后就可以通过 URL 进行访问。之后写好后端，并且将相对路径保存在数据库里面，就是一个图床了。
