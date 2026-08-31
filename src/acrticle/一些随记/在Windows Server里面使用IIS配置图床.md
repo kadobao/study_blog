@@ -207,6 +207,7 @@ IIS 默认只允许访问**已知 MIME 类型**的文件（如 `.png`、`.jpg`�
 | `.exe` | `application/octet-stream` |
 | `.zip` | `application/zip` |
 | `.dmg` | `application/x-apple-diskimage` |
+| `.wgt` | `application/widget` |
 
 ### 方式一：通过 IIS 管理器手动添加
 
@@ -236,6 +237,8 @@ IIS 默认只允许访问**已知 MIME 类型**的文件（如 `.png`、`.jpg`�
     <staticContent>
       <!-- APK 安装包 -->
       <mimeMap fileExtension=".apk" mimeType="application/vnd.android.package-archive" />
+      <!-- WGT Widget 包（uni-app 热更新包） -->
+      <mimeMap fileExtension=".wgt" mimeType="application/widget" />
       <!-- 可根据需要继续添加其他类型 -->
       <!-- <mimeMap fileExtension=".exe" mimeType="application/octet-stream" /> -->
       <!-- <mimeMap fileExtension=".zip" mimeType="application/zip" /> -->
